@@ -43,8 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         public static Button buttonLogin;public static Button buttnRegister;
         public static Button buttnForgot;public static Button buttnInvited;
 
-
-        public static TextView id_app; public static TextInputLayout inputpass;
+        public static TextInputLayout inputpass;
         public static TextView text_titulo; public static ImageView splash;
 
         public static View activityRootView;
@@ -71,7 +70,6 @@ public class LoginActivity extends AppCompatActivity {
             buttnRegister.setVisibility(v); buttonLogin.setVisibility(v);
             emailt.setVisibility(v); pass.setVisibility(v); inputpass.setVisibility(v);
             logo.setVisibility(v); text_titulo.setVisibility(v);
-            id_app.setVisibility(v);
         }
 
        @Override
@@ -156,7 +154,6 @@ public class LoginActivity extends AppCompatActivity {
             pass=  findViewById(R.id.password);
             inputpass = findViewById(R.id.inputpassw);
             text_titulo = findViewById(R.id.text_r_titulo);
-            id_app = findViewById(R.id.id_app);
             buttonLogin = findViewById(R.id.email_sign_in_button);
             buttnRegister = findViewById(R.id.email_register_in_button);
             buttnForgot = findViewById(R.id.email_forgot_in_button);
@@ -164,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
             splash = findViewById(R.id.splash);
 
             logo = findViewById(R.id.icon_login_sm);
-            ImagePicasso.setImageCenterCop(context_this, R.drawable.icon_logo_sm, logo);
+            //ImagePicasso.setImageCenterInsideWrap(context_this, R.drawable.portada, logo);
 
             emailt.setFocusableInTouchMode(false);
 
@@ -194,7 +191,7 @@ public class LoginActivity extends AppCompatActivity {
             PlantillaMensaje mensaje = new PlantillaMensaje(context_this);
 
             if(email.length()==0){
-                mensaje.setMensaje("Iniciar sesión", "Ingrese un correo electrónico,");
+                mensaje.setMensaje("Iniciar sesión", "Ingrese un correo electrónico.");
                 return;
             }
             if(password.length()==0){

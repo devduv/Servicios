@@ -64,7 +64,6 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewVisible(LoginActivity.emailt);
         ViewVisible.viewVisible(LoginActivity.inputpass);
         ViewVisible.viewVisible(LoginActivity.pass);
-        ViewVisible.viewVisible(LoginActivity.id_app);
         ViewVisible.viewVisible(LoginActivity.text_titulo);
         ViewVisible.viewVisible(LoginActivity.logo);
 
@@ -81,7 +80,7 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewListener(LoginActivity.inputpass, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.pass, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.emailt, shortAnimationTime);
-        ViewVisible.viewListener(LoginActivity.id_app, shortAnimationTime);
+
         ViewVisible.viewListener(LoginActivity.text_titulo, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.logo, shortAnimationTime);
 

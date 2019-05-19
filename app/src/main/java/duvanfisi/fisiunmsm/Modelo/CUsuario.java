@@ -5,8 +5,8 @@ import android.os.Parcelable;
 
 public class CUsuario implements Parcelable {
     //importante
+
     private String email;
-    private String password;
     private String nombre;
     private String ap_paterno;
     private String ap_materno;
@@ -32,7 +32,6 @@ public class CUsuario implements Parcelable {
     private String ult_conexion;
 
     private boolean ticketon;
-
     public CUsuario(){
 
     }
@@ -60,7 +59,6 @@ public class CUsuario implements Parcelable {
 
     protected CUsuario(Parcel in) {
         email = in.readString();
-        password = in.readString();
         nombre = in.readString();
         ap_paterno = in.readString();
         ap_materno = in.readString();
@@ -104,14 +102,6 @@ public class CUsuario implements Parcelable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getNombre() {
@@ -261,7 +251,6 @@ public class CUsuario implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(email);
-        dest.writeString(password);
         dest.writeString(nombre);
         dest.writeString(ap_paterno);
         dest.writeString(ap_materno);
