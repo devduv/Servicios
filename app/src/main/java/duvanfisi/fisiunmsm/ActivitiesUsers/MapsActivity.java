@@ -52,10 +52,12 @@ public class MapsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         carga = findViewById(R.id.cargausuarios);
+
     }
 
     public void setImage(){
         ImagePicasso.setImageCenterCop(MapsActivity.this, R.drawable.ic_back, back);
+        //sdsdsd
     }
 
     public void onClickButton(){
