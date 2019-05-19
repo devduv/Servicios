@@ -1,0 +1,150 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_background">
+
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="15dp"
+           android:elevation="2dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:background="@drawable/borde_withe"
+                   android:gravity="center">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:orientation="vertical"
+                       >
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                         >
+                          <TextView
+                              android:id="@+id/idbtnpiso"
+                              android:layout_weight="1"
+                              android:gravity="center"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:padding="8dp"
+                              android:textColor="@color/color_background"
+                              android:background="@drawable/borde_piso"
+                              android:fontFamily="sans-serif-condensed"/>
+
+                          <TextView
+                              android:gravity="center"
+                              android:layout_weight="1"
+                              android:id="@+id/idbtnturno"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:padding="8dp"
+                              android:textColor="@color/color_toolbar"
+                              android:background="@drawable/borde_turno"
+                              android:fontFamily="sans-serif-condensed"/>
+                      </LinearLayout>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Queda(n)"
+                           android:layout_gravity="center"
+                           android:layout_marginTop="15dp"
+                           android:textSize="12sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_hints"/>
+
+                       <TextView
+                           android:id="@+id/cbtntickets"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="50sp"
+                           android:layout_gravity="center"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"/>
+
+                       <TextView
+                           android:layout_below="@id/idbtnpiso"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="ticket(s)"
+                           android:textSize="12sp"
+                           android:layout_marginBottom="10dp"
+                           android:layout_gravity="center"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_hints"/>
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:orientation="vertical"
+                       android:gravity="center"
+                       android:layout_gravity="center">
+
+                       <TextView
+                           android:layout_below="@id/idbtnpiso"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Sede"
+                           android:textSize="10sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_hints"/>
+
+                       <TextView
+                          android:id="@+id/idbtnsede"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="end"
+                           android:textSize="10sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"/>
+
+                       <TextView
+                           android:layout_below="@id/idbtnpiso"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Horario"
+                           android:layout_marginTop="10dp"
+                           android:gravity="end"
+                           android:textSize="10sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_hints"/>
+
+                       <TextView
+                           android:id="@+id/idbtnhorario"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="end"
+                           android:textSize="10sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"/>
+
+                   </LinearLayout>
+
+                   <Button
+                       android:id="@+id/btnreservart"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:drawableStart="@android:drawable/ic_input_add"
+                       android:drawableTint="@color/color_background"
+                       android:text="Reservar ticket"
+                       android:textAllCaps="false"
+                       android:textSize="13sp"
+                       android:textColor="@color/color_background"
+                       android:fontFamily="sans-serif-condensed"
+                       android:backgroundTint="@color/colorPrimary"/>
+
+               </LinearLayout>
+       </android.support.v7.widget.CardView>
+
+</LinearLayout>

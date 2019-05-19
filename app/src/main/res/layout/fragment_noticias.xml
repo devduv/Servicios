@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".Fragments.FNoticias">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text"
+                android:textSize="18sp"
+                android:text="Resumen de noticias de la universidad"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"/>
+            <TextView
+            android:id="@+id/titulo_destacados"
+            android:layout_below="@id/titulo_resumen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Noticias destacadas de la semana"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_below="@id/titulo_destacados"
+                android:id="@+id/constrain_01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp">
+
+
+               <include
+                   android:id="@+id/destacadonew"
+                   layout="@layout/plantilla_news"/>
+            </android.support.constraint.ConstraintLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_below="@id/constrain_01"
+                    android:id="@+id/rvTopNews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp">
+                </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

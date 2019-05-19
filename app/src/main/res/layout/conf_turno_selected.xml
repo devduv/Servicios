@@ -1,0 +1,122 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_background">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:background="@drawable/borde_withe">
+
+                   <TextView
+                       android:id="@+id/title_mensaje"
+                       android:layout_width="match_parent"
+                       android:layout_height="50dp"
+                       android:scaleType="center"
+                       android:text="Reservar Ticket"
+                       android:background="@color/colorPrimary"
+                       android:contentDescription="@string/titulo_mensaje"
+                       android:textSize="18sp"
+                       android:textColor="@color/color_background"
+                       android:gravity="center"
+                       android:padding="10dp"/>
+
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"
+                       android:layout_weight="1"
+                       android:orientation="vertical"
+                       android:gravity="center"
+                       android:layout_gravity="center">
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="¿Está seguro de reservar un ticket para este horario?"
+                           android:textSize="16sp"
+                           android:layout_margin="5dp"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:textColor="@color/color_text" />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Sede"
+                           android:textSize="14sp"
+                           android:layout_marginTop="10dp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"
+                           tools:ignore="SmallSp" />
+
+                       <TextView
+                          android:id="@+id/idconfirmsede"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="end"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"
+                           android:textStyle="bold"
+                           tools:ignore="SmallSp" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Horario"
+                           android:layout_marginTop="10dp"
+                           android:gravity="end"
+                           android:textSize="14sp"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"/>
+
+                       <TextView
+                           android:id="@+id/idconfirhorario"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="end"
+                           android:textSize="16sp"
+                           android:textStyle="bold"
+                           android:fontFamily="sans-serif-smallcaps"
+                           android:textColor="@color/color_toolbar"/>
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_marginTop="10dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <Button
+                           android:layout_weight="1"
+                           android:id="@+id/btncancelarreservt"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Cancelar"
+                           android:textAllCaps="false"
+                           android:textSize="14sp"
+                           android:textColor="@color/color_background"
+                           android:fontFamily="sans-serif-condensed"
+                           android:backgroundTint="@color/color_rose"/>
+
+                       <Button
+                           android:layout_weight="1"
+                           android:id="@+id/btnconfirmarreservt"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Confirmar"
+                           android:textAllCaps="false"
+                           android:textSize="14sp"
+                           android:textColor="@color/color_background"
+                           android:fontFamily="sans-serif-condensed"
+                           android:backgroundTint="@color/color_toolbar"/>
+
+                   </LinearLayout>
+               </LinearLayout>
+
+
+</LinearLayout>

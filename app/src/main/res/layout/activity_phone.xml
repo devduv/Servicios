@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitiesUsers.PhoneActivity"
+    android:background="@color/color_background">
+
+    <LinearLayout
+        android:id="@+id/email_login_form"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:id="@+id/back_login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="top"
+            android:background="@color/colorPrimary"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:id="@+id/btnback"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:tint="@color/color_background"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:layout_gravity="top"
+                android:id = "@+id/text_r_titulo"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="48dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Número de celular"
+                android:textSize="20sp"
+                android:textColor="@color/color_background"
+                android:padding="5dp"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingrese su número de celular"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:layout_margin="10dp"
+            tools:ignore="HardcodedText" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="+51"
+                android:layout_marginTop="6dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/phonenumber"
+                    android:layout_width="170dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionUnspecified"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    tools:targetApi="o"
+                    android:fontFamily="sans-serif-black"
+                    tools:ignore="LabelFor"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonphone"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Aceptar"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="@color/color_toolbar"
+            android:textColor="@color/color_background"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/buttonomitir"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:textAllCaps="false"
+            android:text="Omitir paso"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@null"
+            android:textColor="@color/design_default_color_primary"
+            tools:ignore="HardcodedText" />
+
+
+        <ImageView
+            android:id="@+id/img_phone"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Con tu número de celular podrás tener acceso a los diferentes servicios que ofrece la universidad"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_margin="15dp"
+            tools:ignore="HardcodedText" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

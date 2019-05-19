@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/img_serv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/s_imagen_del_servicio" />
+            <TextView
+                android:id="@+id/title_serv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:layout_toEndOf="@id/img_serv"
+                android:textColor="@color/color_datos" />
+
+            <ImageView
+                android:id="@+id/info_serv"
+                android:layout_alignParentEnd="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="5dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:contentDescription="@string/info_del_servicio" />
+            <TextView
+                android:id="@+id/subtitle_serv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/img_serv"
+                android:layout_below="@id/title_serv"
+                android:textColor="@color/color_hints" />
+
+            <TextView
+                android:id="@+id/subsubtitle_serv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toEndOf="@id/img_serv"
+                android:layout_below="@id/subtitle_serv"
+                android:textColor="@color/color_toolbar" />
+
+            <Button
+                android:id="@+id/btnirserv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Ir al servicio"
+                android:textAllCaps="false"
+                android:textColor="@color/color_background"
+                android:layout_below="@id/subsubtitle_serv"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

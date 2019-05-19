@@ -1,0 +1,235 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borde_withe"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:text = "@string/cod_alumno"
+            android:textSize="16sp"
+            android:textColor="@color/color_background"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id = "@+id/text_large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/color_text"
+                android:padding="10dp"
+                android:drawablePadding="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:drawableTop="@android:drawable/ic_dialog_info"
+                android:drawableTint="@color/color_brown"
+                android:text= "Si tu código empieza con \'00\', ingresa esos primeros dígitos."
+                tools:targetApi="m"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:id="@+id/linearcod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:padding="15dp">
+
+
+            </LinearLayout>
+
+
+            <GridLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="3"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+
+                <Button
+                    android:id = "@+id/btn_num_0"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id = "@+id/btn_num_1"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_2"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_3"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_4"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_5"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_6"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_7"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_8"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <Button
+                    android:id = "@+id/btn_num_9"
+                    android:backgroundTint="@color/color_brown"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <ImageButton
+                    android:id = "@+id/btn_num_c"
+                    android:backgroundTint="@android:color/holo_orange_light"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="18sp"
+                    android:src = "@android:drawable/ic_menu_view"
+                    android:textStyle="bold"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id = "@+id/btn_num_b"
+                    android:src = "@android:drawable/ic_input_delete"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:layout_margin="3dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    tools:ignore="ContentDescription" />
+
+            </GridLayout>
+            <Button
+                android:id="@+id/btnsetcod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingresar código de alumno"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/color_background"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

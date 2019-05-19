@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ActivitiesUsers.InformacionActivity">
+
+
+    <TextView
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gracias por usar la aplicación."
+        android:textSize="25sp"/>
+    <View
+        android:layout_below="@id/ln"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="1dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp">
+    </View>
+    <TextView
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esta aplicación no es oficial de la universidad."
+        android:textColor="@color/color_toolbar"
+        android:textSize="25sp"/>
+    <View
+        android:layout_below="@id/ln"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="1dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp">
+    </View>
+    <TextView
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esperamos que con tu apoyo, esta aplicación sea un éxito."
+        android:textSize="25sp"/>
+</LinearLayout>

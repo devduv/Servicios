@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitiesUsers.MapsActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/back_login"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints">
+                <ImageView
+                    android:id="@+id/btnback"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="center"
+
+                    android:tint="@color/color_background"
+                    tools:ignore="ContentDescription" />
+                <TextView
+                    android:layout_gravity="top"
+                    android:id = "@+id/text_r_titulo"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="48dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Estudiantes de la universidad"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_background"
+                    android:padding="5dp"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/titulo_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text"
+                android:textSize="18sp"
+                android:text="Estudiantes que apoyan  esta aplicación"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/titulo_destacados"
+                android:layout_below="@id/titulo_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"
+                android:text="Sólo se muestra el nick name y el nombre por seguridad"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/cargausuarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <include
+                        layout="@layout/plantilla_carga_usuarios"/>
+                    <include
+                        layout="@layout/plantilla_carga_usuarios"/>
+                    <include
+                        layout="@layout/plantilla_carga_usuarios"/>
+                    <include
+                        layout="@layout/plantilla_carga_usuarios"/>
+                    <include
+                        layout="@layout/plantilla_carga_usuarios"/>
+                </LinearLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <android.support.v7.widget.RecyclerView
+
+                        android:id="@+id/recyclerViewUsuarios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </android.support.v7.widget.RecyclerView>
+                </android.support.constraint.ConstraintLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

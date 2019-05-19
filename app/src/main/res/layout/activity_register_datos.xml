@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/id_constraint_register_datos"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_background"
+    tools:context=".ActivitiesUsers.RegisterDatosActivity">
+
+    <LinearLayout
+        android:id="@+id/back_login"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_gravity="top"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/btnback"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/borde_withe"
+            android:contentDescription="@string/back" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_register"
+                android:layout_gravity="top"
+                android:contentDescription="@string/imgregdates" />
+            <TextView
+                android:layout_gravity="top"
+                android:gravity="center"
+                android:id = "@+id/text_r_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/titulo_registro_datos"
+                android:textSize="24sp"
+                android:textColor="@color/color_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_datospersonales"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_gravity="center"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:id = "@+id/tb_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borde_withe"
+                android:layout_marginTop="5dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp">
+
+                    <TextView
+                        android:id = "@+id/text_nombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nombres"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/color_text" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_nombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/names"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/nombres_completos"
+                            android:inputType="textPersonName|textCapWords"
+                            android:maxLines="1"
+                            android:textSize = "15sp"
+                            android:singleLine="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:importantForAutofill="no"
+                            tools:targetApi="o"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    >
+                    <TextView
+                        android:id = "@+id/text_ap_pat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/apellido_paterno"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/color_text"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:id = "@+id/input_ap_pat"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        >
+
+                        <EditText
+                            android:id="@+id/ap_pat"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeActionId="5"
+                            android:hint="@string/paterno"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPersonName|textCapWords"
+                            android:maxLines="1"
+                            android:textSize = "15sp"
+                            android:singleLine="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:importantForAutofill="no"
+                            tools:targetApi="o"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    >
+                    <TextView
+                        android:id = "@+id/text_ap_mat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/apellido_materno"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_text"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:id = "@+id/input_ap_mat"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <EditText
+                            android:id="@+id/ap_mat"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeActionId="5"
+                            android:hint="@string/materno"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPersonName|textCapWords"
+                            android:maxLines="1"
+                            android:textSize = "15sp"
+                            android:singleLine="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:importantForAutofill="no"
+                            tools:targetApi="o"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/id_linearlayout_rd"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id = "@+id/text_codigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/c_digo_de_alumno"
+                        android:layout_gravity="center"
+                        android:textSize="17sp"
+                        android:gravity="center"
+                        android:textColor="@color/color_text"
+                        android:fontFamily="sans-serif-condensed"/>
+
+                    <ImageButton
+                        android:id = "@+id/btnCod"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/carnet_codigo" />
+
+                    <TextView
+                        android:id="@+id/r_codigo"
+                        android:text="@string/codigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_gravity="center"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize = "20sp"
+                        android:focusable="false"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:background="@android:color/transparent"/>
+
+
+                </LinearLayout>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/button_registrar_datos"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/guardar_datos"
+                android:textColor="@color/color_background"
+                android:textSize="19sp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:backgroundTint="@color/colorPrimary"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

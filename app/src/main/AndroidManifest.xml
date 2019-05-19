@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="duvanfisi.fisiunmsm">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".ActivitiesUsers.InformacionActivity"></activity>
+        <activity
+            android:name=".ActivitiesUsers.ForgotPasswordActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.ChangePasswordActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.TicketActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.NoticiaActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.FechaNacActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.PersonajeActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.MiRegistroActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.PoliticasActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.MapsActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.MainActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Actions.SplashActivity"
+            android:theme="@style/SplashTheme"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivitiesUsers.NicknameActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.RegisterEscuelaActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.PhoneActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.LoginActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.RegisterActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".ActivitiesUsers.RegisterDatosActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="InnerclassSeparator" />
+    </application>
+
+</manifest>

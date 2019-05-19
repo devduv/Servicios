@@ -1,0 +1,108 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borde_withe"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="40dp">
+    <TextView
+        android:id="@+id/title_serv_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scaleType="center"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/titulo_servicio"
+        android:textSize="18sp"
+        android:textColor="@color/color_background"
+        android:gravity="center"
+        android:padding="10dp"/>
+
+    <ImageView
+        android:id = "@+id/image_serv_info"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@color/color_comedor_buttons"
+        android:contentDescription="@string/imagen_del_servicio_de_info" />
+
+    <TextView
+        android:id="@+id/subtitle_serv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_comedor_buttons"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/color_text"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/informacion_servicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_brown"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/color_text"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/subsubtitle_serv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_comedor_buttons"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/color_text"
+        android:textSize="14sp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_weight="1"
+            android:id = "@+id/image1_serv_info"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/color_comedor_buttons"
+            android:contentDescription="@string/imagen_del_servicio_de_info" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id = "@+id/image2_serv_info"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/color_comedor_buttons"
+            android:contentDescription="@string/imagen_del_servicio_de_info" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id = "@+id/image3_serv_info"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/color_comedor_buttons"
+            android:contentDescription="@string/imagen_del_servicio_de_info" />
+
+    </LinearLayout>
+
+</LinearLayout>

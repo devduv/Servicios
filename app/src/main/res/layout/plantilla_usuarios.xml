@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardMaxElevation="2dp"
+        app:cardElevation="1dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/puesto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="sans-serif"
+                android:textSize="17sp"/>
+            <ImageView
+                android:layout_toEndOf="@id/puesto"
+                android:layout_below="@id/name_usuario"
+                android:id="@+id/image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"/>
+            <TextView
+                android:id="@+id/name_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/color_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/puesto"/>
+
+            <TextView
+                android:id="@+id/titulo_fecha_nac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/image"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/color_text"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_below="@id/name_usuario"
+                android:text="Facultad"/>
+
+            <TextView
+                android:id="@+id/facultad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/image"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/color_text"
+                android:textSize="13sp"
+                android:layout_below="@id/titulo_fecha_nac"/>
+
+            <TextView
+                android:id="@+id/titulo_escuela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/image"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/color_text"
+                android:textSize="13sp"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/facultad"
+                android:textStyle="bold"
+                android:text="Escuela Profesional"/>
+
+            <TextView
+                android:id="@+id/escuela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/image"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/color_text"
+                android:textSize="13sp"
+                android:layout_below="@id/titulo_escuela"/>
+
+            <TextView
+                android:id="@+id/nickname"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/color_text"
+                android:textSize="13sp"
+                android:layout_below="@id/image"
+                android:layout_toEndOf="@id/puesto"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

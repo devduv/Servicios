@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.FSeleccionarComida"
+    android:background="@color/color_background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginBottom="15dp">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/color_background">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/title_comedor"
+                    android:layout_below="@id/title_sede"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Elegir modalidad de comida"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/color_toolbar"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/title_sede"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_toolbar"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btndesayuno"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_background"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:backgroundTint="@color/color_background"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/titulo_desayuno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_marginTop="45dp"
+                    android:textStyle="bold"
+                    android:text="DESAYUNO"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/horario_desayuno"
+                    android:layout_below="@id/titulo_desayuno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_toolbar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Horario: 7:00am - 7:40am"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:layout_below="@id/horario_desayuno"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text"
+                    android:text="No es necesario separar un ticket"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btnalmuerzo"
+                    android:textAllCaps="false"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:backgroundTint="@color/color_background"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/titulo_almuerzo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_toolbar"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_marginTop="45dp"
+                    android:textStyle="bold"
+                    android:text="ALMUERZO"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/horario_almuerzo"
+                    android:layout_below="@id/titulo_almuerzo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Horario: 12:00m - 1:40pm"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:layout_below="@id/horario_almuerzo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_toolbar"
+                    android:text="Reserva un ticket"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btncena"
+                    android:textAllCaps="false"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:backgroundTint="@color/color_background"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/titulo_cena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="45dp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="CENA"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/horario_cena"
+                    android:layout_below="@id/titulo_cena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_toolbar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Horario: 5:00pm - 6:30pm"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:layout_below="@id/horario_cena"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_toolbar"
+                    android:text="Reserva un ticket"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>

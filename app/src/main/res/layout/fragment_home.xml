@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.FHome"
+    android:background="@color/color_background">
+
+    <include
+        android:id="@+id/pantallacarga"
+        layout="@layout/plantilla_carga"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints,UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/consta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_personajes"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginRight="3dp">
+                </android.support.v7.widget.RecyclerView>
+
+            </android.support.constraint.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/ln"
+                android:layout_below="@id/consta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                tools:ignore="RtlHardcoded,UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/img_news"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription" />
+                <TextView
+                    android:id="@+id/txtNot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Sección de noticias"
+                    android:textColor="@color/color_datos"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_02"
+                android:layout_below="@id/ln"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginEnd="11dp">
+            </View>
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_below="@id/view_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/consta1"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <android.support.v7.widget.RecyclerView
+
+                        android:id="@+id/recyclerViewNoticias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </android.support.v7.widget.RecyclerView>
+                </android.support.constraint.ConstraintLayout>
+
+
+                <Button
+                    android:id="@+id/button_fragment_news"
+                    android:layout_below="@id/consta1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Ver más noticias"
+                    android:gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_background"
+                    android:background="@color/color_toolbar"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <LinearLayout
+                    android:id="@+id/lnnews"
+                    android:layout_below="@id/button_fragment_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/img_services"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/txtservices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Servicios"
+                        android:textColor="@color/color_datos"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_03"
+                    android:layout_below="@id/lnnews"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/darker_gray"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginEnd="11dp">
+                </View>
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/consta2"
+                    android:layout_below="@id/view_03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewServices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </android.support.v7.widget.RecyclerView>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_below="@id/consta2"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:id="@+id/imgpub"/>
+                </RelativeLayout>
+                <LinearLayout
+
+                    android:id="@+id/lnareas"
+                    android:layout_below="@id/rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/img_areas"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/txtareas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Áreas y Facultades"
+                        android:textColor="@color/color_datos"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_04"
+                    android:layout_below="@id/lnareas"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/darker_gray"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginEnd="11dp">
+                </View>
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/consta3"
+                    android:layout_below="@id/view_04"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewAreas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </android.support.v7.widget.RecyclerView>
+
+                </android.support.constraint.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_below="@id/consta3"
+                    android:id="@+id/linearlayout_bot_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp"
+                    >
+                    <View
+                        android:id="@+id/view_05"
+                        android:layout_below="@id/lnareas"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginEnd="11dp">
+                    </View>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>
