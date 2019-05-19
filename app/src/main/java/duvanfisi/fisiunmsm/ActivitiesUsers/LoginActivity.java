@@ -38,15 +38,15 @@ public class LoginActivity extends AppCompatActivity {
 
         public static EditText emailt; public static EditText pass;
 
-        public static ImageView logo;
-
         public static Button buttonLogin;public static Button buttnRegister;
         public static Button buttnForgot;public static Button buttnInvited;
 
-        public static TextInputLayout inputpass;
-        public static TextView text_titulo; public static ImageView splash;
+        public static TextInputLayout inputpass; public static View view;
+        public static ImageView splash;
 
         public static View activityRootView;
+
+        private boolean keyboard_on = false;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
             buttnInvited.setVisibility(v); buttnForgot.setVisibility(v);
             buttnRegister.setVisibility(v); buttonLogin.setVisibility(v);
             emailt.setVisibility(v); pass.setVisibility(v); inputpass.setVisibility(v);
-            logo.setVisibility(v); text_titulo.setVisibility(v);
+            view.setVisibility(v);
         }
 
        @Override
@@ -153,14 +153,12 @@ public class LoginActivity extends AppCompatActivity {
             emailt = findViewById(R.id.email);
             pass=  findViewById(R.id.password);
             inputpass = findViewById(R.id.inputpassw);
-            text_titulo = findViewById(R.id.text_r_titulo);
             buttonLogin = findViewById(R.id.email_sign_in_button);
             buttnRegister = findViewById(R.id.email_register_in_button);
             buttnForgot = findViewById(R.id.email_forgot_in_button);
             buttnInvited = findViewById(R.id.email_invited_in_button);
             splash = findViewById(R.id.splash);
-
-            logo = findViewById(R.id.icon_login_sm);
+            view = findViewById(R.id.view);
             //ImagePicasso.setImageCenterInsideWrap(context_this, R.drawable.portada, logo);
 
             emailt.setFocusableInTouchMode(false);
@@ -170,6 +168,7 @@ public class LoginActivity extends AppCompatActivity {
                 public boolean onTouch(View v, MotionEvent event) {
                     emailt.setFocusableInTouchMode(true);
                     pass.setFocusableInTouchMode(true);
+                    keyboard_on = true;
                     return false;
                 }
             });
@@ -179,6 +178,7 @@ public class LoginActivity extends AppCompatActivity {
                 public boolean onTouch(View v, MotionEvent event) {
                     pass.setFocusableInTouchMode(true);
                     emailt.setFocusableInTouchMode(true);
+                    keyboard_on = true;
                     return false;
                 }
             });

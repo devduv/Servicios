@@ -3,11 +3,11 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <device id="pixel" />
+        <device id="pixel_3_xl" />
         <device id="tv_1080p" />
+        <device id="pixel" />
         <device id="Nexus 7" />
         <device id="pixel_xl" />
-        <device id="pixel_3_xl" />
         <device id="pixel_2" />
         <device id="wear_square" />
         <device id="tv_720p" />
@@ -21,10 +21,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44eb92cc-aab1-45f3-96ee-4bdcfa732608" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CTeacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_1_jar2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -32,19 +32,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_opencensus_opencensus_api_0_12_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_opencensus_opencensus_api_0_12_3_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Extras/ViewVisible.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Extras/ViewVisible.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +76,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="193" column="84" selection-start-line="193" selection-start-column="84" selection-end-line="193" selection-end-column="84" />
+            <state relative-caret-position="105">
+              <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+              <folding>
+                <element signature="e#2913#3079#0" expanded="true" />
+                <element signature="e#3078#3079#0" expanded="true" />
+                <element signature="e#3251#3742#0" expanded="true" />
+                <element signature="e#3741#3742#0" expanded="true" />
+                <element signature="e#3789#4036#0" expanded="true" />
+                <element signature="e#4035#4036#0" expanded="true" />
+                <element signature="e#4085#4381#0" expanded="true" />
+                <element signature="e#4380#4381#0" expanded="true" />
+                <element signature="e#4428#4653#0" expanded="true" />
+                <element signature="e#4652#4653#0" expanded="true" />
+                <element signature="e#4701#5430#0" expanded="true" />
+                <element signature="e#5103#5390#0" expanded="true" />
+                <element signature="e#5389#5390#0" expanded="true" />
+                <element signature="e#5429#5430#0" expanded="true" />
+                <element signature="e#6314#6656#0" expanded="true" />
+                <element signature="e#6655#6656#0" expanded="true" />
+                <element signature="e#6744#7086#0" expanded="true" />
+                <element signature="e#7085#7086#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,8 +105,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1029">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="424">
+              <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1048#2384#0" expanded="true" />
+                <element signature="e#2383#2384#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,14 +120,34 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+              <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
               <folding>
-                <element signature="e#1907#1927#0" expanded="true" />
-                <element signature="e#2232#2262#0" expanded="true" />
+                <element signature="e#3838#3861#0" expanded="true" />
+                <element signature="e#5118#5141#0" expanded="true" />
+                <element signature="e#6573#6605#0" expanded="true" />
               </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2184">
+              <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -135,9 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Recyclers/RecyclerViewPublicacion.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/plantilla_publicacion.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/PublicacionFirebase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/LoadMore.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ILoadMore.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_loading.xml" />
@@ -150,7 +191,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Actions/Preferences.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/TicketsFirebase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Actions/Utilidades.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/FirebaseAccount.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ViewLayouts/PlantillaMensaje.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Extras/ADialogs.java" />
@@ -183,14 +223,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CEmployee.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CTeacher.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/ViewVisible.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Extras/ViewVisible.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="70" />
+    <option name="x" value="95" />
     <option name="y" value="-20" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
@@ -203,9 +247,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -237,14 +281,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="duvanfisi" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="fisiunmsm" type="462c0819:PsiDirectoryNode" />
-              <item name="Actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Servicios" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="duvanfisi" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fisiunmsm" type="462c0819:PsiDirectoryNode" />
               <item name="ActivitiesUsers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -258,21 +294,7 @@
             <path>
               <item name="Servicios" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="duvanfisi" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fisiunmsm" type="462c0819:PsiDirectoryNode" />
-              <item name="Modelo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Servicios" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Servicios" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -286,13 +308,19 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="ZY322N5LQT" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Servicios" />
     <property name="settings.editor.selected.configurable" value="instant.run" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\res\drawable" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\res\layout" />
+      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\res\drawable" />
+      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\java\duvanfisi\fisiunmsm\Fragments" />
+      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\java\duvanfisi\fisiunmsm\Recyclers" />
+      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\java\duvanfisi\fisiunmsm\Modelo" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="duvanfisi.fisiunmsm.ActivitiesUsers" />
     </key>
     <key name="android.template.packageName">
       <recent name="duvanfisi.fisiunmsm.ActivitiesUsers" />
@@ -304,12 +332,9 @@
       <recent name="duvanfisi.fisiunmsm.Users" />
       <recent name="duvanfisi.fisiunmsm" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\res\layout" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\res\drawable" />
-      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\java\duvanfisi\fisiunmsm\Fragments" />
-      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\java\duvanfisi\fisiunmsm\Recyclers" />
-      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\java\duvanfisi\fisiunmsm\Modelo" />
+      <recent name="C:\Users\duvan\AndroidStudioProjects\Servicios\app\src\main\res\layout" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -418,12 +443,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558244632928</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="login design">
+      <created>1558286746336</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558286746336</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info id="Image Layers" order="1" />
@@ -438,18 +469,18 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Logcat" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="TODO" order="3" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4966443" weight="0.4858357" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4966443" weight="0.70963174" />
       <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4966443" weight="0.24645892" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.504698" side_tool="true" weight="0.3611898" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4986577" weight="0.3286119" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49530202" weight="0.3611898" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5060403" side_tool="true" weight="0.19546743" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4986577" weight="0.15722379" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49395972" weight="0.19546743" />
       <window_info anchor="bottom" id="Android Profiler" order="9" />
       <window_info anchor="bottom" id="Run" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info active="true" anchor="right" id="Preview" order="2" sideWeight="0.49583334" visible="true" weight="0.3738255" />
+      <window_info active="true" anchor="right" id="Preview" order="2" sideWeight="0.4957507" visible="true" weight="0.3738255" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Device File Explorer" order="4" sideWeight="0.5008881" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Device File Explorer" order="4" sideWeight="0.5042493" side_tool="true" weight="0.3738255" />
       <window_info anchor="right" id="Hierarchy" order="5" weight="0.3295302" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.3295302" />
       <window_info anchor="right" id="Assistant" order="7" sideWeight="0.4991119" weight="0.3295302" />
@@ -462,35 +493,10 @@
     </ignored-roots>
     <MESSAGE value="prueba" />
     <MESSAGE value="model user" />
-    <option name="LAST_COMMIT_MESSAGE" value="model user" />
+    <MESSAGE value="login design" />
+    <option name="LAST_COMMIT_MESSAGE" value="login design" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Recyclers/RecyclerViewEsc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="246" column="21" lean-forward="true" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="125" column="34" selection-start-line="125" selection-start-column="34" selection-end-line="125" selection-end-column="34" />
-          <folding>
-            <element signature="e#3645#3952#0" expanded="true" />
-            <element signature="e#3951#3952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/NoticiaFirebase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1153">
@@ -534,13 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="132" column="22" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="61" column="137" selection-start-line="61" selection-start-column="137" selection-end-line="61" selection-end-column="137" />
         </state>
       </provider>
     </entry>
@@ -734,14 +733,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Interfaces.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Interfaces/ILoadMore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -771,13 +762,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CTeacher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CTeacher.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/CUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -918,27 +903,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/ViewVisible.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="42">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Extras/ViewVisible.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Extras/ViewVisible.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="193" column="84" selection-start-line="193" selection-start-column="84" selection-end-line="193" selection-end-column="84" />
+        <state relative-caret-position="105">
+          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+          <folding>
+            <element signature="e#2913#3079#0" expanded="true" />
+            <element signature="e#3078#3079#0" expanded="true" />
+            <element signature="e#3251#3742#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3789#4036#0" expanded="true" />
+            <element signature="e#4035#4036#0" expanded="true" />
+            <element signature="e#4085#4381#0" expanded="true" />
+            <element signature="e#4380#4381#0" expanded="true" />
+            <element signature="e#4428#4653#0" expanded="true" />
+            <element signature="e#4652#4653#0" expanded="true" />
+            <element signature="e#4701#5430#0" expanded="true" />
+            <element signature="e#5103#5390#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5429#5430#0" expanded="true" />
+            <element signature="e#6314#6656#0" expanded="true" />
+            <element signature="e#6655#6656#0" expanded="true" />
+            <element signature="e#6744#7086#0" expanded="true" />
+            <element signature="e#7085#7086#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2184">
+          <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Animation/AnimationLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1048#2384#0" expanded="true" />
+            <element signature="e#2383#2384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+          <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
           <folding>
-            <element signature="e#1907#1927#0" expanded="true" />
-            <element signature="e#2232#2262#0" expanded="true" />
+            <element signature="e#3838#3861#0" expanded="true" />
+            <element signature="e#5118#5141#0" expanded="true" />
+            <element signature="e#6573#6605#0" expanded="true" />
           </folding>
         </state>
       </provider>

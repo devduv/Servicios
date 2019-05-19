@@ -40,6 +40,9 @@ public class AnimationLogin implements Animation.AnimationListener {
                         LoginActivity.buttnInvited.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.INVISIBLE);
                     }else{
+                            LoginActivity.emailt.setFocusable(false);
+                            LoginActivity.pass.setFocusable(false);
+
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.buttnInvited.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.VISIBLE);
@@ -64,9 +67,7 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewVisible(LoginActivity.emailt);
         ViewVisible.viewVisible(LoginActivity.inputpass);
         ViewVisible.viewVisible(LoginActivity.pass);
-        ViewVisible.viewVisible(LoginActivity.text_titulo);
-        ViewVisible.viewVisible(LoginActivity.logo);
-
+        ViewVisible.viewVisible(LoginActivity.view);
 
         LoginActivity.emailt.setHint("example@unmsm.edu.pe");
         LoginActivity.pass.setHint("Contraseña");
@@ -80,9 +81,7 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewListener(LoginActivity.inputpass, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.pass, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.emailt, shortAnimationTime);
-
-        ViewVisible.viewListener(LoginActivity.text_titulo, shortAnimationTime);
-        ViewVisible.viewListener(LoginActivity.logo, shortAnimationTime);
+        ViewVisible.viewListener(LoginActivity.view, shortAnimationTime);
 
         LoginActivity.animation_ended = true;
     }
