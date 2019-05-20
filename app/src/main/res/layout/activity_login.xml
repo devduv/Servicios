@@ -35,20 +35,35 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <View
+        <FrameLayout
             android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="@color/colorPrimaryDark"
-            android:contentDescription="@string/logo_de_sm"/>
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    android:contentDescription="@string/logo_de_sm"/>
+            </RelativeLayout>
+
+                <ViewFlipper
+                    android:id="@+id/viewflipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </ViewFlipper>
+        </FrameLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginRight="30dp"
             android:layout_marginBottom="0dp">
 
             <EditText
@@ -69,8 +84,8 @@
             android:id="@+id/inputpassw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:passwordToggleEnabled="true">
 
         <EditText
@@ -103,7 +118,7 @@
             android:textAllCaps="false"
             android:textStyle="bold"
             android:textColor="@color/color_background"
-            android:textSize="18sp"
+            android:textSize="17sp"
             tools:targetApi="lollipop"/>
 
         <Button
@@ -119,7 +134,7 @@
             android:text="@string/button_forgotpass"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
         <Button
@@ -127,20 +142,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="25dp"
-
             android:backgroundTint="@color/color_brown"
             android:text="@string/button_signin"
             android:textAllCaps="false"
             android:textColor="@color/color_background"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             tools:targetApi="lollipop" />
 
 
         <LinearLayout
+            android:id="@+id/linearlogin"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -152,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
-                android:background="@color/color_hints"/>
+                android:background="@color/color_comedor_buttons"/>
             <TextView
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
@@ -161,6 +178,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textSize="14sp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
                 android:text="también puedes"/>
             <View
                 android:layout_weight="1"
@@ -168,7 +188,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:background="@color/color_hints"/>
+                android:background="@color/color_comedor_buttons"/>
         </LinearLayout>
         <Button
             android:id="@+id/email_invited_in_button"
@@ -184,7 +204,7 @@
             android:textAllCaps="false"
             android:textColor="@color/color_background"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="17sp"/>
 
     </LinearLayout>
 

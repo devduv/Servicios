@@ -2,6 +2,7 @@ package duvanfisi.fisiunmsm.ActivitiesUsers;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TextInputLayout;
@@ -13,9 +14,12 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import duvanfisi.fisiunmsm.Animation.AnimationLogin;
 import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
@@ -33,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         private boolean canExitApp = false;
         private final Context context_this = LoginActivity.this;
+        private ImageView imglogo;
 
         public static boolean animation_ended = false;
 
@@ -41,12 +46,15 @@ public class LoginActivity extends AppCompatActivity {
         public static Button buttonLogin;public static Button buttnRegister;
         public static Button buttnForgot;public static Button buttnInvited;
 
-        public static TextInputLayout inputpass; public static View view;
+        public static TextInputLayout inputpass; public static FrameLayout view;
+        public static LinearLayout linearlogin;
         public static ImageView splash;
 
         public static View activityRootView;
 
         private boolean keyboard_on = false;
+
+        private ViewFlipper viewFlipper;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             buttnInvited.setVisibility(v); buttnForgot.setVisibility(v);
             buttnRegister.setVisibility(v); buttonLogin.setVisibility(v);
             emailt.setVisibility(v); pass.setVisibility(v); inputpass.setVisibility(v);
-            view.setVisibility(v);
+            view.setVisibility(v); linearlogin.setVisibility(v);
         }
 
        @Override
@@ -146,9 +154,28 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
 
+        public void flipper(int image){
+
+            ImageView imageView = new ImageView(this);
+            ImagePicasso.setImageCenterCop(context_this, image, imageView);
+
+            viewFlipper.addView(imageView);
+            viewFlipper.setFlipInterval(5000);
+            viewFlipper.setAutoStart(true);
+            viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
+            viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
+        }
+        public void setImages(){
+            int images[] = {R.drawable.portada, R.drawable.portada2};
+            for(int i =0; i<images.length; i++){
+                flipper(images[i]);
+            }
+
+        }
         @SuppressLint("ClickableViewAccessibility")
         public void inicializarViews(){
 
+            viewFlipper = findViewById(R.id.viewflipper);
             activityRootView = findViewById(R.id.id_constraint_login);
             emailt = findViewById(R.id.email);
             pass=  findViewById(R.id.password);
@@ -159,7 +186,10 @@ public class LoginActivity extends AppCompatActivity {
             buttnInvited = findViewById(R.id.email_invited_in_button);
             splash = findViewById(R.id.splash);
             view = findViewById(R.id.view);
-            //ImagePicasso.setImageCenterInsideWrap(context_this, R.drawable.portada, logo);
+            linearlogin = findViewById(R.id.linearlogin);
+
+
+
 
             emailt.setFocusableInTouchMode(false);
 
@@ -182,6 +212,8 @@ public class LoginActivity extends AppCompatActivity {
                     return false;
                 }
             });
+
+            setImages();
         }
 
         private void attemptLogin() {

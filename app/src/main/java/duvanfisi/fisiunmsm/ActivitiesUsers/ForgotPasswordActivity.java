@@ -1,9 +1,11 @@
 package duvanfisi.fisiunmsm.ActivitiesUsers;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,9 +38,20 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void inicializarViews(){
         this.buttonForgot = findViewById(R.id.email_forgot_button);
         this.email = findViewById(R.id.email_f);
+
+        email.setFocusableInTouchMode(false);
+        email.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                email.setFocusableInTouchMode(true);
+
+                return false;
+            }
+        });
     }
     public void verificarEmail(){
         this.email_t = email.getText().toString();

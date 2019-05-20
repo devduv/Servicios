@@ -39,6 +39,7 @@ public class AnimationLogin implements Animation.AnimationListener {
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.buttnInvited.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.INVISIBLE);
+                        LoginActivity.linearlogin.setVisibility(ViewVisible.INVISIBLE);
                     }else{
                             LoginActivity.emailt.setFocusable(false);
                             LoginActivity.pass.setFocusable(false);
@@ -46,6 +47,7 @@ public class AnimationLogin implements Animation.AnimationListener {
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.buttnInvited.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.VISIBLE);
+                        LoginActivity.linearlogin.setVisibility(ViewVisible.VISIBLE);
                     }
                 }
             }
@@ -62,6 +64,7 @@ public class AnimationLogin implements Animation.AnimationListener {
         LoginActivity.splash.setVisibility(ViewVisible.INVISIBLE);
         ViewVisible.viewVisible(LoginActivity.buttnInvited);
         ViewVisible.viewVisible(LoginActivity.buttnRegister);
+        ViewVisible.viewVisible(LoginActivity.linearlogin);
         ViewVisible.viewVisible(LoginActivity.buttnForgot);
         ViewVisible.viewVisible(LoginActivity.buttonLogin);
         ViewVisible.viewVisible(LoginActivity.emailt);
@@ -69,12 +72,14 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewVisible(LoginActivity.pass);
         ViewVisible.viewVisible(LoginActivity.view);
 
+
         LoginActivity.emailt.setHint("example@unmsm.edu.pe");
         LoginActivity.pass.setHint("Contraseña");
 
         int shortAnimationTime = context.getResources().getInteger(android.R.integer.config_shortAnimTime);
 
         ViewVisible.viewListener(LoginActivity.buttnInvited, shortAnimationTime);
+        ViewVisible.viewListener(LoginActivity.linearlogin, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttnRegister, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttnForgot, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttonLogin, shortAnimationTime);
