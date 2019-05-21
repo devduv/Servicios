@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -183,7 +184,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -209,9 +209,9 @@ public class MainActivity extends AppCompatActivity {
                             return false;
                         }
                     case R.id.action_arrive:
-                        PlantillaMensaje mensaje_mapa = new PlantillaMensaje(MainActivity.this);
-                        mensaje_mapa.setMensaje("Mapa", "Próximamente!");
-                        //StartActivity.startActivity(MainActivity.this, new MapsActivity());
+                        /*PlantillaMensaje mensaje_mapa = new PlantillaMensaje(MainActivity.this);
+                        mensaje_mapa.setMensaje("Mapa", "Próximamente!");*/
+                        StartActivity.startActivity(MainActivity.this, new MapsActivity());
                         return true;
                     case R.id.action_info:
                         StartActivity.startActivity(MainActivity.this, new InformacionActivity());

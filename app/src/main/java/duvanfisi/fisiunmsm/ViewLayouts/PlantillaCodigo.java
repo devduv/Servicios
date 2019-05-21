@@ -210,10 +210,12 @@ public class PlantillaCodigo {
             linearLayout.addView(setTxt(btn.getText().toString()));
             cod_in_tec = cod_in_tec + btn.getText().toString();
             cont++;
-        }else{
+        }else if(cont ==7){
+            setCodigo();
+            }else{
             PlantillaMensaje mensaje = new PlantillaMensaje(context);
             mensaje.setMensaje("Código", "Demasiados dígitos");
-        }
+            }
     }
 
     public void getBorrar(){

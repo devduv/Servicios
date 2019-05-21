@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -24,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 import java.util.Random;
 
+import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
 import duvanfisi.fisiunmsm.ViewLayouts.PlantillaCodigo;
 import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
@@ -56,7 +59,6 @@ public class RegisterDatosActivity extends AppCompatActivity {
     private ImageButton btnCodigo_alumno;
     private Button button_registrar_datos;
 
-    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,10 +87,16 @@ public class RegisterDatosActivity extends AppCompatActivity {
             }
         });
 
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        this.ap_mat.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onClick(View v) {
-               onBackPressed();
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                    CloseKeyboard.closeKeyboardStart(context_this, ap_mat);
+                    PlantillaCodigo codigo = new PlantillaCodigo(context_this, cod_in_tec, r_cod);
+                    codigo.begin();
+                    return true;
+                }
+                return false;
             }
         });
     }
@@ -154,8 +162,15 @@ public void mensaje(){
         });
 
         ImageView back = findViewById(R.id.btnback);
-        linearLayout = findViewById(R.id.back_login);
-        ImagePicasso.setImageCenterCop(RegisterDatosActivity.this, R.drawable.ic_back, back);
+        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         ImagePicasso.setImageCenterCop(RegisterDatosActivity.this, R.drawable.ic_carnet, btnCodigo_alumno);
 
 

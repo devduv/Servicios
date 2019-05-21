@@ -9,7 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
+import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
 import duvanfisi.fisiunmsm.R;
 
@@ -52,6 +54,17 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        ImageView back = findViewById(R.id.btnback);
+        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
     }
     public void verificarEmail(){
         this.email_t = email.getText().toString();

@@ -10,25 +10,37 @@
     android:background="@color/color_background"
     tools:context=".ActivitiesUsers.RegisterActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/back_login"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:layout_gravity="top">
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="top"
+        android:background="@color/colorPrimary"
+        tools:ignore="MissingConstraints">
         <ImageView
             android:id="@+id/btnback"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginTop="5dp"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginStart="10dp"
             android:layout_gravity="center"
-            android:background="@drawable/borde_withe"
-            tools:ignore="ContentDescription" />
 
-    </LinearLayout>
+            android:tint="@color/color_background"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20sp"
+            android:text="Crear una cuenta"
+            android:textColor="@color/color_background"
+            android:padding="5dp"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -49,36 +61,14 @@
                     android:layout_height="55dp"
                     android:id="@+id/image_registro"
                     android:layout_gravity="center"
+                    android:tint="@color/colorPrimaryDark"
                     android:contentDescription="@string/titulo"
                     android:background="@color/color_background"/>
-                <TextView
-                    android:id = "@+id/text_r_titulo"
-                    android:layout_width="match_parent"
-                    android:layout_gravity="top"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/titulo_registro_user"
-                    android:textSize="24sp"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/color_text"/>
-
-                <TextView
-                    android:id="@+id/usuario_contra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/usuario_y_contrase_a"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="14sp"
-                    style="?android:textAppearanceSmall"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop = "5dp"
-                    android:background="@drawable/borde_withe">
-
+                    android:layout_marginTop = "10dp">
 
                     <TextView
                         android:id = "@+id/text_email"
@@ -107,7 +97,7 @@
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:textSize = "14sp"
+                            android:textSize = "16sp"
                             android:textColor="@color/color_text"
                             android:importantForAutofill="no"
                             tools:targetApi="o"
@@ -148,7 +138,7 @@
                             android:inputType="textPassword"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:textSize = "14sp"
+                            android:textSize = "16sp"
                             android:importantForAutofill="no"
                             tools:targetApi="o"
                             tools:ignore="LabelFor"
@@ -186,7 +176,7 @@
                             android:inputType="textPassword"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:textSize = "14sp"
+                            android:textSize = "16sp"
                             android:importantForAutofill="no"
                             tools:targetApi="o"/>
 
@@ -206,6 +196,7 @@
                         android:layout_height="30dp"
                         android:textSize="15sp"
                         android:gravity="center"
+                        android:textStyle="bold"
                         android:layout_toEndOf="@id/checkBox"
                         android:layout_below="@id/input_confir_pass"
                         android:textColor="@color/color_datos"
@@ -215,14 +206,14 @@
                 </RelativeLayout>
                 <Button
                     android:id="@+id/button_signin"
-                    style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:text="@string/button_signinme"
                     android:textColor="@color/color_background"
-                    android:textSize="19sp"
-                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
                     android:backgroundTint="@color/colorPrimary"
                     />
 

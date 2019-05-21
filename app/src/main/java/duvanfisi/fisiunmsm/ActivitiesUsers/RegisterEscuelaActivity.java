@@ -36,7 +36,6 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
 
     private ImageView img_esc;
 
-    private ImageView btnback;
     private CUsuario usuario;
 
     private Button btn_reg_esc;
@@ -59,6 +58,15 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
 
 
     public void inicializarViews(){
+        ImageView back = findViewById(R.id.btnback);
+        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         Intent intent_user = getIntent();
         this.firebaseUser = (FirebaseUser) Objects.requireNonNull(intent_user.getExtras()).get(Utilidades.FIREBASEUSER);
 
@@ -70,9 +78,7 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
         this.title_facultad = findViewById(R.id.title_facultad);
         this.img_esc = findViewById(R.id.img_esc);
         this.btn_reg_esc = findViewById(R.id.btn_reg_esc);
-        this.btnback = findViewById(R.id.btnback);
 
-        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, btnback);
         getCodeUser();
 
     }
@@ -83,10 +89,6 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
         dialog_loading.show();
     }
 
-    public void back(){
-        onBackPressed();
-
-    }
 
     public void onClickButton(){
         this.btn_reg_esc.setOnClickListener(new View.OnClickListener() {
@@ -96,12 +98,6 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
             }
         });
 
-        this.btnback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back();
-            }
-        });
     }
 
 

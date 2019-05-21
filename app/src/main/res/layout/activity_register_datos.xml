@@ -9,27 +9,37 @@
     android:background="@color/color_background"
     tools:context=".ActivitiesUsers.RegisterDatosActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/back_login"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_gravity="top"
+        android:background="@color/colorPrimary"
         tools:ignore="MissingConstraints">
-
         <ImageView
             android:id="@+id/btnback"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginTop="5dp"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginStart="10dp"
             android:layout_gravity="center"
-            android:background="@drawable/borde_withe"
-            android:contentDescription="@string/back" />
 
-    </LinearLayout>
+            android:tint="@color/color_background"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20sp"
+            android:text="Registro de datos"
+            android:textColor="@color/color_background"
+            android:padding="5dp"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -55,30 +65,13 @@
                 android:layout_height="60dp"
                 android:src="@drawable/icon_register"
                 android:layout_gravity="top"
+                android:tint="@color/colorPrimaryDark"
                 android:contentDescription="@string/imgregdates" />
-            <TextView
-                android:layout_gravity="top"
-                android:gravity="center"
-                android:id = "@+id/text_r_titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:text="@string/titulo_registro_datos"
-                android:textSize="24sp"
-                android:textColor="@color/color_text"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/titulo_datospersonales"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_gravity="center"
-                android:textSize="20sp" />
 
             <TableLayout
                 android:id = "@+id/tb_r"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/borde_withe"
                 android:layout_marginTop="5dp">
 
                 <LinearLayout
@@ -88,14 +81,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp">
 
-                    <TextView
-                        android:id = "@+id/text_nombres"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nombres"
-                        android:gravity="center"
-                        android:textSize="14sp"
-                        android:textColor="@color/color_text" />
+
 
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/input_nombres"
@@ -104,12 +90,13 @@
 
                         <EditText
                             android:id="@+id/names"
+                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/nombres_completos"
                             android:inputType="textPersonName|textCapWords"
                             android:maxLines="1"
-                            android:textSize = "15sp"
+                            android:textSize = "16sp"
                             android:singleLine="true"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
@@ -124,16 +111,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
                     >
-                    <TextView
-                        android:id = "@+id/text_ap_pat"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/apellido_paterno"
-                        android:gravity="center"
-                        android:textSize="14sp"
-                        android:textColor="@color/color_text"
-                        />
+
                     <android.support.design.widget.TextInputLayout
                         android:id = "@+id/input_ap_pat"
                         android:layout_weight="1"
@@ -147,11 +125,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:imeActionId="5"
+                            android:gravity="center"
                             android:hint="@string/paterno"
                             android:imeOptions="actionUnspecified"
                             android:inputType="textPersonName|textCapWords"
                             android:maxLines="1"
-                            android:textSize = "15sp"
+                            android:textSize = "16sp"
                             android:singleLine="true"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
@@ -165,18 +144,8 @@
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    >
-                    <TextView
-                        android:id = "@+id/text_ap_mat"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/apellido_materno"
-                        android:gravity="center"
-                        android:textSize="14sp"
-                        android:layout_weight="1"
-                        android:textColor="@color/color_text"
-                        />
+                    android:layout_marginRight="25dp">
+
                     <android.support.design.widget.TextInputLayout
                         android:id = "@+id/input_ap_mat"
                         android:layout_weight="1"
@@ -189,11 +158,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:imeActionId="5"
+                            android:gravity="center"
                             android:hint="@string/materno"
                             android:imeOptions="actionUnspecified"
                             android:inputType="textPersonName|textCapWords"
                             android:maxLines="1"
-                            android:textSize = "15sp"
+                            android:textSize = "16sp"
                             android:singleLine="true"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"

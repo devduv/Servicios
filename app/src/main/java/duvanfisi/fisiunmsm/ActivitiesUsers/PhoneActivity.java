@@ -31,8 +31,6 @@ public class PhoneActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private CUsuario usuario;
 
-    private ImageView back;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +48,16 @@ public class PhoneActivity extends AppCompatActivity {
         this.phone = findViewById(R.id.buttonphone);
         this.omitir = findViewById(R.id.buttonomitir);
         ImageView img_phone = findViewById(R.id.img_phone);
+        ImageView back = findViewById(R.id.btnback);
+        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
 
-        back = findViewById(R.id.btnback);
-        ImagePicasso.setImageCenterCop(PhoneActivity.this, R.drawable.ic_back, back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         ImagePicasso.setImageCenterCop(PhoneActivity.this, R.drawable.ic_phone, img_phone);
         setUsuario();
     }
@@ -70,13 +75,7 @@ public class PhoneActivity extends AppCompatActivity {
                 registrarPhone();
             }
         });
-
-        this.back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        ;
     }
 
     @Override

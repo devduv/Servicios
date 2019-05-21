@@ -72,6 +72,15 @@ public class NicknameActivity extends AppCompatActivity {
     }
 
     public void instanciarViews(){
+        ImageView back = findViewById(R.id.btnback);
+        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         this.nickname_user = findViewById(R.id.nickname_ver_input);
         this.icnickname = findViewById(R.id.icnickname);
         this.img_select = findViewById(R.id.img_selected);

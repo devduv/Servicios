@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/navigation_personajes"
-        android:icon="@drawable/icon_personaje"
+        android:icon="@drawable/icon_personaje_selected"
         android:title="@string/title_personajes"/>
 
     <item

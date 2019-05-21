@@ -27,24 +27,23 @@
             tools:ignore="MissingConstraints">
             <ImageView
                 android:id="@+id/btnback"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="5dp"
                 android:padding="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
+
                 android:tint="@color/color_background"
                 tools:ignore="ContentDescription" />
             <TextView
                 android:layout_gravity="top"
-                android:id = "@+id/text_r_titulo"
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_height="48dp"
-                android:fontFamily="sans-serif-condensed"
-                android:text="Número de celular"
                 android:textSize="20sp"
+                android:text="Número de celular"
                 android:textColor="@color/color_background"
                 android:padding="5dp"
                 tools:ignore="HardcodedText" />

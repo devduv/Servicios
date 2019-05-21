@@ -1,6 +1,7 @@
 package duvanfisi.fisiunmsm.ActivitiesUsers;
 
 import android.annotation.SuppressLint;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,10 +13,13 @@ import android.widget.LinearLayout;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
+import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;
+import duvanfisi.fisiunmsm.Interfaces.ILoadMore;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.R;
+import duvanfisi.fisiunmsm.Recyclers.MyAdapter;
 
 public class MapsActivity extends AppCompatActivity {
 
@@ -24,6 +28,8 @@ public class MapsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     public static LinearLayout carga;
 
+    MyAdapter adapter;
+    private  UsuarioFirebase usuarioFirebase;
     public static boolean loading;
 
     @SuppressLint("UseSparseArrays")
@@ -38,26 +44,30 @@ public class MapsActivity extends AppCompatActivity {
 
         this.onClickButton();
 
-        this. cUsuarioHashMap = new HashMap<>();
-        FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
-        UsuarioFirebase usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
-        usuarioFirebase.setUsuarios(recyclerView, cUsuarioHashMap);
 
+        FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
+        usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
+        usuarioFirebase.setUsuarios(recyclerView, cUsuarioHashMap, 0, 10);
+
+        adapter();
     }
 
 
     public void iniciliazarViews(){
+        this. cUsuarioHashMap = new HashMap<>();
         back = findViewById(R.id.btnback);
         recyclerView = findViewById(R.id.recyclerViewUsuarios);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         carga = findViewById(R.id.cargausuarios);
+        carga.setVisibility(ViewVisible.INVISIBLE);
+        adapter = new MyAdapter(recyclerView, this, cUsuarioHashMap);
+        recyclerView.setAdapter(adapter);
 
     }
 
     public void setImage(){
         ImagePicasso.setImageCenterCop(MapsActivity.this, R.drawable.ic_back, back);
-        //sdsdsd
     }
 
     public void onClickButton(){
@@ -68,14 +78,12 @@ public class MapsActivity extends AppCompatActivity {
             }
         });
     }
-/*
+
     public void adapter(){
-        final MyAdapter adapter = new MyAdapter(recyclerView, this, cUsuarioHashMap);
-        recyclerView.setAdapter(adapter);
         adapter.setLoadMore(new ILoadMore() {
             @Override
             public void onLoadMore() {
-                if(cUsuarioHashMap.size() <= 20){
+                if(cUsuarioHashMap.size() <= 100){
                     cUsuarioHashMap.put(null,null);
                     adapter.notifyItemInserted(cUsuarioHashMap.size()-1);
                     new Handler().postDelayed(new Runnable() {
@@ -87,12 +95,13 @@ public class MapsActivity extends AppCompatActivity {
                             int end = index+10;
 
                             //agregar
+                            usuarioFirebase.setUsuarios(recyclerView, cUsuarioHashMap, index, end);
                             adapter.notifyDataSetChanged();
                             adapter.setLoaded();
                         }
-                    }, 4000);
+                    }, 2000);
                 }
             }
         });
-    }*/
+    }
 }

@@ -41,8 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ImageView ic_registro;
 
-    private LinearLayout linearLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void inicializarViews(){
 
-        ImageView back = findViewById(R.id.btnback);
-        linearLayout = findViewById(R.id.back_login);
+
         emailt = findViewById(R.id.email);
         pass = findViewById(R.id.password);
         pass_confirmar = findViewById(R.id.password_confir);
@@ -72,7 +69,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         ic_registro = findViewById(R.id.image_registro);
         ImagePicasso.setImageCenterCop(RegisterActivity.this, R.drawable.ic_registro, ic_registro);
+        ImageView back = findViewById(R.id.btnback);
         ImagePicasso.setImageCenterCop(RegisterActivity.this, R.drawable.ic_back, back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         final View activityRootView = findViewById(R.id.id_constraint_register);
         activityRootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -116,13 +121,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                     registrarUser();
-            }
-        });
-
-        linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                RegisterActivity.super.onBackPressed();
             }
         });
 

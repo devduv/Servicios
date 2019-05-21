@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,39 +18,38 @@
             android:orientation="vertical">
 
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/back_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageButton
+                android:layout_height="48dp"
+                android:layout_gravity="top"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints">
+                <ImageView
                     android:id="@+id/btnback"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
                     android:layout_gravity="center"
-                    android:backgroundTint="@color/color_background"/>
 
+                    android:tint="@color/color_background"
+                    tools:ignore="ContentDescription" />
                 <TextView
-                    android:id="@+id/usuario_contra"
+                    android:layout_gravity="top"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Seleccione la escuela a la que pertenece"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="14sp"
-                    style="?android:textAppearanceSmall"/>
-            </LinearLayout>
+                    android:layout_height="48dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:text="Registro de datos"
+                    android:textColor="@color/color_background"
+                    android:padding="5dp"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/color_gray"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:id = "@+id/title_facultad"
@@ -99,6 +97,7 @@
         android:backgroundTint="@color/colorPrimary"
         android:textAllCaps="false"
         android:text="Registrar Escuela"
+        android:textSize="16sp"
         android:layout_gravity="bottom"
         android:textColor="@color/color_background"
         />

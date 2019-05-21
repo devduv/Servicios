@@ -273,22 +273,22 @@ public class FirebaseAccount {
 
     public void irRegistrarDatos(FirebaseUser firebaseUser){
         StartActivity.startActivity(context, new RegisterDatosActivity(), firebaseUser);
-        ((Activity) context).finish();
+       //((Activity) context).finish();
     }
     public void irRegistrarEscuela(FirebaseUser firebaseUser){
         if(dialog_loading!=null){
             dialog_loading.dismiss();
         }
         StartActivity.startActivity(context, new RegisterEscuelaActivity(), firebaseUser);
-        ((Activity) context).finish();
+        //((Activity) context).finish();
     }
     public void irPhoneNumber(FirebaseUser firebaseUser){
         StartActivity.startActivity(context, new PhoneActivity(), firebaseUser);
-        ((Activity) context).finish();
+        //((Activity) context).finish();
     }
     public void irNickname(FirebaseUser firebaseUser){
         StartActivity.startActivity(context, new NicknameActivity(), firebaseUser);
-        ((Activity) context).finish();
+        //((Activity) context).finish();
     }
     public static void irMain(FirebaseUser firebaseUser, Context context){
         Preferences.guardarPreferencias(context, firebaseUser);

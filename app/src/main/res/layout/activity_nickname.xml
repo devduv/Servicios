@@ -8,16 +8,37 @@
     android:background="@color/color_background"
     tools:context=".ActivitiesUsers.NicknameActivity">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:scaleType="center"
-    android:text = "Crea tu nickname"
-    android:background="@color/colorPrimaryDark"
-    android:textSize="18sp"
-    android:textColor="@color/color_background"
-    android:gravity="center"
-    android:padding="10dp" />
+    <RelativeLayout
+        android:id="@+id/back_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="top"
+        android:background="@color/colorPrimary"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/btnback"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+
+            android:tint="@color/color_background"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20sp"
+            android:text="Crea tu nickname"
+            android:textColor="@color/color_background"
+            android:padding="5dp"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"

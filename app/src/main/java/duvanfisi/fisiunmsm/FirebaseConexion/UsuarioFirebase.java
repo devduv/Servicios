@@ -113,11 +113,12 @@ public class UsuarioFirebase {
     }
 
 
-    public void setUsuarios(final RecyclerView recyclerView, final HashMap<Integer, CUsuario> cUsuarioHashMap){
+    public void setUsuarios(final RecyclerView recyclerView, final HashMap<Integer, CUsuario> cUsuarioHashMap,
+                            int start, int end){
         CollectionReference collectionReference = this.firebaseDatabase.getCollection(Utilidades.USERS);
 
 
-        collectionReference.orderBy("nombre").startAt(0).endAt(10)
+        collectionReference.orderBy("nombre").limit(10)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot querySnapshot,
@@ -136,14 +137,14 @@ public class UsuarioFirebase {
                                 }
                             }
 
-                            MapsActivity.carga.setVisibility(ViewVisible.INVISIBLE);
+                           /* MapsActivity.carga.setVisibility(ViewVisible.INVISIBLE);
                             //RecyclerPersonaje . . .
                             RecyclerViewUsuarios recyclerViewUsuario
                                     = new RecyclerViewUsuarios
                                     (context, cUsuarioHashMap);
                             //recyclerViewUsuario.notifyDataSetChanged();
                             RecyclerViewFunction.recyclerview
-                                    (recyclerView, context, RecyclerViewFunction.VERTICAL,recyclerViewUsuario);
+                                    (recyclerView, context, RecyclerViewFunction.VERTICAL,recyclerViewUsuario);*/
 
                         }
                     }

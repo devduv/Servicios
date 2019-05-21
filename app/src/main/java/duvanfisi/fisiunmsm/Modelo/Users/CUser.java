@@ -28,6 +28,10 @@ public class CUser {
 
 
     public CUser(){
+        CUser user = new CUser();
+        user.setUser_type("transpinterno");
+
+//user.setTypeUser(“student”);
 
     }
     public CUser(String email, String names, String last_name_p, String last_name_m, String user_type){
