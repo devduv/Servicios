@@ -39,17 +39,29 @@ public class LoginActivity extends AppCompatActivity {
         private final Context context_this = LoginActivity.this;
         private ImageView imglogo;
 
+
         public static boolean animation_ended = false;
 
-        public static EditText emailt; public static EditText pass;
+        @SuppressLint("StaticFieldLeak")
+        public static EditText emailt; @SuppressLint("StaticFieldLeak")
+    public static EditText pass;
 
-        public static Button buttonLogin;public static Button buttnRegister;
-        public static Button buttnForgot;public static Button buttnInvited;
+        @SuppressLint("StaticFieldLeak")
+        public static Button buttonLogin;
+    @SuppressLint("StaticFieldLeak")
+    public static Button buttnRegister;
+        @SuppressLint("StaticFieldLeak")
+        public static Button buttnForgot;
 
-        public static TextInputLayout inputpass; public static FrameLayout view;
+        @SuppressLint("StaticFieldLeak")
+        public static TextInputLayout inputpass; @SuppressLint("StaticFieldLeak")
+    public static FrameLayout view;
+        @SuppressLint("StaticFieldLeak")
         public static LinearLayout linearlogin;
+        @SuppressLint("StaticFieldLeak")
         public static ImageView splash;
 
+        @SuppressLint("StaticFieldLeak")
         public static View activityRootView;
 
         private boolean keyboard_on = false;
@@ -74,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         public void visibility(int v){
-            buttnInvited.setVisibility(v); buttnForgot.setVisibility(v);
+            buttnForgot.setVisibility(v);
             buttnRegister.setVisibility(v); buttonLogin.setVisibility(v);
             emailt.setVisibility(v); pass.setVisibility(v); inputpass.setVisibility(v);
             view.setVisibility(v); linearlogin.setVisibility(v);
@@ -136,22 +148,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            buttnInvited.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PlantillaLoading loading = new PlantillaLoading(LoginActivity.this);
-                    loading.setTextLoading("Bienvenido...");
-                    final AlertDialog dialog_l = loading.loading();
-                    dialog_l.show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            dialog_l.dismiss();
-                            StartActivity.startActivity(context_this, new MainActivity(), null);
-                        }
-                    }, 1500);
-                }
-            });
         }
 
         public void flipper(int image){
@@ -166,15 +162,14 @@ public class LoginActivity extends AppCompatActivity {
             viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
         }
         public void setImages(){
-            int images[] = {R.drawable.portada, R.drawable.portada2};
-            for(int i =0; i<images.length; i++){
-                flipper(images[i]);
+            int[] images = {R.drawable.portada, R.drawable.portada2};
+            for (int image : images) {
+                flipper(image);
             }
 
         }
         @SuppressLint("ClickableViewAccessibility")
         public void inicializarViews(){
-
             viewFlipper = findViewById(R.id.viewflipper);
             activityRootView = findViewById(R.id.id_constraint_login);
             emailt = findViewById(R.id.email);
@@ -183,7 +178,6 @@ public class LoginActivity extends AppCompatActivity {
             buttonLogin = findViewById(R.id.email_sign_in_button);
             buttnRegister = findViewById(R.id.email_register_in_button);
             buttnForgot = findViewById(R.id.email_forgot_in_button);
-            buttnInvited = findViewById(R.id.email_invited_in_button);
             splash = findViewById(R.id.splash);
             view = findViewById(R.id.view);
             linearlogin = findViewById(R.id.linearlogin);

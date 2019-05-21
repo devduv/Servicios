@@ -3,6 +3,7 @@ package duvanfisi.fisiunmsm.Extras;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -83,7 +84,6 @@ public class ADialogs {
 
         switch (aux){
             case 0:
-
                 builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         FirebaseAccount firebaseAccount = new FirebaseAccount(context);
@@ -124,6 +124,22 @@ public class ADialogs {
                     }
                 });
                 break;
+            case 3:
+                builder.setPositiveButton("Iniciar Sesión", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(context, LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        StartActivity.startActivity(context, intent);
+                    }
+                });
+                builder.setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ((ViewGroup) view.getParent()).removeAllViews();
+                    }
+                });
+                break;
+
 
         }
 

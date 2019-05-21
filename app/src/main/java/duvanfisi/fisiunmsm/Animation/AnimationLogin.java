@@ -37,15 +37,14 @@ public class AnimationLogin implements Animation.AnimationListener {
                     if(heightDiff >  DisplayMetric.dpToPx(context, 200)){
                         LoginActivity.splash.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.INVISIBLE);
-                        LoginActivity.buttnInvited.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.linearlogin.setVisibility(ViewVisible.INVISIBLE);
+                        LoginActivity.view.setBackgroundColor(context.getResources().getColor(R.color.color_background));
                     }else{
-                            LoginActivity.emailt.setFocusable(false);
-                            LoginActivity.pass.setFocusable(false);
-
+                        LoginActivity.emailt.setFocusable(false);
+                        LoginActivity.pass.setFocusable(false);
+                        LoginActivity.view.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.VISIBLE);
-                        LoginActivity.buttnInvited.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.linearlogin.setVisibility(ViewVisible.VISIBLE);
                     }
@@ -62,7 +61,6 @@ public class AnimationLogin implements Animation.AnimationListener {
     public void onAnimationEnd(Animation animation) {
 
         LoginActivity.splash.setVisibility(ViewVisible.INVISIBLE);
-        ViewVisible.viewVisible(LoginActivity.buttnInvited);
         ViewVisible.viewVisible(LoginActivity.buttnRegister);
         ViewVisible.viewVisible(LoginActivity.linearlogin);
         ViewVisible.viewVisible(LoginActivity.buttnForgot);
@@ -77,10 +75,8 @@ public class AnimationLogin implements Animation.AnimationListener {
         LoginActivity.pass.setHint("Contraseña");
 
         int shortAnimationTime = context.getResources().getInteger(android.R.integer.config_shortAnimTime);
-
-        ViewVisible.viewListener(LoginActivity.buttnInvited, shortAnimationTime);
-        ViewVisible.viewListener(LoginActivity.linearlogin, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttnRegister, shortAnimationTime);
+        ViewVisible.viewListener(LoginActivity.linearlogin, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttnForgot, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttonLogin, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.inputpass, shortAnimationTime);

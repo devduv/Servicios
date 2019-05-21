@@ -38,19 +38,8 @@
         <FrameLayout
             android:id="@+id/view"
             android:layout_width="match_parent"
+            android:background="@color/colorPrimaryDark"
             android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:background="@color/colorPrimaryDark"
-                    android:contentDescription="@string/logo_de_sm"/>
-            </RelativeLayout>
-
                 <ViewFlipper
                     android:id="@+id/viewflipper"
                     android:layout_width="match_parent"
@@ -137,22 +126,6 @@
             android:textSize="13sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/email_register_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="5dp"
-            android:backgroundTint="@color/color_brown"
-            android:text="@string/button_signin"
-            android:textAllCaps="false"
-            android:textColor="@color/color_background"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            tools:targetApi="lollipop" />
-
 
         <LinearLayout
             android:id="@+id/linearlogin"
@@ -181,7 +154,8 @@
                 android:textSize="14sp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginStart="2dp"
-                android:text="también puedes"/>
+                android:text="también puedes"
+                tools:ignore="HardcodedText" />
             <View
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
@@ -190,21 +164,22 @@
                 android:layout_height="1dp"
                 android:background="@color/color_comedor_buttons"/>
         </LinearLayout>
+
         <Button
-            android:id="@+id/email_invited_in_button"
-            style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:id="@+id/email_register_in_button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/color_yellow_dark"
-            android:text="@string/ingresar_como_invitado"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/color_brown"
+            android:text="@string/button_signin"
             android:textAllCaps="false"
             android:textColor="@color/color_background"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:textSize="17sp"/>
+            tools:targetApi="lollipop" />
 
     </LinearLayout>
 

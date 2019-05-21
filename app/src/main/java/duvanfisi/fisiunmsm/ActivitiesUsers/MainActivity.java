@@ -47,20 +47,22 @@ public class MainActivity extends AppCompatActivity {
     public static FirebaseUser firebaseUser;
     private boolean canExitApp = false;
 
+    @SuppressLint("StaticFieldLeak")
     public static BottomNavigationView navigation;
 
+    @SuppressLint("StaticFieldLeak")
     public static Toolbar toolbar;
 
     public static  FragmentManager fragmentManager;
     private FHome fhome;
     private FPersonajes fpersonajes;
+    @SuppressLint("StaticFieldLeak")
     public static FServicios fservicios;
     private FPerfil fperfil;
     private FNoticias fnews;
 
     public static CUsuario usuario;
 
-    private PlantillaLoading loading;
     private AlertDialog dialog_loading;
 
     private FirebaseDatabase firebaseDatabase;
@@ -117,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
                                return true;
                            }else{
                                PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
-                               mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión");
+                               mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                               mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
                                return false;
                            }
                        }else{
@@ -190,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.tools_main);
 
+
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -200,7 +204,8 @@ public class MainActivity extends AppCompatActivity {
                             return true;
                         }else{
                             PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
-                            mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión");
+                            mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                            mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
                             return false;
                         }
                     case R.id.action_arrive:
@@ -212,10 +217,14 @@ public class MainActivity extends AppCompatActivity {
                         StartActivity.startActivity(MainActivity.this, new InformacionActivity());
                         return true;
                     case R.id.action_salir:
-                       PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
-                       mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                       mensaje.setMensaje("Cerrar sesión", "¿Desea cerrar sesión?", 2);
-                        return true;
+                        if(firebaseUser!=null) {
+                            PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
+                            mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                            mensaje.setMensaje("Cerrar sesión", "¿Desea cerrar sesión?", 2);
+                            return true;
+                        }else{
+                            startLogin();
+                        }
                 }
                 return false;
             }
@@ -229,6 +238,11 @@ public class MainActivity extends AppCompatActivity {
         inicializarViews();
     }
 
+    public void startLogin(){
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        StartActivity.startActivity(MainActivity.this, intent);
+    }
 
     @Override
     protected void onStop() {
@@ -242,14 +256,18 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseDatabase = new FirebaseDatabase(this);
         firebaseDatabase.settingsPersistence();
-        this.loading = new PlantillaLoading(this);
-        this.loading.setTextLoading("Cargando datos...");
-        this.dialog_loading = this.loading.loading();
+        PlantillaLoading loading = new PlantillaLoading(this);
+        loading.setTextLoading("Cargando datos...");
+        this.dialog_loading = loading.loading();
 
         Intent intent = getIntent();
         firebaseUser = intent.getExtras().getParcelable(Utilidades.FIREBASEUSER);
+
         if (firebaseUser != null) {
+            toolbar.getMenu().getItem(3).setTitle("Cerrar sesión");
             setUsuario();
+        }else{
+            toolbar.getMenu().getItem(3).setTitle("Iniciar sesión");
         }
 
         PlantillaMensaje mensaje = new PlantillaMensaje(this);
@@ -291,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
     public MainActivity(){
         this.fhome = new FHome();
         this.fpersonajes = new FPersonajes();
-        this.fservicios = new FServicios();
+        fservicios = new FServicios();
         this.fperfil = new FPerfil();
         this.fnews = new FNoticias();
 
