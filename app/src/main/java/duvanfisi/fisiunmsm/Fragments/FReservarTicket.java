@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.TurnoFirebase;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 

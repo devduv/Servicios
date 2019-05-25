@@ -13,7 +13,7 @@ import duvanfisi.fisiunmsm.ActivitiesUsers.ChangePasswordActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.PhoneActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterDatosActivity;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.R;
 
@@ -112,7 +112,7 @@ public class FPerfil extends Fragment {
 
     public void deleteAcc(){
 
-        PlantillaMensaje mensaje = new PlantillaMensaje(getContext());
+        TemplateMessage mensaje = new TemplateMessage(getContext());
         mensaje.setMensaje("Eliminar cuenta", "¿Enserio quieres eliminar esta cuenta?",0);
 
 

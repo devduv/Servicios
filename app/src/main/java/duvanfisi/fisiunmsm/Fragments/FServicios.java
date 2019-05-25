@@ -14,7 +14,7 @@ import android.widget.TextView;
 import org.jetbrains.annotations.NotNull;
 
 import duvanfisi.fisiunmsm.Extras.ADialogs;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.R;
@@ -102,13 +102,13 @@ public class FServicios extends Fragment {
                             if(MainActivity.firebaseUser!=null) {
                                 MainActivity.startFragment("Servicio elegido", fragment, id, new Bundle());
                             }else{
-                                PlantillaMensaje mensaje = new PlantillaMensaje(getContext());
+                                TemplateMessage mensaje = new TemplateMessage(getContext());
                                 mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión");
                             }
                         }
                         break;
                     case R.id.card_service_transporte:
-                        PlantillaMensaje mensaje = new PlantillaMensaje(getContext());
+                        TemplateMessage mensaje = new TemplateMessage(getContext());
                         mensaje.setBackgroundColor(getContext().getResources().getColor(R.color.colorPrimary));
                         mensaje.setMensaje("Transporte", "Próximamente");
                         break;
@@ -125,13 +125,13 @@ public class FServicios extends Fragment {
                             if(MainActivity.firebaseUser!=null) {
                                 MainActivity.startFragment("Servicio elegido", fragment, id, new Bundle());
                             }else{
-                                PlantillaMensaje mensaje = new PlantillaMensaje(getContext());
+                                TemplateMessage mensaje = new TemplateMessage(getContext());
                                 mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión");
                             }
                         }
                         break;
                     case R.id.card_service_transporte:
-                        PlantillaMensaje mensaje = new PlantillaMensaje(getContext());
+                        TemplateMessage mensaje = new TemplateMessage(getContext());
                         mensaje.setBackgroundColor(getContext().getResources().getColor(R.color.colorPrimary));
                         mensaje.setMensaje("Transporte", "Próximamente");
                         break;

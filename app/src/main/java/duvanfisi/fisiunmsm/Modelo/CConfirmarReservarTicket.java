@@ -15,7 +15,7 @@ import duvanfisi.fisiunmsm.Extras.ADialogs;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.FirebaseConexion.TurnoFirebase;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
 
 public class CConfirmarReservarTicket {
 
@@ -154,7 +154,7 @@ public class CConfirmarReservarTicket {
             TurnoFirebase.ticketOnTransaction(dialog_loading, context, databaseReference,
                     Integer.toString(id_piso), Integer.toString(id_turno));
         }else{
-            InternetConecction.nointernet(getContext());
+            InternetConecction.notInternet(getContext());
         }
 
     }

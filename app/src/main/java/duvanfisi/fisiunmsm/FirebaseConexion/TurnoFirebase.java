@@ -34,9 +34,9 @@ import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Fragments.FReservarTicket;
 
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaReservarTicket;
+import duvanfisi.fisiunmsm.Templates.PlantillaReservarTicket;
 import duvanfisi.fisiunmsm.Modelo.CTicket;
 import duvanfisi.fisiunmsm.Modelo.CTurno;
 
@@ -404,7 +404,7 @@ public class TurnoFirebase {
 
                             dialog.dismiss();
 
-                            PlantillaMensaje mensaje = new PlantillaMensaje(context);
+                            TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setMensajeTicket("Reservar Ticket",
                                     "Ha reservado su ticket satisfactoriamente.",
                                     ticket);
@@ -412,7 +412,7 @@ public class TurnoFirebase {
 
                         }else{
                             dialog.dismiss();
-                            PlantillaMensaje mensaje = new PlantillaMensaje(context);
+                            TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setMensaje("Reservar Ticket", "Se acabaron los tickets.");
                             mensaje.setBackgroundColor(context.getResources().getColor(R.color.color_rose));
 

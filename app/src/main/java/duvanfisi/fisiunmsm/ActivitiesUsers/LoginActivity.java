@@ -2,11 +2,9 @@ package duvanfisi.fisiunmsm.ActivitiesUsers;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -22,8 +20,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import duvanfisi.fisiunmsm.Animation.AnimationLogin;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
@@ -214,7 +211,7 @@ public class LoginActivity extends AppCompatActivity {
             String email = emailt.getText().toString().trim();
             String password = pass.getText().toString();
 
-            PlantillaMensaje mensaje = new PlantillaMensaje(context_this);
+            TemplateMessage mensaje = new TemplateMessage(context_this);
 
             if(email.length()==0){
                 mensaje.setMensaje("Iniciar sesión", "Ingrese un correo electrónico.");

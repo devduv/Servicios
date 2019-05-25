@@ -17,8 +17,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
@@ -42,13 +42,13 @@ public class FirebaseAccount {
 
 
     private PlantillaLoading loading;
-    private PlantillaMensaje mensaje;
+    private TemplateMessage mensaje;
     public FirebaseAccount(Context context){
         this.context = context;
         loading = new PlantillaLoading(context);
         this.mAuth = FirebaseAuth.getInstance();
 
-        this.mensaje = new PlantillaMensaje(context);
+        this.mensaje = new TemplateMessage(context);
 
         dialog_loading = loading.loading();
 
@@ -68,7 +68,7 @@ public class FirebaseAccount {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             dialog_loading.dismiss();
-                            PlantillaMensaje mensaje  = new PlantillaMensaje(context);
+                            TemplateMessage mensaje  = new TemplateMessage(context);
                             mensaje.setBackgroundColor(LIGHTBLUE);
                             mensaje.setMensaje("Cambiar contraseña", "Se ha cambiado su contraseña satisfactoriamente",1);
                         }
@@ -203,12 +203,12 @@ public class FirebaseAccount {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            PlantillaMensaje mensaje = new PlantillaMensaje(context);
+                            TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setBackgroundColor(LIGHTBLUE);
                             mensaje.setMensaje("Olvidé mi contraseña", "Se ha enviado un link a su email.");
 
                         }else{
-                            PlantillaMensaje mensaje = new PlantillaMensaje(context);
+                            TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setBackgroundColor(RED);
                             mensaje.setMensaje("Olvidé mi contraseña", "El email no ha sido registrado.");
                         }
@@ -238,7 +238,7 @@ public class FirebaseAccount {
                                         StartActivity.startActivity(context, new LoginActivity());
                                         ((Activity) context).finish();
                                     }else{
-                                        PlantillaMensaje mensaje = new PlantillaMensaje(context);
+                                        TemplateMessage mensaje = new TemplateMessage(context);
                                         mensaje.setMensaje("Eliminar", "No se pudo completar");
                                     }
                                 }

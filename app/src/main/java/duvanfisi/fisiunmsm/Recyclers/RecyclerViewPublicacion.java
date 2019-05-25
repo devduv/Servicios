@@ -15,7 +15,7 @@ import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Modelo.CPublicacion;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaPublicacion;
+import duvanfisi.fisiunmsm.Templates.PlantillaPublicacion;
 
 public class RecyclerViewPublicacion extends RecyclerView.Adapter<RecyclerViewPublicacion.ViewHolder>{
     ;

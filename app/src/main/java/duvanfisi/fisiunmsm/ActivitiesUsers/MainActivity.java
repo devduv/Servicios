@@ -5,15 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -27,8 +24,8 @@ import java.util.ArrayList;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.Fragments.FNoticias;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;
@@ -119,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                                startFragment("mi perfil", fperfil, 4);
                                return true;
                            }else{
-                               PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
+                               TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
                                mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                                mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
                                return false;
@@ -203,22 +200,22 @@ public class MainActivity extends AppCompatActivity {
                             StartActivity.startActivity(MainActivity.this, new MiRegistroActivity());
                             return true;
                         }else{
-                            PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
+                            TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
                             mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                             mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
                             return false;
                         }
                     case R.id.action_arrive:
-                        /*PlantillaMensaje mensaje_mapa = new PlantillaMensaje(MainActivity.this);
+                        /*TemplateMessage mensaje_mapa = new TemplateMessage(MainActivity.this);
                         mensaje_mapa.setMensaje("Mapa", "Próximamente!");*/
-                        StartActivity.startActivity(MainActivity.this, new MapsActivity());
+                       // StartActivity.startActivity(MainActivity.this, new LocationActivity());
                         return true;
                     case R.id.action_info:
                         StartActivity.startActivity(MainActivity.this, new InformacionActivity());
                         return true;
                     case R.id.action_salir:
                         if(firebaseUser!=null) {
-                            PlantillaMensaje mensaje = new PlantillaMensaje(MainActivity.this);
+                            TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
                             mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                             mensaje.setMensaje("Cerrar sesión", "¿Desea cerrar sesión?", 2);
                             return true;
@@ -270,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
             toolbar.getMenu().getItem(3).setTitle("Iniciar sesión");
         }
 
-        PlantillaMensaje mensaje = new PlantillaMensaje(this);
+        TemplateMessage mensaje = new TemplateMessage(this);
         mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         if (Preferences.getFirstTime(this)) {
             mensaje.setMensaje("Servicios San Marcos",

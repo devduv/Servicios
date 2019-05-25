@@ -18,21 +18,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
-import java.util.Random;
 
 import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaCodigo;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.PlantillaCodigo;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.Extras.DisplayMetric;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;
 import duvanfisi.fisiunmsm.R;
@@ -104,7 +101,7 @@ public class RegisterDatosActivity extends AppCompatActivity {
 
 
 public void mensaje(){
-    PlantillaMensaje mensaje = new PlantillaMensaje(this);
+    TemplateMessage mensaje = new TemplateMessage(this);
     mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
     mensaje.setMensaje(Utilidades.WELCOME, firebaseUser.getEmail() + Utilidades.PROCED);
 

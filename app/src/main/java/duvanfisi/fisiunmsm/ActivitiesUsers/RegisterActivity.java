@@ -11,12 +11,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
 import duvanfisi.fisiunmsm.Extras.DisplayMetric;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
@@ -135,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
         String email = emailt.getText().toString();
         String password = pass.getText().toString();
         String passwordconf = pass_confirmar.getText().toString();
-        PlantillaMensaje mensaje = new PlantillaMensaje(this);
+        TemplateMessage mensaje = new TemplateMessage(this);
         if(email.length()==0){
             mensaje.setMensaje("Registrar usuario", "Ingrese un correo electrónico.");
             return;

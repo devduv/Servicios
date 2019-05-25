@@ -16,8 +16,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import java.util.Objects;
 
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaMensaje;
+import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
@@ -103,7 +103,7 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
 
     public void registrarEscuela(){
 
-        PlantillaMensaje mensaje = new PlantillaMensaje(this);
+        TemplateMessage mensaje = new TemplateMessage(this);
         if(escuela_selected.length()==0){
             mensaje.setMensaje("Escuela Académico Profesional", "No hay seleccionado ninguna escuela");
         }else{

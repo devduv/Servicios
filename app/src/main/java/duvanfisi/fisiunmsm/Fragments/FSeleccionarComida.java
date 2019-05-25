@@ -73,7 +73,7 @@ public class FSeleccionarComida extends Fragment {
             this.idcomida = idcomida;
             MainActivity.startFragment("tickets", new FReservarTicket(), 3,  getBundle(idsede, this.idcomida));
         }else{
-            InternetConecction.nointernet(getContext());
+            InternetConecction.notInternet(getContext());
         }
 
 

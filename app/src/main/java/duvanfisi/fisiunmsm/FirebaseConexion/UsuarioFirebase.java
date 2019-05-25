@@ -22,14 +22,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MapsActivity;
-import duvanfisi.fisiunmsm.Extras.ViewVisible;
-import duvanfisi.fisiunmsm.ViewLayouts.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
 import duvanfisi.fisiunmsm.Modelo.CTicket;
 import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
-import duvanfisi.fisiunmsm.Recyclers.RecyclerViewUsuarios;
 
 public class UsuarioFirebase {
 
