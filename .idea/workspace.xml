@@ -115,64 +115,7 @@
     <last-search-timestamp>1558706048302</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44eb92cc-aab1-45f3-96ee-4bdcfa732608" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_16_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_auto_value_auto_value_annotations_1_6_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_9_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_19_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_17_1_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LocationActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/Prueba.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_location.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/release/res/values/google_maps_api.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Actions/InternetConecction.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Actions/InternetConecction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/RegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/RegisterDatosActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/RegisterDatosActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/RegisterEscuelaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/RegisterEscuelaActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/FirebaseAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/FirebaseAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/TurnoFirebase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/TurnoFirebase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/UsuarioFirebase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/FirebaseConexion/UsuarioFirebase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FPerfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FReservarTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FReservarTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FSeleccionarComida.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FSeleccionarComida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FServicios.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Fragments/FServicios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CConfirmarReservarTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/CConfirmarReservarTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Recyclers/RecyclerViewPublicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Recyclers/RecyclerViewPublicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ViewLayouts/PlantillaCodigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Templates/PlantillaCodigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ViewLayouts/PlantillaLoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Templates/PlantillaLoading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ViewLayouts/PlantillaMensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Templates/TemplateMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ViewLayouts/PlantillaPublicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Templates/PlantillaPublicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ViewLayouts/PlantillaReservarTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Templates/PlantillaReservarTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="44eb92cc-aab1-45f3-96ee-4bdcfa732608" name="Default Changelist" comment="por ti" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,16 +175,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LocationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="44" selection-start-column="44" selection-end-column="44" />
+            <state relative-caret-position="252">
+              <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
@@ -372,13 +318,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_datos_escuela.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Actions/InternetConecction.java" />
         <option value="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LocationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/MainActivity.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/Modelo/Users/Prueba.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LocationActivity.java" />
       </list>
     </option>
   </component>
@@ -427,6 +373,14 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="duvanfisi" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="fisiunmsm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Servicios" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="duvanfisi" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fisiunmsm" type="462c0819:PsiDirectoryNode" />
+              <item name="ActivitiesUsers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Servicios" type="1abcf292:AndroidViewProjectNode" />
@@ -661,12 +615,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558468136510</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="por ti">
+      <created>1558760839615</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558760839615</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info id="Image Layers" order="1" />
@@ -675,17 +635,17 @@
       <window_info id="Build Variants" order="4" sideWeight="0.50554323" side_tool="true" weight="0.18322147" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Resources Explorer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.49445677" visible="true" weight="0.1704698" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.49445677" visible="true" weight="0.1704698" />
       <window_info id="Captures" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="0" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Logcat" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="TODO" order="3" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4966443" weight="0.64447594" />
-      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4966443" weight="0.27620396" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.4966443" visible="true" weight="0.27620396" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5067114" side_tool="true" weight="0.19546743" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4986577" weight="0.15722379" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49328858" visible="true" weight="0.22379604" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49328858" weight="0.22379604" />
       <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="10" weight="0.6770538" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
@@ -711,7 +671,8 @@
     <MESSAGE value="new login design" />
     <MESSAGE value="consistency" />
     <MESSAGE value="change design" />
-    <option name="LAST_COMMIT_MESSAGE" value="change design" />
+    <MESSAGE value="por ti" />
+    <option name="LAST_COMMIT_MESSAGE" value="por ti" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home_black.xml">
@@ -1074,17 +1035,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LocationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" selection-start-column="44" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="63" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/duvanfisi/fisiunmsm/ActivitiesUsers/LocationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
