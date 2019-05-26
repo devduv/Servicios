@@ -208,7 +208,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_arrive:
                         /*TemplateMessage mensaje_mapa = new TemplateMessage(MainActivity.this);
                         mensaje_mapa.setMensaje("Mapa", "Próximamente!");*/
-                       // StartActivity.startActivity(MainActivity.this, new LocationActivity());
+                        StartActivity.startActivity(MainActivity.this, new LocationActivity()   );
+                       // Intent intent = new Intent(MainActivity.this, LocationActivity.ExtraData.class);
                         return true;
                     case R.id.action_info:
                         StartActivity.startActivity(MainActivity.this, new InformacionActivity());
