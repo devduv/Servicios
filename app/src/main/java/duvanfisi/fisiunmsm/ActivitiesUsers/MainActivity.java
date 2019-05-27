@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                        // Intent intent = new Intent(MainActivity.this, LocationActivity.ExtraData.class);
                         return true;
                     case R.id.action_info:
-                        StartActivity.startActivity(MainActivity.this, new InformacionActivity());
+                        StartActivity.startActivity(MainActivity.this, new WelcomeActivity());
                         return true;
                     case R.id.action_salir:
                         if(firebaseUser!=null) {

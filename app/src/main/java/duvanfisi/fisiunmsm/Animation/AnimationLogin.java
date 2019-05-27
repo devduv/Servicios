@@ -39,11 +39,11 @@ public class AnimationLogin implements Animation.AnimationListener {
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.INVISIBLE);
                         LoginActivity.linearlogin.setVisibility(ViewVisible.INVISIBLE);
-                        LoginActivity.view.setBackgroundColor(context.getResources().getColor(R.color.color_background));
+                       // LoginActivity.view.setBackgroundColor(context.getResources().getColor(R.color.color_background));
                     }else{
                         LoginActivity.emailt.setFocusable(false);
                         LoginActivity.pass.setFocusable(false);
-                        LoginActivity.view.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+                      //  LoginActivity.view.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
                         LoginActivity.buttnRegister.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.buttnForgot.setVisibility(ViewVisible.VISIBLE);
                         LoginActivity.linearlogin.setVisibility(ViewVisible.VISIBLE);
@@ -66,9 +66,12 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewVisible(LoginActivity.buttnForgot);
         ViewVisible.viewVisible(LoginActivity.buttonLogin);
         ViewVisible.viewVisible(LoginActivity.emailt);
+        ViewVisible.viewVisible(LoginActivity.imguser);
+        ViewVisible.viewVisible(LoginActivity.imgkey);
         ViewVisible.viewVisible(LoginActivity.inputpass);
         ViewVisible.viewVisible(LoginActivity.pass);
-        ViewVisible.viewVisible(LoginActivity.view);
+        ViewVisible.viewVisible(LoginActivity.imglogo);
+
 
 
         LoginActivity.emailt.setHint("example@unmsm.edu.pe");
@@ -80,9 +83,11 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewListener(LoginActivity.buttnForgot, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.buttonLogin, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.inputpass, shortAnimationTime);
+        ViewVisible.viewListener(LoginActivity.imguser, shortAnimationTime);
+        ViewVisible.viewListener(LoginActivity.imgkey, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.pass, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.emailt, shortAnimationTime);
-        ViewVisible.viewListener(LoginActivity.view, shortAnimationTime);
+        ViewVisible.viewListener(LoginActivity.imglogo, shortAnimationTime);
 
         LoginActivity.animation_ended = true;
     }

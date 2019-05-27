@@ -12,12 +12,27 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
+
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.Marker
 import duvanfisi.fisiunmsm.R
+
 
 class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 
+    private val PERTH = LatLng(-31.952854, 115.857342)
+    private val SYDNEY = LatLng(-33.87365, 151.20689)
+    private val BRISBANE = LatLng(-27.47093, 153.0235)
+
+
+    private var mPerth: Marker? = null
+    private val mSydney: Marker? = null
+    private val mBrisbane: Marker? = null
+
+
+    private val MELBOURNE = LatLng(-37.813, 144.962)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location)
@@ -45,6 +60,22 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
        // mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
        // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(unmsmmap, 16f));
+        /*mMap.addMarker(MarkerOptions()
+                .position(PERTH)
+                .title("Perth"))
+
+
+        mMap.addMarker(MarkerOptions()
+                .position(SYDNEY)
+                .title("Sydney"))
+
+
+        mMap.addMarker(MarkerOptions()
+                .position(BRISBANE)
+                .title("Brisbane"))*/
+
+        // Set a listener for marker click.
+        //mMap.setOnMarkerClickListener();
     }
 
 

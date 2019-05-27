@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
         private boolean canExitApp = false;
         private final Context context_this = LoginActivity.this;
-        private ImageView imglogo;
+        public static ImageView imglogo;
 
 
         public static boolean animation_ended = false;
@@ -51,9 +51,9 @@ public class LoginActivity extends AppCompatActivity {
         public static Button buttnForgot;
 
         @SuppressLint("StaticFieldLeak")
-        public static TextInputLayout inputpass; @SuppressLint("StaticFieldLeak")
-    public static FrameLayout view;
-        @SuppressLint("StaticFieldLeak")
+        public static TextInputLayout inputpass; //@SuppressLint("StaticFieldLeak")
+    //public static FrameLayout view;
+        //@SuppressLint("StaticFieldLeak")
         public static LinearLayout linearlogin;
         @SuppressLint("StaticFieldLeak")
         public static ImageView splash;
@@ -61,9 +61,12 @@ public class LoginActivity extends AppCompatActivity {
         @SuppressLint("StaticFieldLeak")
         public static View activityRootView;
 
+
+        public static ImageView imguser;
+        public static ImageView imgkey;
         private boolean keyboard_on = false;
 
-        private ViewFlipper viewFlipper;
+       // private ViewFlipper viewFlipper;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -80,13 +83,15 @@ public class LoginActivity extends AppCompatActivity {
             FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
             firebaseDatabase.settingsPersistence();
         }
-
-
         public void visibility(int v){
             buttnForgot.setVisibility(v);
             buttnRegister.setVisibility(v); buttonLogin.setVisibility(v);
             emailt.setVisibility(v); pass.setVisibility(v); inputpass.setVisibility(v);
-            view.setVisibility(v); linearlogin.setVisibility(v);
+           // view.setVisibility(v);
+            linearlogin.setVisibility(v);
+            imglogo.setVisibility(v);
+            imguser.setVisibility(v);
+            imgkey.setVisibility(v);
         }
 
        @Override
@@ -103,6 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                    }
                }, 2000);
            } else {
+               finish();
                super.onBackPressed();
            }
         }
@@ -147,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
 
         }
 
-        public void flipper(int image){
+        /*public void flipper(int image){
 
             ImageView imageView = new ImageView(this);
             ImagePicasso.setImageCenterCop(context_this, image, imageView);
@@ -157,17 +163,17 @@ public class LoginActivity extends AppCompatActivity {
             viewFlipper.setAutoStart(true);
             viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
             viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
-        }
-        public void setImages(){
+        }*/
+        /*public void setImages(){
             int[] images = {R.drawable.portada, R.drawable.portada2};
             for (int image : images) {
                 flipper(image);
             }
 
-        }
+        }*/
         @SuppressLint("ClickableViewAccessibility")
         public void inicializarViews(){
-            viewFlipper = findViewById(R.id.viewflipper);
+            //viewFlipper = findViewById(R.id.viewflipper);
             activityRootView = findViewById(R.id.id_constraint_login);
             emailt = findViewById(R.id.email);
             pass=  findViewById(R.id.password);
@@ -176,10 +182,14 @@ public class LoginActivity extends AppCompatActivity {
             buttnRegister = findViewById(R.id.email_register_in_button);
             buttnForgot = findViewById(R.id.email_forgot_in_button);
             splash = findViewById(R.id.splash);
-            view = findViewById(R.id.view);
+            //view = findViewById(R.id.view);
+            imglogo = findViewById(R.id.imglogo);
             linearlogin = findViewById(R.id.linearlogin);
+            imguser = findViewById(R.id.iconuserlogin);
+            imgkey = findViewById(R.id.iconkeylogin);
 
 
+            //ImagePicasso.setImageCenterCop(this, R.drawable.icon_logo_sm_2, imglogo);
 
 
             emailt.setFocusableInTouchMode(false);
@@ -204,7 +214,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            setImages();
+           // setImages();
         }
 
         private void attemptLogin() {
