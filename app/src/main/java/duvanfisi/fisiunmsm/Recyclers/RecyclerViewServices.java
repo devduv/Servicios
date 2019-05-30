@@ -8,9 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -18,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Extras.ADialogs;
-import duvanfisi.fisiunmsm.Modelo.CServicio;
+import duvanfisi.fisiunmsm.Model.CServicio;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewServices extends RecyclerView.Adapter<RecyclerViewServices.ViewHolder>{

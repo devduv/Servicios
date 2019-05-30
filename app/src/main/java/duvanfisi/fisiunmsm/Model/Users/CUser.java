@@ -1,4 +1,4 @@
-package duvanfisi.fisiunmsm.Modelo.Users;
+package duvanfisi.fisiunmsm.Model.Users;
 
 import java.util.HashMap;
 import java.util.Map;

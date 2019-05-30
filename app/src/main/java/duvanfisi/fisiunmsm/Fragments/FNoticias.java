@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +21,8 @@ import duvanfisi.fisiunmsm.ActivitiesUsers.NoticiaActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.NoticiaFirebase;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
+import duvanfisi.fisiunmsm.Model.CNoticia;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
-import duvanfisi.fisiunmsm.Recyclers.RecyclerViewTopNoticias;
 
 
 public class FNoticias extends Fragment {

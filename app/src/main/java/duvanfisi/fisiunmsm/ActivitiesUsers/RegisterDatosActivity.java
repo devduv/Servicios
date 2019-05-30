@@ -25,9 +25,9 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 
 import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
-import duvanfisi.fisiunmsm.Templates.PlantillaCodigo;
+import duvanfisi.fisiunmsm.Templates.TemplateCode;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.Extras.DisplayMetric;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
@@ -71,7 +71,7 @@ public class RegisterDatosActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                PlantillaCodigo codigo = new PlantillaCodigo(context_this, cod_in_tec, r_cod);
+                TemplateCode codigo = new TemplateCode(context_this, cod_in_tec, r_cod);
                 codigo.begin();
             }
         });
@@ -89,7 +89,7 @@ public class RegisterDatosActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                     CloseKeyboard.closeKeyboardStart(context_this, ap_mat);
-                    PlantillaCodigo codigo = new PlantillaCodigo(context_this, cod_in_tec, r_cod);
+                    TemplateCode codigo = new TemplateCode(context_this, cod_in_tec, r_cod);
                     codigo.begin();
                     return true;
                 }
@@ -197,9 +197,9 @@ public void mensaje(){
 
     public void registrarDatosCompletos() {
 
-        String ap_pat = this.ap_pat.getText().toString().trim();
-        String ap_mat = this.ap_mat.getText().toString().trim();
-        String nombres = this.nomb.getText().toString().trim();
+        String ap_pat = this.ap_pat.getText().toString().trim().toUpperCase();
+        String ap_mat = this.ap_mat.getText().toString().trim().toUpperCase();
+        String nombres = this.nomb.getText().toString().trim().toUpperCase();
         String code = this.r_cod.getText().toString();
 
         if (TextUtils.isEmpty(nombres)) {

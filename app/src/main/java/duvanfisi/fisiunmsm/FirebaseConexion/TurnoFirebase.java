@@ -37,8 +37,8 @@ import duvanfisi.fisiunmsm.Fragments.FReservarTicket;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 
 import duvanfisi.fisiunmsm.Templates.PlantillaReservarTicket;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
-import duvanfisi.fisiunmsm.Modelo.CTurno;
+import duvanfisi.fisiunmsm.Model.CTicket;
+import duvanfisi.fisiunmsm.Model.CTurno;
 
 import duvanfisi.fisiunmsm.R;
 

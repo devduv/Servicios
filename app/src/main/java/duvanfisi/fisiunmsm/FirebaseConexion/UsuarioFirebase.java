@@ -22,9 +22,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Templates.TemplateLoading;
+import duvanfisi.fisiunmsm.Model.CTicket;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 
 public class UsuarioFirebase {
@@ -35,14 +35,14 @@ public class UsuarioFirebase {
     private FirebaseDatabase firebaseDatabase;
     private  UserProfileChangeRequest profileUpdates;
 
-    private PlantillaLoading loading;
+    private TemplateLoading loading;
     private AlertDialog dialog_loading;
 
     public UsuarioFirebase(FirebaseDatabase firebaseDatabase){
 
         this.firebaseDatabase = firebaseDatabase;
         this.context = firebaseDatabase.getContext();
-        this.loading = new PlantillaLoading(context);
+        this.loading = new TemplateLoading(context);
 
 
     }
@@ -97,7 +97,7 @@ public class UsuarioFirebase {
                                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                                             CUsuario usuariodocument = documentSnapshot.toObject(CUsuario.class);
                                             dialog_loading.dismiss();
-                                            firebaseAccount.verificarEscuela(usuariodocument, firebaseUser);
+                                            firebaseAccount.verificarEscuela(firebaseUser, usuariodocument);
                                         }
                                     });
                                 }

@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.TurnoFirebase;
-import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 
@@ -49,13 +49,13 @@ public class FReservarTicket extends Fragment {
                              Bundle savedInstanceState) {
 
         this.view = inflater.inflate(R.layout.fragment_comselec, container, false);
-        this.view_ticket_acp = inflater.inflate(R.layout.mensaje, container, false);
+        this.view_ticket_acp = inflater.inflate(R.layout.template_message, container, false);
         this.inicializarViews();
         return this.view;
     }
 
     public void inicializarViews(){
-        PlantillaLoading loading = new PlantillaLoading(getContext());
+        TemplateLoading loading = new TemplateLoading(getContext());
         loading.setTextLoading("Buscando tickets...");
         dialog_loading = loading.loading();
         dialog_loading.show();

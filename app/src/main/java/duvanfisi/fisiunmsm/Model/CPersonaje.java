@@ -1,4 +1,4 @@
-package duvanfisi.fisiunmsm.Modelo;
+package duvanfisi.fisiunmsm.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

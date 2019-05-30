@@ -5,12 +5,16 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
 import duvanfisi.fisiunmsm.R;
@@ -38,6 +42,18 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 verificarEmail();
             }
         });
+
+        email.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                    CloseKeyboard.closeKeyboardStart(ForgotPasswordActivity.this, email);
+                    verificarEmail();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -58,6 +74,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         ImageView back = findViewById(R.id.btnback);
         ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
 
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +84,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     }
     public void verificarEmail(){
-        this.email_t = email.getText().toString();
+        this.email_t = email.getText().toString().trim();
 
         if (TextUtils.isEmpty(email_t)) {
             email.setError(getString(R.string.error_field_required));

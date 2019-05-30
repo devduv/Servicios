@@ -1,13 +1,10 @@
 package duvanfisi.fisiunmsm.ActivitiesUsers;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -15,7 +12,7 @@ import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.PersonajeFirebase;
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;
 
 public class PersonajeActivity extends AppCompatActivity {

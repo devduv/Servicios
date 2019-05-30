@@ -1,4 +1,4 @@
-package duvanfisi.fisiunmsm.Modelo;
+package duvanfisi.fisiunmsm.Model;
 
 public class CPublicacion {
     private int _id;

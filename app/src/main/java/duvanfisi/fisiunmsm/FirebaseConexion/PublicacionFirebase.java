@@ -6,9 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
@@ -17,13 +15,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 
-import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
-import duvanfisi.fisiunmsm.Modelo.CPublicacion;
+import duvanfisi.fisiunmsm.Model.CNoticia;
+import duvanfisi.fisiunmsm.Model.CPublicacion;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
-import duvanfisi.fisiunmsm.Recyclers.RecyclerViewNoticias;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewPublicacion;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewTopNoticias;
 

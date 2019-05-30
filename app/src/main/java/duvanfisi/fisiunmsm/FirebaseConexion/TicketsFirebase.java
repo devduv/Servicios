@@ -1,14 +1,10 @@
 package duvanfisi.fisiunmsm.FirebaseConexion;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
@@ -26,8 +22,7 @@ import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.MiRegistroActivity;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
-import duvanfisi.fisiunmsm.R;
+import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewTickets;
 

@@ -15,7 +15,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.Objects;
 
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;

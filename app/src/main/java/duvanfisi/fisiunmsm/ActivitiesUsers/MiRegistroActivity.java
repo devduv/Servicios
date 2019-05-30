@@ -14,7 +14,7 @@ import java.util.HashMap;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.TicketsFirebase;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
+import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.R;
 
 public class MiRegistroActivity extends AppCompatActivity {

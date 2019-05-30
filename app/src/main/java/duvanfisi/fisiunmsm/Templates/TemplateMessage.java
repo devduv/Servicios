@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ADialogs;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
+import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.R;
 
 public class TemplateMessage {
@@ -23,7 +23,7 @@ public class TemplateMessage {
 
     public TemplateMessage(Context context){
         this.context = context;
-        this.mensaje = ViewFloat.floatview(this.context, R.layout.mensaje);
+        this.mensaje = ViewFloat.floatview(this.context, R.layout.template_message);
         this.title_mensaje = mensaje.findViewById(R.id.title_mensaje);
         this.content_mensaje = mensaje.findViewById(R.id.content_mensaje);
     }

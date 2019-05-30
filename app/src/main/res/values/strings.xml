@@ -14,7 +14,7 @@
 
     <string name="titulo_iniciarsesion">Iniciar Sesión</string>
     <string name="button_signup">Iniciar sesión</string>
-    <string name="button_signin">Crear una cuenta</string>
+    <string name="button_signin">Registrarse</string>
     <string name="button_signinme">Registrarme</string>
     <string name="button_forgotpass">Olvidé mi contraseña</string>
     <string name="ingresar_como_invitado">Ingresar como Invitado</string>

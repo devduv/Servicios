@@ -13,7 +13,7 @@ import java.util.Random;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.R;
 
-public class PlantillaCodigo {
+public class TemplateCode {
     private Context context;
     private int cont;
 
@@ -40,7 +40,7 @@ public class PlantillaCodigo {
 
 
     private TextView r_cod;
-    public PlantillaCodigo(Context context, String cod_in_tec, TextView r_cod){
+    public TemplateCode(Context context, String cod_in_tec, TextView r_cod){
         this.cod_in_tec = cod_in_tec;
         this.context = context;
         this.view_content = ViewFloat.floatview(context, R.layout.ingresar_cod);
@@ -205,11 +205,14 @@ public class PlantillaCodigo {
     }
 
     public void setCOD(Button btn){
-        if(cont <8) {
+        if(cont <7) {
             linearLayout.addView(setTxt(btn.getText().toString()));
             cod_in_tec = cod_in_tec + btn.getText().toString();
             cont++;
         }else if(cont ==7){
+            linearLayout.addView(setTxt(btn.getText().toString()));
+            cod_in_tec = cod_in_tec + btn.getText().toString();
+            cont++;
             setCodigo();
             }else{
             TemplateMessage mensaje = new TemplateMessage(context);

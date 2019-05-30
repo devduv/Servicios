@@ -1,4 +1,4 @@
-package duvanfisi.fisiunmsm.Modelo;
+package duvanfisi.fisiunmsm.Model;
 
 public class CAnuncio {
     private String link;

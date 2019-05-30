@@ -4,9 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -30,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText emailt;
     private EditText pass;
     private EditText pass_confirmar;
-    private CheckBox checkBox;
+    public static CheckBox checkBox;
 
     private TextView idterminos;
     private final Context context_this = RegisterActivity.this;
@@ -87,6 +89,9 @@ public class RegisterActivity extends AppCompatActivity {
                         button_signin.setVisibility(ViewVisible.INVISIBLE);
                         ic_registro.setVisibility(ViewVisible.INVISIBLE);
                     }else{
+                        emailt.setFocusable(false);
+                        pass.setFocusable(false);
+                        pass_confirmar.setFocusable(false);
                         button_signin.setVisibility(ViewVisible.VISIBLE);
                         ic_registro.setVisibility(ViewVisible.VISIBLE);
                     }
@@ -129,6 +134,19 @@ public class RegisterActivity extends AppCompatActivity {
                 StartActivity.startActivity(RegisterActivity.this, new PoliticasActivity());
             }
         });
+
+        pass_confirmar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                    CloseKeyboard.closeKeyboardStart(context_this, pass);
+                    TemplateMessage templateMessage = new TemplateMessage(RegisterActivity.this);
+                    templateMessage.setMensaje("Registro de usuario", Utilidades.ACEPTEDTERM,5);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
     public void registrarUser() {
         String email = emailt.getText().toString();
@@ -159,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity {
             FirebaseAccount firebaseDB = new FirebaseAccount(this);
             firebaseDB.registerUser(email,password);
         }else{
-            mensaje.setMensaje("Registro de usuario", Utilidades.ACEPTEDTERM);
+            mensaje.setMensaje("Registro de usuario", Utilidades.ACEPTEDTERM,5);
         }
 
 

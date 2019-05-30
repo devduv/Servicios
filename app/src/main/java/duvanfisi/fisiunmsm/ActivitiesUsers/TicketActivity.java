@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.Date;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
+import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.R;
 
 public class TicketActivity extends AppCompatActivity {

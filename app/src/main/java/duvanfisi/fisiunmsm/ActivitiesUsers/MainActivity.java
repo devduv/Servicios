@@ -24,9 +24,9 @@ import java.util.ArrayList;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.Fragments.FNoticias;
-import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;
 import duvanfisi.fisiunmsm.Fragments.FHome;
@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseDatabase = new FirebaseDatabase(this);
         firebaseDatabase.settingsPersistence();
-        PlantillaLoading loading = new PlantillaLoading(this);
+        TemplateLoading loading = new TemplateLoading(this);
         loading.setTextLoading("Cargando datos...");
         this.dialog_loading = loading.loading();
 

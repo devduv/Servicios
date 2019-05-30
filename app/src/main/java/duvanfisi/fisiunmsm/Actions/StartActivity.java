@@ -1,18 +1,13 @@
 package duvanfisi.fisiunmsm.Actions;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.io.Serializable;
-
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 
 
 public class StartActivity {
@@ -36,6 +31,15 @@ public class StartActivity {
         intent.putExtra(Utilidades.FIREBASEUSER, user);
         context.startActivity(intent);
     }
+
+    public static void startActivity(Context context, AppCompatActivity activity, FirebaseUser user, CUsuario usuario){
+        Intent intent = new Intent(context, activity.getClass());
+        intent.putExtra(Utilidades.FIREBASEUSER, user);
+        intent.putExtra(Utilidades.KEY_MODEL_USER, usuario);
+        context.startActivity(intent);
+    }
+
+
 
     public static void startActivity(Context context, Intent intent){
         context.startActivity(intent);

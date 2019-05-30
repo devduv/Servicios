@@ -1,6 +1,5 @@
 package duvanfisi.fisiunmsm.FirebaseConexion;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -18,8 +17,7 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
-import duvanfisi.fisiunmsm.Fragments.FHome;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
+import duvanfisi.fisiunmsm.Model.CNoticia;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewNoticias;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewTopNoticias;

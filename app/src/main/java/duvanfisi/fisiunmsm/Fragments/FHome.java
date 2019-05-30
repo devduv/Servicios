@@ -21,12 +21,10 @@ import duvanfisi.fisiunmsm.FirebaseConexion.EscuelaFirebase;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.NoticiaFirebase;
 import duvanfisi.fisiunmsm.FirebaseConexion.PersonajeFirebase;
-import duvanfisi.fisiunmsm.FirebaseConexion.PublicacionFirebase;
 import duvanfisi.fisiunmsm.FirebaseConexion.ServicioFirebase;
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
-import duvanfisi.fisiunmsm.Modelo.CPublicacion;
-import duvanfisi.fisiunmsm.Modelo.CServicio;
+import duvanfisi.fisiunmsm.Model.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CNoticia;
+import duvanfisi.fisiunmsm.Model.CServicio;
 import duvanfisi.fisiunmsm.R;
 
 

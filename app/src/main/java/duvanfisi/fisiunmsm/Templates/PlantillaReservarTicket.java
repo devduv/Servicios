@@ -9,7 +9,7 @@ import com.google.firebase.database.DatabaseReference;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
-import duvanfisi.fisiunmsm.Modelo.CConfirmarReservarTicket;
+import duvanfisi.fisiunmsm.Model.CConfirmarReservarTicket;
 import duvanfisi.fisiunmsm.R;
 
 public class PlantillaReservarTicket {

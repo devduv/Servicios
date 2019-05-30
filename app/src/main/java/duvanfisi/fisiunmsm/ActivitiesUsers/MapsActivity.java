@@ -17,7 +17,7 @@ import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;
 import duvanfisi.fisiunmsm.Interfaces.ILoadMore;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Recyclers.MyAdapter;
 

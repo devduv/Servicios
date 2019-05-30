@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import duvanfisi.fisiunmsm.Extras.ADialogs;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.R;

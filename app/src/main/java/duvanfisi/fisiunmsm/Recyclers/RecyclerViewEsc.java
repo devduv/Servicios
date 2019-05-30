@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import duvanfisi.fisiunmsm.Modelo.CEscuela;
+import duvanfisi.fisiunmsm.Model.CEscuela;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterEscuelaActivity;
 
@@ -33,7 +33,7 @@ public class RecyclerViewEsc extends RecyclerView.Adapter<RecyclerViewEsc.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.escuela_list,parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.template_school,parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }

@@ -3,6 +3,7 @@ package duvanfisi.fisiunmsm.FirebaseConexion;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,11 +16,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Fragments.CArea;
-import duvanfisi.fisiunmsm.Modelo.CEscuela;
-import duvanfisi.fisiunmsm.Modelo.CFacultad;
+import duvanfisi.fisiunmsm.Model.CEscuela;
+import duvanfisi.fisiunmsm.Model.CFaculty;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewAreas;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewEsc;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
@@ -32,7 +33,7 @@ public class EscuelaFirebase {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
-    private CFacultad facultad;
+    private CFaculty facultad;
     private ArrayList<CEscuela> escuelas;
 
 
@@ -80,7 +81,7 @@ public class EscuelaFirebase {
     }
 
     public void setCollectionFacultades(String cod, final TextView title_fac, final ImageView imageView,
-                                        final RecyclerView recyclerView){
+                                        final RecyclerView recyclerView, final Button btnreg, final Button btnfound){
 
         databaseReference = getFacultadReference()
                 .child(cod);
@@ -88,7 +89,7 @@ public class EscuelaFirebase {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                facultad = dataSnapshot.getValue(CFacultad.class);
+                facultad = dataSnapshot.getValue(CFaculty.class);
 
                 title_fac.setText(facultad.getNombre());
                 RegisterEscuelaActivity.facultad_selected = facultad.getNombre();
@@ -103,6 +104,9 @@ public class EscuelaFirebase {
                        }
                        RecyclerViewEsc adapter = new RecyclerViewEsc(context, escuelas);
                        RecyclerViewFunction.recyclerview(recyclerView, context, RecyclerViewFunction.VERTICAL, adapter);
+
+                       btnreg.setVisibility(ViewVisible.VISIBLE);
+                       btnfound.setVisibility(ViewVisible.VISIBLE);
 
                        RegisterEscuelaActivity.dialog_loading.dismiss();
                    }

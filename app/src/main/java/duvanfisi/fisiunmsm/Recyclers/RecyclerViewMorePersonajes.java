@@ -9,9 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -20,9 +18,8 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.PersonajeActivity;
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewMorePersonajes extends RecyclerView.Adapter<RecyclerViewMorePersonajes.ViewHolder>{

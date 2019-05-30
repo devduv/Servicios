@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseUser;
 
+import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.ActivitiesUsers.WelcomeActivity;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
 
 
@@ -18,7 +20,8 @@ public class SplashActivity extends AppCompatActivity {
         if(Preferences.isLogin(this)){
            startMainUser();
         }else{
-           startMainInvited();
+            startMainInvited();
+            //StartActivity.startActivity(this, new LoginActivity());
         }
 
     }

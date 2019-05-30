@@ -1,4 +1,4 @@
-package duvanfisi.fisiunmsm.Modelo.Users;
+package duvanfisi.fisiunmsm.Model.Users;
 
 public class CStudent extends CUser{
     private int tickets_withdrawn;

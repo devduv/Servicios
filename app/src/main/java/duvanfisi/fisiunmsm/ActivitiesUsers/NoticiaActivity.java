@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
+import duvanfisi.fisiunmsm.Model.CNoticia;
 import duvanfisi.fisiunmsm.R;
 
 public class NoticiaActivity extends AppCompatActivity {

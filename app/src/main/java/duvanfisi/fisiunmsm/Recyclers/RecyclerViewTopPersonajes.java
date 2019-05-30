@@ -2,14 +2,11 @@ package duvanfisi.fisiunmsm.Recyclers;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,10 +14,9 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.PersonajeActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewTopPersonajes extends RecyclerView.Adapter<RecyclerViewTopPersonajes.ViewHolder>{

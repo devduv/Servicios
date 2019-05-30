@@ -1,4 +1,4 @@
-package duvanfisi.fisiunmsm.Modelo;
+package duvanfisi.fisiunmsm.Model;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
@@ -15,7 +15,7 @@ import duvanfisi.fisiunmsm.Extras.ADialogs;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.FirebaseConexion.TurnoFirebase;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 
 public class CConfirmarReservarTicket {
 
@@ -145,7 +145,7 @@ public class CConfirmarReservarTicket {
 
     public void confirmar(){
         if(InternetConecction.isOnline(getContext())){
-            PlantillaLoading loading = new PlantillaLoading(context);
+            TemplateLoading loading = new TemplateLoading(context);
             loading.setTextLoading("Reservando...");
             AlertDialog dialog_loading = loading.loading();
             dialog_loading.show();

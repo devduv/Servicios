@@ -16,7 +16,7 @@ import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.ActivitiesUsers.NoticiaActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
+import duvanfisi.fisiunmsm.Model.CNoticia;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewNoticias extends RecyclerView.Adapter<RecyclerViewNoticias.ViewHolder>{

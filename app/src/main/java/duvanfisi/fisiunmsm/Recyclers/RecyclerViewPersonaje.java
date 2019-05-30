@@ -3,11 +3,8 @@ package duvanfisi.fisiunmsm.Recyclers;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +16,9 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.PersonajeActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewPersonaje extends RecyclerView.Adapter<RecyclerViewPersonaje.ViewHolder>{

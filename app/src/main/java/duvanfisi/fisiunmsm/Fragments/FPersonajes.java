@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import java.util.HashMap;
 
-import duvanfisi.fisiunmsm.Modelo.CPersonaje;
+import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewMorePersonajes;

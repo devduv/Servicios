@@ -17,14 +17,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
+import duvanfisi.fisiunmsm.ActivitiesUsers.FacultyActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterActivity;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
-import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
-import duvanfisi.fisiunmsm.FirebaseConexion.TicketsFirebase;
-import duvanfisi.fisiunmsm.FirebaseConexion.UsuarioFirebase;
 import duvanfisi.fisiunmsm.Fragments.TicketFragment;
-import duvanfisi.fisiunmsm.Modelo.CServicio;
+import duvanfisi.fisiunmsm.Model.CServicio;
 import duvanfisi.fisiunmsm.R;
 
 public class ADialogs {
@@ -39,7 +38,7 @@ public class ADialogs {
                 MainActivity.startFragment("ticket", new TicketFragment(), 2, bundle);
             }
         });
-        builder.setCancelable(false);
+        //builder.setCancelable(false);
         return builder.create();
     }
 
@@ -53,7 +52,7 @@ public class ADialogs {
                 ((ViewGroup) view.getParent()).removeAllViews();
             }
         });
-        builder.setCancelable(false);
+        //builder.setCancelable(false);
         return builder.create();
     }
 
@@ -139,11 +138,38 @@ public class ADialogs {
                     }
                 });
                 break;
+            case 5:
+                builder.setPositiveButton("Aceptar términos", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        RegisterActivity.checkBox.setChecked(true);
+                    }
+                });
+                builder.setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ((ViewGroup) view.getParent()).removeAllViews();
+                    }
+                });
+                break;
+            case 6:
+                builder.setPositiveButton("Sí, es mi facultad", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        ((ViewGroup) view.getParent()).removeAllViews();
+                    }
+                });
+                builder.setNegativeButton("Buscar mi facultad", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //. . .
+                        StartActivity.startActivity(context, new FacultyActivity());
+                    }
+                });
+                break;
 
 
         }
 
-        builder.setCancelable(false);
+        //builder.setCancelable(false);
         return builder.create();
     }
     public static AlertDialog info_servicio(final Context context, Bundle bundle) {
@@ -197,7 +223,7 @@ public class ADialogs {
     public static AlertDialog mensajeTurno(Context context, final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view);
-        builder.setCancelable(false);
+       //builder.setCancelable(false);
         return builder.create();
     }
 }

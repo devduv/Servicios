@@ -12,7 +12,7 @@ import duvanfisi.fisiunmsm.Extras.ADialogs;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.R;
 
-public class PlantillaLoading {
+public class TemplateLoading {
 
 
 
@@ -21,7 +21,7 @@ public class PlantillaLoading {
     private TextView load;
     private LottieAnimationView lottieAnimationView;
 
-    public PlantillaLoading(Context context){
+    public TemplateLoading(Context context){
         this.context = context;
         this.load_view = ViewFloat.floatview(context, R.layout.loading);
         this.load = this.load_view.findViewById(R.id.loading);

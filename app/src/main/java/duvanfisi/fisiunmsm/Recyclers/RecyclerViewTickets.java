@@ -17,13 +17,8 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.NoticiaActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.TicketActivity;
-import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Fragments.TicketFragment;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
-import duvanfisi.fisiunmsm.Modelo.CTicket;
+import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewTickets extends RecyclerView.Adapter<RecyclerViewTickets.ViewHolder>{

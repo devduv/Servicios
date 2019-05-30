@@ -1,8 +1,8 @@
-package duvanfisi.fisiunmsm.Modelo;
+package duvanfisi.fisiunmsm.Model;
 
 import java.util.ArrayList;
 
-public class CFacultad {
+public class CFaculty {
     private int _id;
     private int cantidadesc;
     private String nombre;
@@ -10,7 +10,7 @@ public class CFacultad {
     private String sobrenombre;
     private ArrayList<CEscuela> escuelas = new ArrayList<>();
 
-    public CFacultad(){
+    public CFaculty(){
 
     }
 

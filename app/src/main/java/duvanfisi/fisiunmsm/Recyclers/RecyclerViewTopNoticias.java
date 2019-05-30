@@ -2,7 +2,6 @@ package duvanfisi.fisiunmsm.Recyclers;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +19,7 @@ import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.ActivitiesUsers.NoticiaActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
-import duvanfisi.fisiunmsm.Modelo.CNoticia;
+import duvanfisi.fisiunmsm.Model.CNoticia;
 import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewTopNoticias extends RecyclerView.Adapter<RecyclerViewTopNoticias.ViewHolder>{

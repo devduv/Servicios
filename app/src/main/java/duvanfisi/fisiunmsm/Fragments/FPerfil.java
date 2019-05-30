@@ -14,7 +14,7 @@ import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.PhoneActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterDatosActivity;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.R;
 
 

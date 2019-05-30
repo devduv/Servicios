@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Interfaces.ILoadMore;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.R;
 
 class LoadingViewHolder extends RecyclerView.ViewHolder {

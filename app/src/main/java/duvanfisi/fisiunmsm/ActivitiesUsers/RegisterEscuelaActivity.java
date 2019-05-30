@@ -16,9 +16,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import java.util.Objects;
 
-import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Extras.ViewVisible;
+import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.EscuelaFirebase;
@@ -39,10 +40,11 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
     private CUsuario usuario;
 
     private Button btn_reg_esc;
+    private Button btn_found_fac;
     public static String facultad_selected;
     public static String escuela_selected;
 
-    private PlantillaLoading loading;
+    private TemplateLoading loading;
 
     public static AlertDialog dialog_loading;
     private RecyclerView recyclerView;
@@ -69,15 +71,20 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
         });
         Intent intent_user = getIntent();
         this.firebaseUser = (FirebaseUser) Objects.requireNonNull(intent_user.getExtras()).get(Utilidades.FIREBASEUSER);
+        this.usuario = (CUsuario) intent_user.getExtras().get(Utilidades.KEY_MODEL_USER);
 
-
-        this.loading = new PlantillaLoading(this);
+        this.loading = new TemplateLoading(this);
         setLoading();
         this.recyclerView = findViewById(R.id.recyclerViewEscuelas);
 
         this.title_facultad = findViewById(R.id.title_facultad);
         this.img_esc = findViewById(R.id.img_esc);
         this.btn_reg_esc = findViewById(R.id.btn_reg_esc);
+        this.btn_found_fac = findViewById(R.id.btn_found_fac);
+        escuela_selected = "";
+
+        this.btn_reg_esc.setVisibility(ViewVisible.INVISIBLE);
+        this.btn_found_fac.setVisibility(ViewVisible.INVISIBLE);
 
         getCodeUser();
 
@@ -95,6 +102,14 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarEscuela();
+            }
+        });
+
+        this.btn_found_fac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TemplateMessage templateMessage = new TemplateMessage(RegisterEscuelaActivity.this);
+                templateMessage.setMensaje("Registrar Escuela", "Está seguro que la facultad que se le mostró no es una a la que pertenece?", 6);
             }
         });
 
@@ -119,37 +134,25 @@ public class RegisterEscuelaActivity extends AppCompatActivity {
 
     public void getFacultades(String cod){
         EscuelaFirebase escuelaFirebase = new EscuelaFirebase(this);
-        escuelaFirebase.setCollectionFacultades(cod, title_facultad, img_esc,recyclerView);
+        escuelaFirebase.setCollectionFacultades(cod, title_facultad, img_esc,recyclerView, btn_reg_esc, btn_found_fac);
     }
 
     public void getCodeUser(){
-        FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
-        UsuarioFirebase firebase = new UsuarioFirebase(firebaseDatabase);
-        DocumentReference documentReference = firebase.getDocumentUsuario(firebaseUser.getEmail());
-        documentReference.get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    usuario = documentSnapshot.toObject(CUsuario.class);
-                    if (usuario != null) {
-                        String cod_aux = "";
-                        String cod = Integer.toString(usuario.getCodigo());
-                        if(cod.length()!=8){
-                            if(cod.length()==7){
-                                cod_aux = "0" +cod;
-                            }
-                            if(cod.length()==6){
-                                cod_aux = "00"+cod;
-                            }
-                        }else{
-                            cod_aux = cod;
-                        }
-                        String c = cod_aux.substring(2,4);
-                        getFacultades(c);
-                    }
-
-
+        if (usuario != null) {
+            String cod_aux = "";
+            String cod = Integer.toString(usuario.getCodigo());
+            if(cod.length()!=8){
+                if(cod.length()==7){
+                    cod_aux = "0" +cod;
                 }
-        });
+                if(cod.length()==6){
+                    cod_aux = "00"+cod;
+                }
+            }else{
+                cod_aux = cod;
+            }
+            String c = cod_aux.substring(2,4);
+            getFacultades(c);
+        }
     }
 }

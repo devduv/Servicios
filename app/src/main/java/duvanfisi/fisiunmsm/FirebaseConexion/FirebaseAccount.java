@@ -17,9 +17,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
-import duvanfisi.fisiunmsm.Templates.PlantillaLoading;
+import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Modelo.CUsuario;
+import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
@@ -31,29 +31,22 @@ import duvanfisi.fisiunmsm.Actions.Utilidades;
 
 public class FirebaseAccount {
 
-
-    private int RED;
-    private int LIGHTBLUE;
-
     private Context context;
     private FirebaseAuth mAuth;
     private FirebaseUser firebaseUser;
     private AlertDialog dialog_loading;
 
 
-    private PlantillaLoading loading;
+    private TemplateLoading loading;
     private TemplateMessage mensaje;
     public FirebaseAccount(Context context){
         this.context = context;
-        loading = new PlantillaLoading(context);
+        loading = new TemplateLoading(context);
         this.mAuth = FirebaseAuth.getInstance();
 
         this.mensaje = new TemplateMessage(context);
 
         dialog_loading = loading.loading();
-
-        RED = context.getResources().getColor(android.R.color.holo_red_light);
-        LIGHTBLUE = context.getResources().getColor(R.color.colorPrimary);
 
     }
 
@@ -69,7 +62,6 @@ public class FirebaseAccount {
                         if (task.isSuccessful()) {
                             dialog_loading.dismiss();
                             TemplateMessage mensaje  = new TemplateMessage(context);
-                            mensaje.setBackgroundColor(LIGHTBLUE);
                             mensaje.setMensaje("Cambiar contraseña", "Se ha cambiado su contraseña satisfactoriamente",1);
                         }
                     }
@@ -95,7 +87,7 @@ public class FirebaseAccount {
                                 setMensaje(
                                         context.getString(R.string.titulo_iniciarsesion),
                                         context.getString(R.string.no_verify_email),
-                                        RED, firebaseUser);
+                                        firebaseUser);
                             }else {
                                 signup();
                             }
@@ -103,8 +95,7 @@ public class FirebaseAccount {
                             dialog_loading.dismiss();
                             setMensaje(
                                     context.getString(R.string.titulo_iniciarsesion),
-                                    context.getString(R.string.user_pass_inc),
-                                    RED);
+                                    context.getString(R.string.user_pass_inc));
                         }
                     }
                 });
@@ -180,36 +171,42 @@ public class FirebaseAccount {
                usuarioFirebase.setUsuario(documentSnapshot.toObject(CUsuario.class));
                 CUsuario usuario = usuarioFirebase.getUsuario();
                 if(usuario!=null){
-                    verificarEscuela(usuario, firebaseUser);
+                    dialog_loading.dismiss();
+                    verificarEscuela(firebaseUser, usuario);
                 }else{
+                    dialog_loading.dismiss();
                     irRegistrarDatos(firebaseUser);
                 }
             }
         });
     }
 
-    public void verificarEscuela(CUsuario usuario, FirebaseUser firebaseUser){
+    public void verificarEscuela(FirebaseUser firebaseUser, CUsuario usuario){
         if(usuario.getEscuela().equalsIgnoreCase(Utilidades.NO_DATES)){
-            irRegistrarEscuela(firebaseUser);
+            irRegistrarEscuela(firebaseUser, usuario);
         }else{
             verificarPhone(usuario, firebaseUser);
         }
     }
 
     public void forgotPassword(String email){
+        TemplateLoading templateLoading = new TemplateLoading(context);
+        templateLoading.setTextLoading("Verificando email...");
+        final AlertDialog alertDialog = templateLoading.loading();
+        alertDialog.show();
 
         mAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+                            alertDialog.dismiss();
                             TemplateMessage mensaje = new TemplateMessage(context);
-                            mensaje.setBackgroundColor(LIGHTBLUE);
                             mensaje.setMensaje("Olvidé mi contraseña", "Se ha enviado un link a su email.");
 
                         }else{
+                            alertDialog.dismiss();
                             TemplateMessage mensaje = new TemplateMessage(context);
-                            mensaje.setBackgroundColor(RED);
                             mensaje.setMensaje("Olvidé mi contraseña", "El email no ha sido registrado.");
                         }
                     }
@@ -275,11 +272,11 @@ public class FirebaseAccount {
         StartActivity.startActivity(context, new RegisterDatosActivity(), firebaseUser);
        //((Activity) context).finish();
     }
-    public void irRegistrarEscuela(FirebaseUser firebaseUser){
+    public void irRegistrarEscuela(FirebaseUser firebaseUser, CUsuario usuario){
         if(dialog_loading!=null){
             dialog_loading.dismiss();
         }
-        StartActivity.startActivity(context, new RegisterEscuelaActivity(), firebaseUser);
+        StartActivity.startActivity(context, new RegisterEscuelaActivity(), firebaseUser,  usuario);
         //((Activity) context).finish();
     }
     public void irPhoneNumber(FirebaseUser firebaseUser){
@@ -323,7 +320,6 @@ public class FirebaseAccount {
             setMensaje(
                     context.getString(R.string.ver_email),
                     context.getString(R.string.verificacion_email),
-                    LIGHTBLUE,
                     CLOSED_ACTIVITY);
 
 
@@ -334,24 +330,20 @@ public class FirebaseAccount {
         dialog_loading.dismiss();
         setMensaje(
                 context.getString(R.string.men_registrar_usuario),
-                context.getString(R.string.men_user_rep),
-                RED);
+                context.getString(R.string.men_user_rep));
     }
 
-    private void setMensaje(String title, String desc, int color){
-        mensaje.setBackgroundColor(color);
+    private void setMensaje(String title, String desc){
         mensaje.setMensaje(
                 title, desc);
     }
 
-    private void setMensaje(String title, String desc, int color, int action){
-        mensaje.setBackgroundColor(color);
+    private void setMensaje(String title, String desc, int action){
         mensaje.setMensaje(
                 title, desc, action);
     }
 
-    private void setMensaje(String title, String desc, int color, FirebaseUser firebaseUser){
-        mensaje.setBackgroundColor(color);
+    private void setMensaje(String title, String desc, FirebaseUser firebaseUser){
         mensaje.setMensaje(
                 title, desc, firebaseUser);
     }

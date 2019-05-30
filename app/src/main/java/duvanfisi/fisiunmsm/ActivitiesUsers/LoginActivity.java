@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
 
        @Override
         public void onBackPressed() {
-           if (!canExitApp) {
+          /* if (!canExitApp) {
                canExitApp = true;
                Toast.makeText(this, getString(R.string.close_app), Toast.LENGTH_SHORT).show();
 
@@ -107,10 +107,10 @@ public class LoginActivity extends AppCompatActivity {
                        canExitApp = false;
                    }
                }, 2000);
-           } else {
-               finish();
+           } else {*/
+               //finish();
                super.onBackPressed();
-           }
+           //}
         }
 
         public void onClickButtons(){
@@ -187,11 +187,16 @@ public class LoginActivity extends AppCompatActivity {
             linearlogin = findViewById(R.id.linearlogin);
             imguser = findViewById(R.id.iconuserlogin);
             imgkey = findViewById(R.id.iconkeylogin);
+            ImageView back = findViewById(R.id.btnback);
+            ImagePicasso.setImageCenterCop(LoginActivity.this, R.drawable.ic_back, back);
 
 
-            //ImagePicasso.setImageCenterCop(this, R.drawable.icon_logo_sm_2, imglogo);
-
-
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
             emailt.setFocusableInTouchMode(false);
 
             emailt.setOnTouchListener(new View.OnTouchListener() {

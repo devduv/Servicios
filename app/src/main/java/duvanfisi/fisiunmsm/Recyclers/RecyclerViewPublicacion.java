@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
-import duvanfisi.fisiunmsm.Modelo.CPublicacion;
+import duvanfisi.fisiunmsm.Model.CPublicacion;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Templates.PlantillaPublicacion;
 

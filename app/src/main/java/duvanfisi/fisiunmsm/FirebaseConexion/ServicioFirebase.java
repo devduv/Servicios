@@ -13,7 +13,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.Modelo.CServicio;
+import duvanfisi.fisiunmsm.Model.CServicio;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewServices;
 
@@ -26,7 +26,7 @@ public class ServicioFirebase {
 
     private RecyclerView recyclerViewNoticia;
 
-   // private PlantillaLoading loading;
+   // private TemplateLoading loading;
    // private AlertDialog dialog_loading;
 
     public ServicioFirebase(FirebaseDatabase firebaseDatabase){
@@ -34,7 +34,7 @@ public class ServicioFirebase {
         this.firebaseDatabase = firebaseDatabase;
         this.context = firebaseDatabase.getContext();
 
-       // this.loading = new PlantillaLoading(context);
+       // this.loading = new TemplateLoading(context);
     }
 
     public CollectionReference getDocumentNoticia(){

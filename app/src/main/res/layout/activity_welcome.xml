@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color_toolbar"
     tools:context=".ActivitiesUsers.WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/imgportada"
+        android:layout_width="626dp"
+        android:layout_height="835dp"
+        android:layout_gravity="center"
+        android:background="@drawable/portada" />
     <RelativeLayout
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_margin="15dp"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:backgroundTint="@color/color_background"
-            android:background="@drawable/ic_back"/>
-        <ImageView
-            android:id="@+id/imgportada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/portada"/>
         <LinearLayout
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/icon_logo_sm_2"
+                android:backgroundTint="@color/color_background"/>
+
             <TextView
+                android:layout_marginStart="45dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_background"
@@ -37,8 +44,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="45dp"
                 android:text="Universidad Nacional Mayor de San Marcos"/>
 
             <TextView
@@ -47,22 +53,17 @@
                 android:textColor="@color/color_background"
                 android:gravity="center"
                 android:textSize="14sp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_marginBottom="15dp"
                 android:text="Universidad del Perú, Decana de América"/>
 
-            <ImageView
-                android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/icon_logo_sm_2"
-                android:backgroundTint="@color/color_background"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/color_background"
-                android:layout_margin="15dp"/>
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -79,28 +80,41 @@
                 android:textColor="@color/color_background"
                 android:gravity="center"
                 android:textSize="14sp"
-                android:layout_margin="15dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
                 android:text="Esta aplicación te dará acceso a los principales servicios que brinda la universidad."/>
 
             <Button
+                android:id="@+id/btnempezar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/border_button_2"
+                android:gravity="center"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@color/color_background"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnprincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="35dp"
                 android:textColor="@color/color_background"
                 android:gravity="center"
                 android:textSize="14sp"
-                android:backgroundTint="@color/color_toolbar"
+                android:background="@drawable/border_button_2"
                 android:textAllCaps="false"
-                android:layout_margin="15dp"
-                android:text="Empezar"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/color_background"
-                android:layout_margin="15dp"/>
-
-
-
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:text="Entrar como visitante"/>
         </LinearLayout>
+
     </RelativeLayout>
 
 
