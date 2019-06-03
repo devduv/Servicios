@@ -1,10 +1,11 @@
 package duvanfisi.fisiunmsm.FirebaseConexion;
 
+import android.support.v7.app.AlertDialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
+
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
+import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Model.CFaculty;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFac;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
@@ -41,7 +43,7 @@ public class FacultyFirebase {
                 .child(Utilidades.FACULTADES);
     }
 
-    public void setCollectionFaculties(final RecyclerView recyclerView){
+    public void setCollectionFaculties(final RecyclerView recyclerView, final AlertDialog dialog, final Button btn_reg_fac){
 
         databaseReference = getFacultadReference();
         faculties = new HashMap<Integer, CFaculty>();
@@ -56,6 +58,8 @@ public class FacultyFirebase {
                     i++;
                 }
 
+                dialog.dismiss();
+                btn_reg_fac.setVisibility(ViewVisible.VISIBLE);
                 RecyclerViewFac adapter = new RecyclerViewFac(context, faculties);
                 RecyclerViewFunction.recyclerview(recyclerView, context, RecyclerViewFunction.VERTICAL, adapter);
             }
@@ -63,6 +67,7 @@ public class FacultyFirebase {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //not found
+                dialog.dismiss();
             }
         });
     }

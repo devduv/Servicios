@@ -74,7 +74,8 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="0" />
+                                                <entry key="scalingPercent" value="114" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -97,7 +98,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="63" />
+                                                <entry key="scalingPercent" value="52" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -107,9 +108,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="973032" />
-                                      <entry key="foregroundImage" value="C:\Users\duvan\AndroidStudioProjects\ServiciosSM\Servicios\app\src\main\res\drawable\icon_logo_sm.png" />
+                                      <entry key="backgroundImage" value="C:\Users\duvan\AndroidStudioProjects\ServiciosSM\Servicios\app\src\main\res\drawable\bg.png" />
+                                      <entry key="foregroundImage" value="C:\Users\duvan\OneDrive\Escritorio\Sin título-1.png" />
+                                      <entry key="webIconShape" value="NONE" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -148,7 +149,8 @@
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="backgroundColor" value="0081c7" />
-                                      <entry key="imageAsset" value="C:\Users\duvan\AndroidStudioProjects\ServiciosSM\Servicios\app\src\main\res\drawable\icon_logo_sm.png" />
+                                      <entry key="iconShape" value="NONE" />
+                                      <entry key="imageAsset" value="C:\Users\duvan\OneDrive\Escritorio\Sin título-1.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

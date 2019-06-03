@@ -408,13 +408,11 @@ public class TurnoFirebase {
                             mensaje.setMensajeTicket("Reservar Ticket",
                                     "Ha reservado su ticket satisfactoriamente.",
                                     ticket);
-                            mensaje.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
 
                         }else{
                             dialog.dismiss();
                             TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setMensaje("Reservar Ticket", "Se acabaron los tickets.");
-                            mensaje.setBackgroundColor(context.getResources().getColor(R.color.color_rose));
 
                         }
                     }

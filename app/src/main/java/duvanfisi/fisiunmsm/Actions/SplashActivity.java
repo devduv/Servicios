@@ -20,8 +20,9 @@ public class SplashActivity extends AppCompatActivity {
         if(Preferences.isLogin(this)){
            startMainUser();
         }else{
-            startMainInvited();
-            //StartActivity.startActivity(this, new LoginActivity());
+            //startMainInvited();
+            StartActivity.startActivity(this, new LoginActivity());
+            finish();
         }
 
     }

@@ -8,10 +8,19 @@ public class CFaculty {
     private String nombre;
     private String photo;
     private String sobrenombre;
+    private boolean flag;
     private ArrayList<CEscuela> escuelas = new ArrayList<>();
 
     public CFaculty(){
+        //flag = false;
+    }
 
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
     public int get_id() {

@@ -86,13 +86,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onGlobalLayout() {
                     int heightDiff = activityRootView.getRootView().getHeight() - activityRootView.getHeight();
                     if(heightDiff >  DisplayMetric.dpToPx(context_this, 200)){
-                        button_signin.setVisibility(ViewVisible.INVISIBLE);
+                       // button_signin.setVisibility(ViewVisible.INVISIBLE);
                         ic_registro.setVisibility(ViewVisible.INVISIBLE);
                     }else{
                         emailt.setFocusable(false);
                         pass.setFocusable(false);
                         pass_confirmar.setFocusable(false);
-                        button_signin.setVisibility(ViewVisible.VISIBLE);
+                       // button_signin.setVisibility(ViewVisible.VISIBLE);
                         ic_registro.setVisibility(ViewVisible.VISIBLE);
                     }
             }
@@ -138,12 +138,15 @@ public class RegisterActivity extends AppCompatActivity {
         pass_confirmar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    CloseKeyboard.closeKeyboardStart(context_this, pass);
-                    TemplateMessage templateMessage = new TemplateMessage(RegisterActivity.this);
-                    templateMessage.setMensaje("Registro de usuario", Utilidades.ACEPTEDTERM,5);
-                    return true;
+                if(!checkBox.isChecked()){
+                    if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                        CloseKeyboard.closeKeyboardStart(context_this, pass);
+                        TemplateMessage templateMessage = new TemplateMessage(RegisterActivity.this);
+                        templateMessage.setMensaje("Registro de usuario", Utilidades.ACEPTEDTERM,5);
+                        return true;
+                    }
                 }
+
                 return false;
             }
         });

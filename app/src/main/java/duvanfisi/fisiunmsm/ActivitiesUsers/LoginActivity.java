@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -36,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         private final Context context_this = LoginActivity.this;
         public static ImageView imglogo;
 
+        private Button btn_m_o_p;
 
         public static boolean animation_ended = false;
 
@@ -61,10 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         @SuppressLint("StaticFieldLeak")
         public static View activityRootView;
 
-
-        public static ImageView imguser;
-        public static ImageView imgkey;
-        private boolean keyboard_on = false;
+        private boolean pass_on = false;
 
        // private ViewFlipper viewFlipper;
 
@@ -90,8 +92,7 @@ public class LoginActivity extends AppCompatActivity {
            // view.setVisibility(v);
             linearlogin.setVisibility(v);
             imglogo.setVisibility(v);
-            imguser.setVisibility(v);
-            imgkey.setVisibility(v);
+            btn_m_o_p.setVisibility(v);
         }
 
        @Override
@@ -151,6 +152,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
+
+
         }
 
         /*public void flipper(int image){
@@ -185,8 +188,8 @@ public class LoginActivity extends AppCompatActivity {
             //view = findViewById(R.id.view);
             imglogo = findViewById(R.id.imglogo);
             linearlogin = findViewById(R.id.linearlogin);
-            imguser = findViewById(R.id.iconuserlogin);
-            imgkey = findViewById(R.id.iconkeylogin);
+            btn_m_o_p = findViewById(R.id.btn_m_o_p);
+
             ImageView back = findViewById(R.id.btnback);
             ImagePicasso.setImageCenterCop(LoginActivity.this, R.drawable.ic_back, back);
 
@@ -204,7 +207,6 @@ public class LoginActivity extends AppCompatActivity {
                 public boolean onTouch(View v, MotionEvent event) {
                     emailt.setFocusableInTouchMode(true);
                     pass.setFocusableInTouchMode(true);
-                    keyboard_on = true;
                     return false;
                 }
             });
@@ -214,14 +216,56 @@ public class LoginActivity extends AppCompatActivity {
                 public boolean onTouch(View v, MotionEvent event) {
                     pass.setFocusableInTouchMode(true);
                     emailt.setFocusableInTouchMode(true);
-                    keyboard_on = true;
                     return false;
                 }
             });
 
+            pass.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(pass.length()>0){
+                        eyepassword();
+                        btn_m_o_p.setVisibility(ViewVisible.VISIBLE);
+
+                    }else{
+                        btn_m_o_p.setVisibility(ViewVisible.INVISIBLE);
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
            // setImages();
         }
 
+        void eyepassword(){
+            btn_m_o_p.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!pass_on) {
+                        inputpass.setPasswordVisibilityToggleDrawable(null);
+                        inputpass.passwordVisibilityToggleRequested(true);
+                        btn_m_o_p.setText("OCULTAR");
+                        pass_on = true;
+                    }else {
+                        btn_m_o_p.setText("MOSTRAR");
+                        inputpass.passwordVisibilityToggleRequested(false);
+                        pass_on = false;
+                    }
+
+                }
+
+
+
+
+            });
+        }
         private void attemptLogin() {
             String email = emailt.getText().toString().trim();
             String password = pass.getText().toString();

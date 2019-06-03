@@ -38,7 +38,6 @@
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_height="48dp"
-                android:fontFamily="sans-serif-condensed"
                 android:textSize="20sp"
                 android:text="Crear una cuenta"
                 android:textColor="@color/color_toolbar"
@@ -219,16 +218,18 @@
                 <Button
                     android:id="@+id/button_signin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginStart="25dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginEnd="25dp"
                     android:text="@string/button_signinme"
-                    android:textColor="@color/color_toolbar"
+                    android:textColor="@color/color_background"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     android:textAllCaps="false"
-                    android:background="@drawable/border_button"
+                    android:background="@drawable/button_radius"
+                    android:backgroundTint="@color/colorPrimary"
                     />
 
             </LinearLayout>

@@ -23,7 +23,7 @@
             android:layout_height="65dp"
             android:layout_gravity="center"
             android:contentDescription="@string/logo_de_sm"
-            android:src="@drawable/icon_logo_sm_3" />
+            android:src="@drawable/icon_app" />
     </FrameLayout>
 
     <LinearLayout
@@ -32,15 +32,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <RelativeLayout
                     android:id="@+id/back_login"
@@ -65,22 +56,17 @@
                     android:layout_height="150dp"
                     android:layout_marginTop="15dp"
                     android:layout_gravity="center"
-                    android:backgroundTint="@color/color_toolbar"
+                    android:backgroundTint="@color/color_brown"
                     android:background="@drawable/icon_logo_sm_4"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="35dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp">
-                    <ImageView
-                        android:id="@+id/iconuserlogin"
-                        android:layout_gravity="center"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/icon_user_login"/>
+                    android:layout_marginRight="35dp">
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -102,24 +88,21 @@
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
 
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp">
-                    <ImageView
-                        android:id="@+id/iconkeylogin"
-                        android:layout_gravity="center"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/icon_key_login"/>
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="35dp">
+
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/inputpassw"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:passwordToggleTint="@color/color_toolbar"
-                        app:passwordToggleEnabled="true">
+                        app:passwordToggleTint="@color/colorPrimary"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleContentDescription="duvan"
+                        app:passwordToggleDrawable="@null">
 
                         <EditText
                             android:id="@+id/password"
@@ -139,26 +122,35 @@
 
                     </android.support.design.widget.TextInputLayout>
 
-                </LinearLayout>
+                    <Button
+                        android:id="@+id/btn_m_o_p"
+                        android:text="MOSTRAR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/color_background"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="right"/>
+                </FrameLayout>
 
 
                 <Button
                     android:id="@+id/email_sign_in_button"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="30dp"
-                    android:background="@drawable/border_button"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="35dp"
                     android:text="@string/button_signup"
+                    android:textStyle="bold"
                     android:textAllCaps="false"
-                    android:textColor="@color/color_toolbar"
+                    android:elevation="2dp"
+                    android:background="@drawable/button_radius"
+                    android:textColor="@color/color_background"
                     android:textSize="17sp"
                     tools:targetApi="lollipop"/>
-            </LinearLayout>
-        </RelativeLayout>
-
 
         <Button
             android:id="@+id/email_forgot_in_button"
@@ -179,8 +171,8 @@
 
         <LinearLayout
             android:id="@+id/linearlogin"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -205,7 +197,8 @@
                 android:layout_marginEnd="2dp"
                 android:layout_marginStart="2dp"
                 android:text="únete"
-                android:textColor="@color/color_toolbar"
+                android:textStyle="bold"
+                android:textColor="@color/color_hints"
                 tools:ignore="HardcodedText" />
             <View
                 android:layout_weight="1"
@@ -219,15 +212,18 @@
         <Button
             android:id="@+id/email_register_in_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/border_button"
+            android:background="@drawable/button_radius"
+            android:backgroundTint="@color/colorPrimary"
             android:text="@string/button_signin"
             android:textAllCaps="false"
-            android:textColor="@color/color_toolbar"
+            android:elevation="2dp"
+            android:textStyle="bold"
+            android:textColor="@color/color_background"
             android:textSize="17sp"
             tools:targetApi="lollipop" />
 

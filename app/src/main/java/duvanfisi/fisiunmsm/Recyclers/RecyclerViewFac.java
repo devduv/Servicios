@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,12 +25,9 @@ import duvanfisi.fisiunmsm.R;
 
 public class RecyclerViewFac extends RecyclerView.Adapter<RecyclerViewFac.ViewHolder>{
 
-    private static final String TAG = "RecyclerViewAdapter";
-
     private HashMap<Integer, CFaculty> faculties;
     private ArrayList<RadioButton> radioButtons;
     private Context mContext;
-    private int selected;
 
     public RecyclerViewFac(Context context, HashMap<Integer, CFaculty> faculties) {
        this.faculties = faculties;
@@ -35,11 +35,11 @@ public class RecyclerViewFac extends RecyclerView.Adapter<RecyclerViewFac.ViewHo
         radioButtons = new ArrayList<>();
     }
 
+    @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.template_faculty,parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
 
@@ -47,49 +47,30 @@ public class RecyclerViewFac extends RecyclerView.Adapter<RecyclerViewFac.ViewHo
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
 
-        holder.nombre_esc.setText(faculties.get(position).getNombre());
-        holder.cod_esc.setText(Integer.toString(faculties.get(position).get_id()));
+        String name_fac = faculties.get(position).getNombre();
+        String fac = Integer.toString(faculties.get(position).get_id());
+
+        holder.nombre_esc.setText(name_fac);
+        holder.cod_esc.setText(fac);
+
         ImagePicasso.setImageCenterInside(mContext,faculties.get(position).getPhoto(), holder.image_esc);
-        radioButtons.add(holder.radioButton);
+
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setSelected(position);
             }
         });
 
         holder.radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!radioButtons.get(position).isSelected()) {
-                    setSelected(position);
-                }
             }
         });
 
 
     }
 
-    public void setSelected(int position){
-        selected = position;
-       FacultyActivity.faculty_selected = faculties.get(selected).getNombre();
-        if(radioButtons.size()!=0){
-            int i = 0;
-            for(RadioButton aux : radioButtons){
-                if(i==position){
-                        aux.setChecked(true);
-
-
-                }else{
-                    aux.setChecked(false);
-                }
-                i++;
-            }
-
-        }
-
-    }
     @Override
     public int getItemCount() {
         return faculties.size();

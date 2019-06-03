@@ -2,6 +2,7 @@ package duvanfisi.fisiunmsm.Actions;
 
 public class Utilidades {
 
+    public static final String FOUNDING_FACULTIES = "Buscando facultades...";
     public static final String WELCOME = "Bienvenido nuevo usuario";
     public final static String PROCED = " es tu correo electrónico registrado, ahora procede a rellenar tus datos personales.";
     public final static String ACEPTEDTERM = "Acepte los términos y condiciones para poder registrarse";

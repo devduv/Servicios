@@ -87,12 +87,15 @@ public class RegisterDatosActivity extends AppCompatActivity {
         this.ap_mat.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    CloseKeyboard.closeKeyboardStart(context_this, ap_mat);
-                    TemplateCode codigo = new TemplateCode(context_this, cod_in_tec, r_cod);
-                    codigo.begin();
-                    return true;
+                if(r_cod.getText().toString().length()==0){
+                    if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                        CloseKeyboard.closeKeyboardStart(context_this, ap_mat);
+                        TemplateCode codigo = new TemplateCode(context_this, cod_in_tec, r_cod);
+                        codigo.begin();
+                        return true;
+                    }
                 }
+
                 return false;
             }
         });
@@ -102,7 +105,6 @@ public class RegisterDatosActivity extends AppCompatActivity {
 
 public void mensaje(){
     TemplateMessage mensaje = new TemplateMessage(this);
-    mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
     mensaje.setMensaje(Utilidades.WELCOME, firebaseUser.getEmail() + Utilidades.PROCED);
 
 }

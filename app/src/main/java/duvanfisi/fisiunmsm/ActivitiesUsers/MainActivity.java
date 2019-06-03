@@ -201,7 +201,6 @@ public class MainActivity extends AppCompatActivity {
                             return true;
                         }else{
                             TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
-                            mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                             mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
                             return false;
                         }
@@ -217,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_salir:
                         if(firebaseUser!=null) {
                             TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
-                            mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                             mensaje.setMensaje("Cerrar sesión", "¿Desea cerrar sesión?", 2);
                             return true;
                         }else{
@@ -269,7 +267,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TemplateMessage mensaje = new TemplateMessage(this);
-        mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         if (Preferences.getFirstTime(this)) {
             mensaje.setMensaje("Servicios San Marcos",
                     "Esta aplicación está en desarrollo aún y no es oficial de la universidad.\n ¿Te gustaría que lo fuera?");
