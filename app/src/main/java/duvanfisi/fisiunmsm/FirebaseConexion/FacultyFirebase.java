@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Model.CFaculty;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFac;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
 
@@ -43,7 +45,8 @@ public class FacultyFirebase {
                 .child(Utilidades.FACULTADES);
     }
 
-    public void setCollectionFaculties(final RecyclerView recyclerView, final AlertDialog dialog, final Button btn_reg_fac){
+    public void setCollectionFaculties(final RecyclerView recyclerView, final AlertDialog dialog,
+                                       final FirebaseUser firebaseUser, final CStudent student){
 
         databaseReference = getFacultadReference();
         faculties = new HashMap<Integer, CFaculty>();
@@ -59,8 +62,7 @@ public class FacultyFirebase {
                 }
 
                 dialog.dismiss();
-                btn_reg_fac.setVisibility(ViewVisible.VISIBLE);
-                RecyclerViewFac adapter = new RecyclerViewFac(context, faculties);
+                RecyclerViewFac adapter = new RecyclerViewFac(context, faculties, firebaseUser, student);
                 RecyclerViewFunction.recyclerview(recyclerView, context, RecyclerViewFunction.VERTICAL, adapter);
             }
 

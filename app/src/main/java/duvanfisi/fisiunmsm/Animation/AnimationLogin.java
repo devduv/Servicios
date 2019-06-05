@@ -1,8 +1,6 @@
 package duvanfisi.fisiunmsm.Animation;
 
 import android.content.Context;
-import android.util.Log;
-import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,7 +8,7 @@ import android.view.animation.AnimationUtils;
 import duvanfisi.fisiunmsm.Extras.DisplayMetric;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
+import duvanfisi.fisiunmsm.Activities.LoginActivity;
 
 
 public class AnimationLogin implements Animation.AnimationListener {
@@ -32,7 +30,7 @@ public class AnimationLogin implements Animation.AnimationListener {
                 (new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if(LoginActivity.animation_ended){
+                if(LoginActivity.ANIMATION_ENDED){
                     int heightDiff = LoginActivity.activityRootView.getRootView().getHeight() - LoginActivity.activityRootView.getHeight();
                     if(heightDiff >  DisplayMetric.dpToPx(context, 200)){
                         LoginActivity.splash.setVisibility(ViewVisible.INVISIBLE);
@@ -85,7 +83,7 @@ public class AnimationLogin implements Animation.AnimationListener {
         ViewVisible.viewListener(LoginActivity.emailt, shortAnimationTime);
         ViewVisible.viewListener(LoginActivity.imglogo, shortAnimationTime);
 
-        LoginActivity.animation_ended = true;
+        LoginActivity.ANIMATION_ENDED = true;
     }
 
     @Override

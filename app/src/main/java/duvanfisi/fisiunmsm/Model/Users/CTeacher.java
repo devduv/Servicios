@@ -1,5 +1,8 @@
 package duvanfisi.fisiunmsm.Model.Users;
 
+import android.annotation.SuppressLint;
+
+@SuppressLint("ParcelCreator")
 public class CTeacher extends CUser{
 
     private String code_teacher;
@@ -11,9 +14,9 @@ public class CTeacher extends CUser{
     private boolean ticket_lunch;
     private boolean ticket_dinner;
 
-    public CTeacher(String email, String names, String last_name_p, String last_name_m,
+    public CTeacher(String _id, String email, String names, String last_name_p, String last_name_m,
                     String user_type, String code_teacher){
-        super(email, names, last_name_p, last_name_m, user_type);
+        super(_id, email, names, last_name_p, last_name_m, user_type);
         this.ticket_dinner = false;
         this.ticket_lunch = false;
         this.tickets_consumed = 0;
@@ -68,5 +71,10 @@ public class CTeacher extends CUser{
 
     public void setTicket_dinner(boolean ticket_dinner) {
         this.ticket_dinner = ticket_dinner;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 }

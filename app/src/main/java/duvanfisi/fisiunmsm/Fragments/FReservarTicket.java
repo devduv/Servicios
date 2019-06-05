@@ -30,7 +30,7 @@ public class FReservarTicket extends Fragment {
 
     private LinearLayout turnos_ticket;
 
-   // private CUsuario usuario;
+   // private CUsuario user;
     private int idsede;
     private int idcomida;
 

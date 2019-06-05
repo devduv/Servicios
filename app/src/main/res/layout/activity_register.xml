@@ -8,7 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color_background"
-    tools:context=".ActivitiesUsers.RegisterActivity">
+    tools:context=".Activities.SigninActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

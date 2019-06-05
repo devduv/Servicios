@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.TicketActivity;
+import duvanfisi.fisiunmsm.Activities.TicketActivity;
 import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.R;
 

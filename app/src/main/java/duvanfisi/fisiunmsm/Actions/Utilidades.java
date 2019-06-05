@@ -2,6 +2,31 @@ package duvanfisi.fisiunmsm.Actions;
 
 public class Utilidades {
 
+
+
+    public static final int ACTION_FOUND_FACULTY = 6;
+
+
+    public static final String TYPE_STUDENT = "student";
+    public static final String TYPE_TEACHER = "teacher";
+
+    public static final String LOGIN = "Iniciar sesion";
+    public static final String EMAIL_REQUERED = "Ingrese un correo electrónico.";
+    public static final String EMAIL_DOMIN = "@unmsm.edu.pe";
+    public static final String WRITE_PASS = "Escriba su contraseña.";
+
+    public static final String SIGIN_USER = "Registrar usuario";
+    public static final String WRITE_NEW_PASS = "Escriba una contraseña.";
+    public static final String USE_DOMIN = "Use direcciones de correo disponibles.";
+    public static final String PASS_SAME = "Contraseñas no son iguales";
+    public static final String MORE_CHARACTERS ="Contraseña debe tener más caracteres.";
+
+
+    public static final String SELECT_PROFESIONAL_SCHOOL = "Seleccionar Escuela Profesional";
+    public static final String NO_FACULTY_CURRENT= "¿Está seguro que la facultad que se le mostró no es una a la que pertenece?";
+
+    public static final String ERROR = "Ha ocurrido un problema.";
+    public static final String REGISTER_DATES = "Registrar datos";
     public static final String FOUNDING_FACULTIES = "Buscando facultades...";
     public static final String WELCOME = "Bienvenido nuevo usuario";
     public final static String PROCED = " es tu correo electrónico registrado, ahora procede a rellenar tus datos personales.";
@@ -20,7 +45,8 @@ public class Utilidades {
     public static final String SUBSUBTITLE_SERV_TRANSPORTE = "Ciudad Universitaria";
 
 
-    public static final String USERS = "users";
+    public static final String DOCUMENT_USERS= "student_users";
+    //public static final String USERS = "users";
     public static final String PERSONAJES = "personajes_ilustres";
     public static final String NOTICIAS = "noticias_unmsm";
     public static final String SERVICIOS = "servicios";
@@ -60,12 +86,12 @@ public class Utilidades {
     public final static String IDSEDE = "idsede";
     public final static String IDCOMIDA = "idcomida";
 
-    public final static String NICKNAME = "nickname";
+    public final static String NICKNAME = "nick";
     public final static String COLOR = "color";
     public final static String PHOTO = "photo";
-    public final static String PHONE = "phone";
-    public final static String ESCUELA = "escuela";
-    public final static String FACULTAD = "facultad";
+    public final static String PHONENUMBER = "phonenumber";
+    public final static String PROFESSIONAL_SCHOOL = "professional_school";
+    public final static String FACULTY = "faculty";
     public final static String T_RETIRADOS= "t_retirados";
     public final static String ULT_CONEXION= "ult_conexion";
 

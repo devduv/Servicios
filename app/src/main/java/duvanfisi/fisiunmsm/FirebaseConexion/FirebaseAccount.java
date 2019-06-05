@@ -16,17 +16,17 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
-import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
+import duvanfisi.fisiunmsm.Activities.LoginActivity;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.NicknameActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.PhoneActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterDatosActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterEscuelaActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
+import duvanfisi.fisiunmsm.Activities.NicknameActivity;
+import duvanfisi.fisiunmsm.Activities.PhoneActivity;
+import duvanfisi.fisiunmsm.Activities.DatesRegisterActivity;
+import duvanfisi.fisiunmsm.Activities.ProfessionalSchoolActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 
 public class FirebaseAccount {
@@ -35,19 +35,15 @@ public class FirebaseAccount {
     private FirebaseAuth mAuth;
     private FirebaseUser firebaseUser;
     private AlertDialog dialog_loading;
-
-
     private TemplateLoading loading;
     private TemplateMessage mensaje;
-    public FirebaseAccount(Context context){
+
+    public FirebaseAccount(Context context) {
         this.context = context;
-        loading = new TemplateLoading(context);
+        this.loading = new TemplateLoading(context);
         this.mAuth = FirebaseAuth.getInstance();
-
         this.mensaje = new TemplateMessage(context);
-
-        dialog_loading = loading.loading();
-
+        this.dialog_loading = loading.loading();
     }
 
     public void changePasswod(String newPassword){
@@ -111,8 +107,6 @@ public class FirebaseAccount {
         }
         return false;
     }
-
-
     public static void loginToken(String iud, final Context context){
         final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signInWithCustomToken(iud)
@@ -122,7 +116,7 @@ public class FirebaseAccount {
                 if (task.isComplete()) {
                     FirebaseUser firebaseUser =  firebaseAuth.getCurrentUser();
                     if (firebaseUser != null) {
-                        signup(firebaseUser, firebaseAuth, context);
+                        signup(firebaseUser, context);
                     }else{
                         Intent intent = new Intent(context, LoginActivity.class);
                         context.startActivity(intent);
@@ -137,20 +131,18 @@ public class FirebaseAccount {
             }
         });
     }
-
-    private static void signup(final FirebaseUser firebaseUser, final FirebaseAuth firebaseAuth, final Context context){
-
+    private static void signup(final FirebaseUser firebaseUser, final Context context){
         FirebaseDatabase firebaseDatabase = new FirebaseDatabase(context);
-        final UsuarioFirebase usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
-        DocumentReference documentReference = usuarioFirebase.getDocumentUsuario(firebaseUser.getEmail());
+        final UserFirebase userFirebase = new UserFirebase(firebaseDatabase);
+        DocumentReference documentReference = userFirebase.getDocumentUsuario(firebaseUser.getEmail());
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                usuarioFirebase.setUsuario(documentSnapshot.toObject(CUsuario.class));
-                CUsuario usuario = usuarioFirebase.getUsuario();
-                if(usuario!=null){
-                    irMain(firebaseUser, context);
+                userFirebase.setUser(documentSnapshot.toObject(CStudent.class));
+                CStudent user = userFirebase.getUser();
+                if(user!=null){
+                    gotoMain(context,firebaseUser, user);
                 }else{
                     Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);
@@ -162,30 +154,30 @@ public class FirebaseAccount {
     private void signup(){
 
         FirebaseDatabase firebaseDatabase = new FirebaseDatabase(context);
-        final UsuarioFirebase usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
-        DocumentReference documentReference = usuarioFirebase.getDocumentUsuario(firebaseUser.getEmail());
+        final UserFirebase userFirebase = new UserFirebase(firebaseDatabase);
+        DocumentReference documentReference = userFirebase.getDocumentUsuario(firebaseUser.getEmail());
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
            @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-               usuarioFirebase.setUsuario(documentSnapshot.toObject(CUsuario.class));
-                CUsuario usuario = usuarioFirebase.getUsuario();
-                if(usuario!=null){
+               userFirebase.setUser(documentSnapshot.toObject(CStudent.class));
+                CStudent user = userFirebase.getUser();
+                if(user!=null){
                     dialog_loading.dismiss();
-                    verificarEscuela(firebaseUser, usuario);
+                    verify_professional_school(firebaseUser, user);
                 }else{
                     dialog_loading.dismiss();
-                    irRegistrarDatos(firebaseUser);
+                    goto_dates_register(firebaseUser);
                 }
             }
         });
     }
 
-    public void verificarEscuela(FirebaseUser firebaseUser, CUsuario usuario){
-        if(usuario.getEscuela().equalsIgnoreCase(Utilidades.NO_DATES)){
-            irRegistrarEscuela(firebaseUser, usuario);
+    public void verify_professional_school(FirebaseUser firebaseUser, CStudent user){
+        if(user.getProfessional_school().equalsIgnoreCase(Utilidades.NO_DATES)){
+            gotoSelectProfessionalSchool(firebaseUser, user);
         }else{
-            verificarPhone(usuario, firebaseUser);
+            verify_phonenumber(user, firebaseUser);
         }
     }
 
@@ -217,7 +209,7 @@ public class FirebaseAccount {
     public void deleteCuenta(final FirebaseUser firebaseUser){
         this.setTextLoading("Vuelve pronto...");
         FirebaseDatabase firebaseDatabase = new FirebaseDatabase(context);
-        firebaseDatabase.deleteDocument(Utilidades.USERS, firebaseUser.getEmail());
+        firebaseDatabase.deleteDocument(Utilidades.DOCUMENT_USERS, firebaseUser.getEmail());
         dialog_loading.show();
         mAuth.signInWithCustomToken(firebaseUser.getUid())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -246,53 +238,50 @@ public class FirebaseAccount {
                 });
 
     }
-    public void verificarPhone(CUsuario usuario, FirebaseUser firebaseUser){
-        if(usuario.getPhone().equalsIgnoreCase(Utilidades.NO_DATES)){
-           irPhoneNumber(firebaseUser);
+    public void verify_phonenumber(CStudent user, FirebaseUser firebaseUser){
+        if(user.getPhonenumber().equalsIgnoreCase(Utilidades.NO_DATES)){
+           gotoPhoneNumber(firebaseUser, user);
         }else{
-            verificarNickname(usuario);
+            verify_nick(user);
         }
     }
 
-    public void verificarNickname(CUsuario usuario){
-        if(usuario.getNickname().equalsIgnoreCase(Utilidades.NO_DATES)) {
+    public void verify_nick(CStudent user){
+        if(user.getNick().equalsIgnoreCase(Utilidades.NO_DATES)) {
             if(dialog_loading!=null){
                 dialog_loading.dismiss();
             }
-            irNickname(firebaseUser);
+            gotoNick(firebaseUser);
         }else{
             if(dialog_loading!=null){
                 dialog_loading.dismiss();
             }
-            irMain(firebaseUser, context);
+            gotoMain(context, firebaseUser, user);
         }
     }
 
-    public void irRegistrarDatos(FirebaseUser firebaseUser){
-        StartActivity.startActivity(context, new RegisterDatosActivity(), firebaseUser);
-       //((Activity) context).finish();
+    public void goto_dates_register(FirebaseUser firebaseUser){
+        StartActivity.startActivity(context, new DatesRegisterActivity(), firebaseUser);
     }
-    public void irRegistrarEscuela(FirebaseUser firebaseUser, CUsuario usuario){
+    public void gotoSelectProfessionalSchool(FirebaseUser firebaseUser, CStudent user){
         if(dialog_loading!=null){
             dialog_loading.dismiss();
         }
-        StartActivity.startActivity(context, new RegisterEscuelaActivity(), firebaseUser,  usuario);
-        //((Activity) context).finish();
+        StartActivity.startActivity(context, new ProfessionalSchoolActivity(), firebaseUser, user);
     }
-    public void irPhoneNumber(FirebaseUser firebaseUser){
-        StartActivity.startActivity(context, new PhoneActivity(), firebaseUser);
-        //((Activity) context).finish();
+    public void gotoPhoneNumber(FirebaseUser firebaseUser, CStudent student){
+        StartActivity.startActivity(context, new PhoneActivity(), firebaseUser, student);
     }
-    public void irNickname(FirebaseUser firebaseUser){
+    public void gotoNick(FirebaseUser firebaseUser){
         StartActivity.startActivity(context, new NicknameActivity(), firebaseUser);
-        //((Activity) context).finish();
     }
-    public static void irMain(FirebaseUser firebaseUser, Context context){
+
+    public static void gotoMain(Context context, FirebaseUser firebaseUser, CStudent user){
         Preferences.guardarPreferencias(context, firebaseUser);
         if(Preferences.getFirstTime(context)){
             Preferences.fisrtTime(context, true);
         }
-        StartActivity.startActivity(context, new MainActivity(), firebaseUser);
+        StartActivity.startActivity(context, new MainActivity(), firebaseUser, user);
         ((Activity) context).finish();
     }
     public void registerUser(String email, String password){

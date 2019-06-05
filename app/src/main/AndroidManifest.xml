@@ -17,8 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ActivitiesUsers.FacultyActivity"></activity>
-        <activity android:name=".ActivitiesUsers.WelcomeActivity" />
+        <activity android:name=".Activities.FacultyActivity"></activity>
+        <activity android:name=".Activities.WelcomeActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,49 +32,49 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ActivitiesUsers.LocationActivity"
+            android:name=".Activities.LocationActivity"
             android:label="@string/title_activity_location" />
         <activity
-            android:name=".ActivitiesUsers.ForgotPasswordActivity"
+            android:name=".Activities.ForgotPasswordActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.ChangePasswordActivity"
+            android:name=".Activities.ChangePasswordActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.TicketActivity"
+            android:name=".Activities.TicketActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.NoticiaActivity"
+            android:name=".Activities.NoticiaActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.FechaNacActivity"
+            android:name=".Activities.FechaNacActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.PersonajeActivity"
+            android:name=".Activities.PersonajeActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.MiRegistroActivity"
+            android:name=".Activities.MiRegistroActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.PoliticasActivity"
+            android:name=".Activities.PoliticasActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.MapsActivity"
+            android:name=".Activities.MapsActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.MainActivity"
+            android:name=".Activities.MainActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
@@ -89,33 +89,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivitiesUsers.NicknameActivity"
+            android:name=".Activities.NicknameActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.RegisterEscuelaActivity"
+            android:name=".Activities.ProfessionalSchoolActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.PhoneActivity"
+            android:name=".Activities.PhoneActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:windowSoftInputMode="adjustResize"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.RegisterActivity"
+            android:name=".Activities.SigninActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".ActivitiesUsers.RegisterDatosActivity"
+            android:name=".Activities.DatesRegisterActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"

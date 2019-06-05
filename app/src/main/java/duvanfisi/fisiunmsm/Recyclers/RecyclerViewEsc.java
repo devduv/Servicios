@@ -13,12 +13,10 @@ import java.util.ArrayList;
 
 import duvanfisi.fisiunmsm.Model.CEscuela;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterEscuelaActivity;
+import duvanfisi.fisiunmsm.Activities.ProfessionalSchoolActivity;
 
 
 public class RecyclerViewEsc extends RecyclerView.Adapter<RecyclerViewEsc.ViewHolder>{
-
-    private static final String TAG = "RecyclerViewAdapter";
 
     private ArrayList<CEscuela> escuelas;
     private ArrayList<RadioButton> radioButtons;
@@ -69,7 +67,7 @@ public class RecyclerViewEsc extends RecyclerView.Adapter<RecyclerViewEsc.ViewHo
 
     public void setSelected(int position){
         selected = position;
-        RegisterEscuelaActivity.escuela_selected = escuelas.get(selected).getNombre();
+        ProfessionalSchoolActivity.SCHOOL_SELECTED = escuelas.get(selected).getNombre();
         if(radioButtons.size()!=0){
             int i = 0;
             for(RadioButton aux : radioButtons){

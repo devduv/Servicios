@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_background"
     android:orientation="vertical"
-    tools:context=".ActivitiesUsers.RegisterEscuelaActivity">
+    tools:context=".Activities.ProfessionalSchoolActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

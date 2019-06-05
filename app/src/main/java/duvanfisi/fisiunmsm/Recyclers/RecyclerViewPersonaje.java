@@ -16,7 +16,7 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.PersonajeActivity;
+import duvanfisi.fisiunmsm.Activities.PersonajeActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;

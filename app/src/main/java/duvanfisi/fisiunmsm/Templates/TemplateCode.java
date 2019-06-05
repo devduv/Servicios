@@ -2,18 +2,25 @@ package duvanfisi.fisiunmsm.Templates;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Random;
 
+import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
+import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.R;
 
 public class TemplateCode {
+    private boolean KEY_ON = false;
     private Context context;
     private int cont;
 
@@ -24,28 +31,20 @@ public class TemplateCode {
 
     private ImageButton btnnunc;
     private ImageButton btnborrar;
-
     private Button btnsetcod;
-
     private AlertDialog dialog;
-
-    private Button button_registrar_datos;
-
     private LinearLayout linearLayout;
-
-
     private String cod_in_tec;
-    private View view_text;
     private View view_content;
-
-
     private TextView r_cod;
-    public TemplateCode(Context context, String cod_in_tec, TextView r_cod){
-        this.cod_in_tec = cod_in_tec;
-        this.context = context;
-        this.view_content = ViewFloat.floatview(context, R.layout.ingresar_cod);
+    private Button btntec;
+    private EditText codekeyboard;
+    private GridLayout gridkey;
 
-        this.view_text = ViewFloat.floatview(context, R.layout.text_cod);
+    public TemplateCode(Context context, TextView r_cod){
+        this.context = context;
+        this.view_content = ViewFloat.floatview(context, R.layout.template_code);
+
 
         btn00 = view_content.findViewById(R.id.btn_num_0);btn01 = view_content.findViewById(R.id.btn_num_1);
         btn02 = view_content.findViewById(R.id.btn_num_2);btn03 = view_content.findViewById(R.id.btn_num_3);
@@ -58,10 +57,13 @@ public class TemplateCode {
         this.btnnunc = view_content.findViewById(R.id.btn_num_c);
         btnsetcod = view_content.findViewById(R.id.btnsetcod);
         linearLayout = view_content.findViewById(R.id.linearcod);
+        btntec = view_content.findViewById(R.id.btntec);
+        codekeyboard = view_content.findViewById(R.id.codekeyboard);
+        codekeyboard.setVisibility(ViewVisible.INVISIBLE);
+        gridkey = view_content.findViewById(R.id.gridkey);
         this.r_cod =r_cod;
         dialog = codigoAlumno();
         onClickButton();
-
     }
 
     public void begin(){
@@ -146,6 +148,40 @@ public class TemplateCode {
                 setCodigo();
             }
         });
+        btntec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                useKeyBoard();
+            }
+        });
+
+        codekeyboard.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                    CloseKeyboard.closeKeyboardStart(context, codekeyboard);
+                    setCodigo();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+    }
+
+    public void useKeyBoard(){
+        if(!KEY_ON){
+            codekeyboard.setVisibility(ViewVisible.VISIBLE);
+            gridkey.setVisibility(ViewVisible.INVISIBLE);
+            KEY_ON = true;
+            btntec.setText("Cambiar de teclado");
+        }else{
+            codekeyboard.setVisibility(ViewVisible.INVISIBLE);
+            gridkey.setVisibility(ViewVisible.VISIBLE);
+            btntec.setText("Deseo usar el teclado");
+            KEY_ON = false;
+        }
+
 
     }
     public AlertDialog codigoAlumno() {
@@ -158,6 +194,7 @@ public class TemplateCode {
         builder.setCancelable(false);
         return builder.create();
     }
+
 
     public void funcionRandom(){
         Random random = new Random();
@@ -198,7 +235,7 @@ public class TemplateCode {
     }
 
     public View setTxt(String number){
-        View view_text = ViewFloat.floatview(context, R.layout.text_cod);
+        View view_text = ViewFloat.floatview(context, R.layout.template_input_code);
         TextView textView = view_text.findViewById(R.id.id_cod_input);
         textView.setText(number);
         return  view_text;
@@ -235,8 +272,20 @@ public class TemplateCode {
 
 
     public void setCodigo(){
-        r_cod.setText(cod_in_tec);
-        dialog.dismiss();
+        CloseKeyboard.closeKeyboardStart(context,codekeyboard);
+        if(!KEY_ON){
+            r_cod.setText(cod_in_tec);
+            dialog.dismiss();
+        }else{
+            if(codekeyboard.getText().toString().length()>8){
+                codekeyboard.setError("Error");
+            }else{
+                r_cod.setText(codekeyboard.getText().toString());
+                dialog.dismiss();
+            }
+
+        }
+
     }
 
 }

@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
-import java.util.Objects;
-
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 
 
 public class StartFragment {
@@ -57,7 +55,7 @@ public class StartFragment {
         transaction.commit();
 
     }
-    public static void startFragment(final String fragment_name, Fragment fragment, Bundle bundle, int id){
+    public static void startFragment(final String fragment_name, Fragment fragment, Bundle bundle){
 
         fragment.setArguments(bundle);
         FragmentTransaction transaction = MainActivity.fragmentManager.beginTransaction();

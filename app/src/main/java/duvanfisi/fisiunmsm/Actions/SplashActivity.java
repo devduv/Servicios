@@ -6,9 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseUser;
 
-import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.WelcomeActivity;
+import duvanfisi.fisiunmsm.Activities.LoginActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
 
 

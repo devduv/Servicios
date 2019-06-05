@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.StartActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.NoticiaActivity;
+import duvanfisi.fisiunmsm.Activities.NoticiaActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.NoticiaFirebase;

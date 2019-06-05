@@ -14,7 +14,7 @@ import duvanfisi.fisiunmsm.Extras.ADialogs;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 
 

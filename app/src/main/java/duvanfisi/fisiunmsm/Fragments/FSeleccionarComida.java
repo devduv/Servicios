@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import duvanfisi.fisiunmsm.Actions.InternetConecction;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 
 
@@ -23,7 +23,7 @@ public class FSeleccionarComida extends Fragment {
     private Button btnalmuerzo;
     private Button btncena;
 
-    //private CUsuario usuario;
+    //private CUsuario user;
     private int idsede;
     private int idcomida;
 
@@ -80,7 +80,7 @@ public class FSeleccionarComida extends Fragment {
 
     }
     public void setBundle(){
-        //usuario = getArguments().getParcelable(Utilidades.KEY_MODEL_USER);
+        //user = getArguments().getParcelable(Utilidades.KEY_MODEL_USER);
         idsede = getArguments().getInt(Utilidades.IDSEDE);
     }
 
@@ -101,7 +101,7 @@ public class FSeleccionarComida extends Fragment {
 
     public Bundle getBundle(int _idsede, int comida){
         Bundle bundle = new Bundle();
-        //bundle.putParcelable(Utilidades.KEY_MODEL_USER, usuario);
+        //bundle.putParcelable(Utilidades.KEY_MODEL_USER, user);
         bundle.putInt(Utilidades.IDSEDE, _idsede);
         bundle.putInt(Utilidades.IDCOMIDA, comida);
         return bundle;

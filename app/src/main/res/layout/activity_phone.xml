@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivitiesUsers.PhoneActivity"
+    tools:context=".Activities.PhoneActivity"
     android:background="@color/color_background">
 
     <LinearLayout

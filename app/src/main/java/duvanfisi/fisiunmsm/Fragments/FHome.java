@@ -13,11 +13,11 @@ import android.widget.RelativeLayout;
 
 import java.util.HashMap;
 
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.AnuncioFirebase;
-import duvanfisi.fisiunmsm.FirebaseConexion.EscuelaFirebase;
+import duvanfisi.fisiunmsm.FirebaseConexion.ProfesionalSchoolFirebase;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase;
 import duvanfisi.fisiunmsm.FirebaseConexion.NoticiaFirebase;
 import duvanfisi.fisiunmsm.FirebaseConexion.PersonajeFirebase;
@@ -99,9 +99,9 @@ public class FHome extends Fragment {
         button_noticias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.touch = 0;
+                MainActivity.ON_TOUCH = 0;
                 MainActivity.startFragment("news", new FNoticias(), 0);
-                MainActivity.navigation.getMenu().getItem(0).setChecked(true);
+                //MainActivity.navigation.getMenu().getItem(0).setChecked(true);
             }
         });
     }
@@ -132,7 +132,7 @@ public class FHome extends Fragment {
 
     public void setAreas(){
         HashMap<Integer, CArea> cAreaHashMap = new HashMap<>();
-        EscuelaFirebase escuelaFirebase  = new EscuelaFirebase(getContext());
+        ProfesionalSchoolFirebase escuelaFirebase  = new ProfesionalSchoolFirebase(getContext());
         escuelaFirebase.setCollectionAreas(recyclerViewArea, cAreaHashMap);
     }
 

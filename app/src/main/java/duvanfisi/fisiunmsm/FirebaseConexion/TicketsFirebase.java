@@ -19,8 +19,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MiRegistroActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MiRegistroActivity;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
@@ -32,7 +32,7 @@ public class TicketsFirebase {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase fd;
-    private UsuarioFirebase usuarioFirebase;
+    private UserFirebase userFirebase;
 
 
     public TicketsFirebase(Context context){
@@ -40,7 +40,7 @@ public class TicketsFirebase {
         this.databaseReference = firebaseDatabase.getReference();
         this.context = context;
         fd = new duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase(this.context);
-        this.usuarioFirebase = new UsuarioFirebase(fd);
+        this.userFirebase = new UserFirebase(fd);
     }
 
     private DatabaseReference getDatabaseReference(){
@@ -116,9 +116,9 @@ public class TicketsFirebase {
 
         ticket.setFecha_retiro(getFechaFull());
         ticket.setHora_retiro(getHoraMedium());
-        ticket.setNombre_usuario(MainActivity.usuario.getNombre());
+        /*ticket.setNombre_usuario(MainActivity.usuario.getNombre());
         ticket.setAp_paterno_usuario(MainActivity.usuario.getAp_paterno());
-        ticket.setAp_materno_usuario(MainActivity.usuario.getAp_materno());
+        ticket.setAp_materno_usuario(MainActivity.usuario.getAp_materno());*/
 
         ticket.key_ticket(getFechaShort());
         String id = ticket.get_id();
@@ -126,7 +126,7 @@ public class TicketsFirebase {
                 .child(key_ticket())
                 .child(id)
                 .setValue(ticket);
-        this.usuarioFirebase.registrarTicket(ticket.getEmail(), ticket);
+        this.userFirebase.registrarTicket(ticket.getEmail(), ticket);
 
     }
 
@@ -156,14 +156,14 @@ public class TicketsFirebase {
     }
 
     public void setTicketUser(final RecyclerView recyclerView, final HashMap<Integer, CTicket> cTicketHashMap, String email) {
-        CollectionReference collectionReference = usuarioFirebase.getRegistroUserTicket(email);
+        CollectionReference collectionReference = userFirebase.getRegistroUserTicket(email);
 
         collectionReference.orderBy("cod", Query.Direction.DESCENDING).limit(2)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot querySnapshot,
                                         @Nullable FirebaseFirestoreException e) {
-                        if (e != null) {
+                        /*if (e != null) {
                             return;
                         }
 
@@ -177,8 +177,8 @@ public class TicketsFirebase {
                             }
                             duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase firebaseDatabase = new duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase(context);
                             MainActivity.usuario.setT_retirados(cTicketHashMap.size());
-                            UsuarioFirebase usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
-                            usuarioFirebase.setTicketRetirado(MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
+                            UserFirebase userFirebase = new UserFirebase(firebaseDatabase);
+                            userFirebase.setTicketRetirado(MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
 
                             if(MainActivity.usuario.getT_retirados()>1){
                                 MiRegistroActivity.titlet.setText("Tickets");
@@ -204,8 +204,7 @@ public class TicketsFirebase {
                                     (context, cTicketHashMap);
                             RecyclerViewFunction.recyclerview
                                     (recyclerView, context, RecyclerViewFunction.VERTICAL, recyclerViewTicket);
-
-                        }
+                        }*/
                     }
                 });
     }

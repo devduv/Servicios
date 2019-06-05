@@ -17,10 +17,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.FacultyActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.LoginActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterActivity;
+import duvanfisi.fisiunmsm.Activities.FacultyActivity;
+import duvanfisi.fisiunmsm.Activities.LoginActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
+import duvanfisi.fisiunmsm.Activities.ProfessionalSchoolActivity;
+import duvanfisi.fisiunmsm.Activities.SigninActivity;
 import duvanfisi.fisiunmsm.FirebaseConexion.FirebaseAccount;
 import duvanfisi.fisiunmsm.Fragments.TicketFragment;
 import duvanfisi.fisiunmsm.Model.CServicio;
@@ -83,7 +84,7 @@ public class ADialogs {
 
         switch (aux){
             case 0:
-                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                /*builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         FirebaseAccount firebaseAccount = new FirebaseAccount(context);
                         firebaseAccount.deleteCuenta(MainActivity.firebaseUser);
@@ -94,7 +95,7 @@ public class ADialogs {
                     public void onClick(DialogInterface dialog, int which) {
                         ((ViewGroup) view.getParent()).removeAllViews();
                     }
-                });
+                });*/
                 break;
             case 1:
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
@@ -107,7 +108,7 @@ public class ADialogs {
                 builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         /*FirebaseDatabase firebaseDatabase = new FirebaseDatabase(context);
-                        UsuarioFirebase usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
+                        UserFirebase usuarioFirebase = new UserFirebase(firebaseDatabase);
                         usuarioFirebase.setUltimaConexion(MainActivity.usuario.getEmail(), TicketsFirebase.getHoraMedium());*/
                         Preferences.cerrarSesion(context);
                         FirebaseAuth.getInstance().signOut();
@@ -141,7 +142,7 @@ public class ADialogs {
             case 5:
                 builder.setPositiveButton("Aceptar términos", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        RegisterActivity.checkBox.setChecked(true);
+                        SigninActivity.checkBox.setChecked(true);
                     }
                 });
                 builder.setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
@@ -161,7 +162,8 @@ public class ADialogs {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //. . .
-                        StartActivity.startActivity(context, new FacultyActivity());
+                        StartActivity.startActivity(context, new FacultyActivity(),
+                                ProfessionalSchoolActivity.firebaseUser, ProfessionalSchoolActivity.user);
                     }
                 });
                 break;
@@ -192,9 +194,9 @@ public class ADialogs {
                 public void onClick(DialogInterface dialog, int id) {
 
                     ((ViewGroup)view_content.getParent()).removeAllViews();
-                    MainActivity.touch = 3;
-                    MainActivity.startFragment("servicios", MainActivity.fservicios, 3);
-                    MainActivity.navigation.getMenu().getItem(3).setChecked(true);
+                    MainActivity.ON_TOUCH = 3;
+                    //MainActivity.startFragment("servicios", MainActivity.fservicios, 3);
+                    //MainActivity.navigation.getMenu().getItem(3).setChecked(true);
 
                 }
 

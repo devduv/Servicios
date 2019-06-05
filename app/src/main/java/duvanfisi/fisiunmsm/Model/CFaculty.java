@@ -3,7 +3,7 @@ package duvanfisi.fisiunmsm.Model;
 import java.util.ArrayList;
 
 public class CFaculty {
-    private int _id;
+    private String _id;
     private int cantidadesc;
     private String nombre;
     private String photo;
@@ -23,11 +23,11 @@ public class CFaculty {
         this.flag = flag;
     }
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 

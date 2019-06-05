@@ -8,17 +8,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import duvanfisi.fisiunmsm.Actions.StartActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.ChangePasswordActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.PhoneActivity;
-import duvanfisi.fisiunmsm.ActivitiesUsers.RegisterDatosActivity;
+import duvanfisi.fisiunmsm.Actions.Utilidades;
+import duvanfisi.fisiunmsm.Activities.ChangePasswordActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
-import duvanfisi.fisiunmsm.Model.CUsuario;
 import duvanfisi.fisiunmsm.R;
 
 
 public class FPerfil extends Fragment {
+
+    private Bundle bundle;
+    private CStudent user;
+    private FirebaseUser firebaseUser;
 
     private TextView datos_name;
     private TextView dato_ap;
@@ -37,14 +42,18 @@ public class FPerfil extends Fragment {
     private Button button_delete;
 
     private View view;
-    CUsuario usuario;
     public FPerfil() {
 
     }
 
+    public void getUserCurrent(){
+        bundle = getArguments();
 
+        firebaseUser = bundle.getParcelable(Utilidades.FIREBASEUSER);
+        user = bundle.getParcelable(Utilidades.KEY_MODEL_USER);
+    }
 
-    public void inicializarViews(){
+    public void initViews(){
         datos_name = view.findViewById(R.id.dato_names);
         dato_ap = view.findViewById(R.id.dato_ap);
         dato_am = view.findViewById(R.id.dato_am);
@@ -58,26 +67,25 @@ public class FPerfil extends Fragment {
         button_change_pass = view.findViewById(R.id.button_change_pass);
         button_change_phone = view.findViewById(R.id.button_change_phone);
         button_delete = view.findViewById(R.id.button_delete);
-        setUserDates();
     }
 
 
     public void setUserDates(){
-        datos_name.setText(usuario.getNombre());
-        dato_ap.setText(usuario.getAp_paterno());
-        dato_am.setText(usuario.getAp_materno());
-        dato_cod.setText(Integer.toString(usuario.getCodigo()));
-        dato_email.setText(usuario.getEmail());
-        if(usuario.getPhone().equalsIgnoreCase("null")){
+        datos_name.setText(user.getNames());
+        dato_ap.setText(user.getLastname_p());
+        dato_am.setText(user.getLastname_m());
+        dato_cod.setText(user.get_id());
+        dato_email.setText(user.getEmail());
+        if(user.getPhonenumber().equalsIgnoreCase(Utilidades.NO_DATES)){
             dato_nc.setText("Sin registrar");
         }else{
-            dato_nc.setText(usuario.getPhone());
+            dato_nc.setText(user.getPhonenumber());
         }
 
-        dato_fac.setText(usuario.getFacultad());
-        dato_esc.setText(usuario.getEscuela());
-        dato_e.setText(usuario.getTipo_usuario());
-        dato_sede.setText(usuario.getSede());
+        dato_fac.setText(user.getFaculty());
+        dato_esc.setText(user.getProfessional_school());
+        dato_e.setText(user.getUser_type());
+        dato_sede.setText(user.getHost_central());
     }
 
     public void OnClickButtons(){
@@ -103,11 +111,11 @@ public class FPerfil extends Fragment {
     }
 
     public void startPhone(){
-        StartActivity.startActivity(getContext(), new PhoneActivity(),MainActivity.firebaseUser);
+       // StartActivity.startActivity(getContext(), new PhoneActivity(),MainActivity.firebaseUser);
     }
 
     public void startRegisterDates(){
-        StartActivity.startActivity(getContext(), new RegisterDatosActivity(),MainActivity.firebaseUser);
+        //StartActivity.startActivity(getContext(), new DatesRegisterActivity(),MainActivity.firebaseUser);
     }
 
     public void deleteAcc(){
@@ -123,10 +131,9 @@ public class FPerfil extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_miperfil, container, false);
-
-        usuario = MainActivity.usuario;
-
-        inicializarViews();
+        initViews();
+        getUserCurrent();
+        setUserDates();
         OnClickButtons();
         return view;
     }

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color_toolbar"
-    tools:context=".ActivitiesUsers.WelcomeActivity">
+    tools:context=".Activities.WelcomeActivity">
 
     <ImageView
         android:id="@+id/imgportada"

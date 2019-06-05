@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:background="@color/color_background">
             <TextView
+                android:layout_marginTop="5dp"
                 android:id="@+id/title_mensaje"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
                 android:textStyle="bold"
                 android:background="@color/color_background"
                 android:contentDescription="@string/titulo_mensaje"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:textColor="@color/color_toolbar"
                 android:gravity="center"
                 android:padding="5dp"/>
@@ -33,7 +34,7 @@
                 android:layout_below="@id/title_mensaje"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/color_text"
                 android:gravity="center"
                 android:padding="10dp"/>

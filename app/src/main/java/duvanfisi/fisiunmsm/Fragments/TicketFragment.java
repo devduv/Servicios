@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 import java.util.Date;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Model.CTicket;
 import duvanfisi.fisiunmsm.R;
 
@@ -109,8 +109,8 @@ public class TicketFragment extends Fragment {
         this.id_fecha.setText(ticket.getFecha_retiro());
         this.id_sede.setText(codigoSede(ticket.get_id_sede())+", San Marcos");
         this.id_piso.setText(codigoPiso(ticket.get_id_piso()));
-        Picasso.with(getContext()).load(MainActivity.usuario.getPhoto()).into(this.id_photo);
-        this.id_nickname.setText(MainActivity.usuario.getNickname());
+        //Picasso.with(getContext()).load(MainActivity.usuario.getPhoto()).into(this.id_photo);
+       // this.id_nickname.setText(MainActivity.usuario.getNickname());
         this.id_names.setText(ticket.getNombre_usuario() + " " +ticket.getAp_paterno_usuario()+ " "+ ticket.getAp_materno_usuario());
         this.id_codigo.setText(Integer.toString(ticket.getCod_usuario()));
         this.id_turno.setText("Turno "+ticket.get_id_turno());

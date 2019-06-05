@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Fragments.FReservarTicket;
 
@@ -387,11 +387,11 @@ public class TurnoFirebase {
                                            DataSnapshot dataSnapshot) {
 
                         if(b){
-                            duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase firebaseDatabase
+                            /*duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase firebaseDatabase
                                     = new duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase(context);
-                            UsuarioFirebase usuarioFirebase = new UsuarioFirebase(firebaseDatabase);
-                            MainActivity.usuario.setT_retirados(MainActivity.usuario.getT_retirados()+1);
-                            usuarioFirebase.setTicketRetirado(MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
+                            UserFirebase userFirebase = new UserFirebase(firebaseDatabase);
+                            //MainActivity.usuario.setT_retirados(MainActivity.usuario.getT_retirados()+1);
+                           // userFirebase.setTicketRetirado(MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
                             CTicket ticket = new CTicket(idcomida, idsede, Integer.parseInt(idpiso),
                                     Integer.parseInt(idturno),
                                     hora_ini, hora_fin, MainActivity.usuario.getCodigo(),
@@ -407,7 +407,7 @@ public class TurnoFirebase {
                             TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setMensajeTicket("Reservar Ticket",
                                     "Ha reservado su ticket satisfactoriamente.",
-                                    ticket);
+                                    ticket);*/
 
                         }else{
                             dialog.dismiss();

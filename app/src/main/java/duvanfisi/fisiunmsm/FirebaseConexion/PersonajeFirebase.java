@@ -20,7 +20,7 @@ import com.google.firebase.firestore.Transaction;
 import java.util.HashMap;
 
 import duvanfisi.fisiunmsm.Actions.Utilidades;
-import duvanfisi.fisiunmsm.ActivitiesUsers.PersonajeActivity;
+import duvanfisi.fisiunmsm.Activities.PersonajeActivity;
 import duvanfisi.fisiunmsm.Model.CPersonaje;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;

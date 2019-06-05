@@ -18,7 +18,7 @@ import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
 import duvanfisi.fisiunmsm.R;
-import duvanfisi.fisiunmsm.ActivitiesUsers.MainActivity;
+import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
 
 
@@ -31,7 +31,7 @@ public class FServicios extends Fragment {
 
     private View info;
 
-   // private CUsuario usuario;
+   // private CUsuario user;
 
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
@@ -46,7 +46,7 @@ public class FServicios extends Fragment {
     public void inicializarViews(){
 
         if (getArguments() != null) {
-          //  usuario = getArguments().getParcelable(Utilidades.KEY_MODEL_USER);
+          //  user = getArguments().getParcelable(Utilidades.KEY_MODEL_USER);
         }
 
         View view_s_comedor = view.findViewById(R.id.card_service_comedor);
@@ -99,12 +99,12 @@ public class FServicios extends Fragment {
                 switch (selected){
                     case R.id.card_service_comedor:
                         if (fragment != null) {
-                            if(MainActivity.firebaseUser!=null) {
+                            /*if(MainActivity.firebaseUser!=null) {
                                 MainActivity.startFragment("Servicio elegido", fragment, id, new Bundle());
                             }else{
                                 TemplateMessage mensaje = new TemplateMessage(getContext());
                                 mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión");
-                            }
+                            }*/
                         }
                         break;
                     case R.id.card_service_transporte:
@@ -122,12 +122,12 @@ public class FServicios extends Fragment {
                 switch (selected){
                     case R.id.card_service_comedor:
                         if (fragment != null) {
-                            if(MainActivity.firebaseUser!=null) {
+                            /*if(MainActivity.firebaseUser!=null) {
                                 MainActivity.startFragment("Servicio elegido", fragment, id, new Bundle());
                             }else{
                                 TemplateMessage mensaje = new TemplateMessage(getContext());
                                 mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión");
-                            }
+                            }*/
                         }
                         break;
                     case R.id.card_service_transporte:
@@ -174,7 +174,7 @@ public class FServicios extends Fragment {
 
     /*public Bundle getBundle(){
         Bundle bundle = new Bundle();
-        bundle.putParcelable(Utilidades.KEY_MODEL_USER, usuario);
+        bundle.putParcelable(Utilidades.KEY_MODEL_USER, user);
         return bundle;
     }*/
 
