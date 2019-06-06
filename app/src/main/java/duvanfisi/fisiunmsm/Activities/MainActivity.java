@@ -43,12 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
     public static int ON_TOUCH;
 
+    //Navigation & Toolbar
     private BottomNavigationView navigation;
     private Toolbar toolbar;
 
     public static  FragmentManager fragmentManager;
 
-    //Menu Main
+    //This is Menu Main
     private FHome fhome;
     private FPersonajes fpersonajes;
     private FServicios nav_services;
@@ -121,6 +122,22 @@ public class MainActivity extends AppCompatActivity {
             }
     };
 
+
+    @SuppressLint("ResourceType")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        set_persistence();
+        initViews();
+        get_user_current_firebase();
+        is_firebaseuser_on();
+        first_time_welcome();
+        setToolbar();
+        gotoHome();
+
+    }
     @Override
     public void onBackPressed() {
         if(item.size()>1) {
@@ -173,20 +190,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("ResourceType")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initViews();
-        is_firebaseuser_on();
-        first_time_welcome();
-        setToolbar();
-        gotoHome();
-
-    }
-
     public void gotoHome(){
         ON_TOUCH = 2;
         startFragment("home", fhome, 2);
@@ -197,7 +200,6 @@ public class MainActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         StartActivity.startActivity(MainActivity.this, intent);
     }
-
     public void setToolbar(){
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -234,24 +236,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    protected void onStop() {
+    @Override protected void onStop() {
         super.onStop();
         /*FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
         UserFirebase usuarioFirebase = new UserFirebase(firebaseDatabase);
         usuarioFirebase.setUltimaConexion(MainActivity.usuario.getEmail(), TicketsFirebase.getHoraMedium());*/
     }
-
     public void initViews() {
-        this.firebaseDatabase = new FirebaseDatabase(this);
-        this.firebaseDatabase.settingsPersistence();
-        this.firebaseUser = getIntent().getExtras().getParcelable(Utilidades.FIREBASEUSER);
         this.toolbar = findViewById(R.id.toolbar);
         this.toolbar.inflateMenu(R.menu.tools_main);
         this.navigation = findViewById(R.id.navigation);
         this.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
+    public void set_persistence(){
+        this.firebaseDatabase = new FirebaseDatabase(this);
+        this.firebaseDatabase.settingsPersistence();
+    }
     public void first_time_welcome(){
         TemplateMessage mensaje = new TemplateMessage(this);
         if (Preferences.getFirstTime(this)) {
@@ -260,19 +260,24 @@ public class MainActivity extends AppCompatActivity {
             Preferences.fisrtTime(this, false);
         }
     }
-
     public void is_firebaseuser_on(){
         if (firebaseUser != null) {
             toolbar.getMenu().getItem(3).setTitle("Cerrar sesión");
-            setUsuario();
+            get_user_current_model();
         }else{
             toolbar.getMenu().getItem(3).setTitle("Iniciar sesión");
         }
     }
-    public void setUsuario(){
-        user = getIntent().getExtras().getParcelable(Utilidades.KEY_MODEL_USER);
+    public void get_user_current_firebase(){
+        if(getIntent().getExtras()!=null){
+            this.firebaseUser = getIntent().getExtras().getParcelable(Utilidades.FIREBASEUSER);
+        }
     }
-
+    public void get_user_current_model(){
+        if(getIntent().getExtras()!=null){
+            this.user = getIntent().getExtras().getParcelable(Utilidades.KEY_MODEL_USER);
+        }
+    }
     public static void startFragment(String name, Fragment fragment, int id){
 
             StartFragment.startFragment(name, fragment, id);

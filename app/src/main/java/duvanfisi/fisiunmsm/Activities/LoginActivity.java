@@ -36,8 +36,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button BUTTON_SHOW_HIDDEN_PASSWORD;
     private boolean PASS_SHOW = false;
-
     public static boolean ANIMATION_ENDED = false;
+
+    private ImageView back;
 
     @SuppressLint("StaticFieldLeak") public static ImageView imglogo;
     @SuppressLint("StaticFieldLeak") public static EditText emailt;
@@ -50,24 +51,17 @@ public class LoginActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak") public static ImageView splash;
     @SuppressLint("StaticFieldLeak") public static View activityRootView;
 
-    private ImageView back;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         this.initViews();
         this.touchListener();
         this.visibility(ViewVisible.INVISIBLE);
         this.animation();
         this.onClickButtons();
-
         FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
         firebaseDatabase.settingsPersistence();
         }
-
     public void initViews(){
         activityRootView = findViewById(R.id.id_constraint_login);
         emailt = findViewById(R.id.email);
@@ -141,7 +135,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override public void onBackPressed() {
         super.onBackPressed();
     }
-
     public void onClickButtons(){
         pass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                 @Override
@@ -182,14 +175,13 @@ public class LoginActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onBackPressed();
+                   StartActivity.startActivity(context, new WelcomeActivity());
                 }
         });
 
 
 
     }
-
     public void eyepassword(){
             BUTTON_SHOW_HIDDEN_PASSWORD.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -212,7 +204,6 @@ public class LoginActivity extends AppCompatActivity {
 
             });
     }
-
     private void attemptLogin() {
         String email = emailt.getText().toString().trim();
         String password = pass.getText().toString();
@@ -233,7 +224,6 @@ public class LoginActivity extends AppCompatActivity {
 
         verify_user(email, password);
     }
-
     public void verify_user(String email, String password){
         FirebaseAccount firebaseAccount = new FirebaseAccount(this);
         firebaseAccount.login(email,password);

@@ -37,9 +37,8 @@
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_height="48dp"
-                android:fontFamily="sans-serif-condensed"
                 android:textSize="20sp"
-                android:text="Buscar Facultad"
+                android:text="Seleccionar Facultad"
                 android:textColor="@color/color_toolbar"
                 android:padding="5dp"
                 tools:ignore="HardcodedText" />

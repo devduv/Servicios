@@ -51,9 +51,7 @@ public class DatesRegisterActivity extends AppCompatActivity {
     private Button button_registrar_datos;
     private ImageView back;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_dates);
 
@@ -65,7 +63,6 @@ public class DatesRegisterActivity extends AppCompatActivity {
         this.message_welcome();
         this.onClickButtons();
     }
-
     public void initViews(){
         this.intent_user = getIntent();
         this.ap_pat = findViewById(R.id.ap_pat);
@@ -77,9 +74,7 @@ public class DatesRegisterActivity extends AppCompatActivity {
         this.button_registrar_datos = findViewById(R.id.button_registrar_datos);
         this.back = findViewById(R.id.btnback);
     }
-
-    @SuppressLint("ClickableViewAccessibility")
-    public void touchListener(){
+    @SuppressLint("ClickableViewAccessibility") public void touchListener(){
         this.ap_pat.setFocusableInTouchMode(false);
         this.ap_mat.setFocusableInTouchMode(false);
         this.nomb.setFocusableInTouchMode(false);
@@ -154,7 +149,6 @@ public class DatesRegisterActivity extends AppCompatActivity {
             }
         });
     }
-
     public void displayView(){
         final View activityRootView = findViewById(R.id.id_constraint_register_datos);
         activityRootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -182,15 +176,12 @@ public class DatesRegisterActivity extends AppCompatActivity {
     public void getFirebaseuser(){
         this.firebaseUser = (FirebaseUser) Objects.requireNonNull(intent_user.getExtras()).get(Utilidades.FIREBASEUSER);
     }
-
     public void message_welcome(){
         if(firebaseUser.getDisplayName()==null) {
             TemplateMessage mensaje = new TemplateMessage(this);
             mensaje.setMensaje(Utilidades.WELCOME, firebaseUser.getEmail() + Utilidades.PROCED);
         }
     }
-
-
     public void register_document_user() {
         USER_TYPE = Utilidades.TYPE_STUDENT;
         String lastname_p = this.ap_pat.getText().toString().trim().toUpperCase();
@@ -223,7 +214,6 @@ public class DatesRegisterActivity extends AppCompatActivity {
 
         create_document_user(code, firebaseUser.getEmail(), names, lastname_p, lastname_m);
     }
-
     public void create_document_user(String code, String email, String names,
                                      String lastname_p, String lastname_m){
 

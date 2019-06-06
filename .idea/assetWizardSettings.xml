@@ -74,7 +74,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="114" />
+                                                <entry key="scalingPercent" value="96" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -98,7 +98,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="52" />
+                                                <entry key="scalingPercent" value="53" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -108,9 +108,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundImage" value="C:\Users\duvan\AndroidStudioProjects\ServiciosSM\Servicios\app\src\main\res\drawable\bg.png" />
-                                      <entry key="foregroundImage" value="C:\Users\duvan\OneDrive\Escritorio\Sin título-1.png" />
-                                      <entry key="webIconShape" value="NONE" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="34495e" />
+                                      <entry key="backgroundImage" value="C:\Users\duvan\AndroidStudioProjects\ServiciosSM\Servicios\app\src\main\res\drawable\fondo_transparente.png" />
+                                      <entry key="foregroundImage" value="C:\Users\duvan\AndroidStudioProjects\ServiciosSM\Servicios\app\src\main\res\drawable\icon_app.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

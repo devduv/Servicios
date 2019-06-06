@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color_toolbar"
     tools:context=".Activities.WelcomeActivity">
@@ -93,27 +92,12 @@
                 android:layout_marginEnd="45dp"
                 android:background="@drawable/border_button_2"
                 android:gravity="center"
-                android:text="Login"
+                android:text="Empezar ahora"
                 android:textAllCaps="false"
                 android:textColor="@color/color_background"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/btnprincipal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:layout_marginTop="35dp"
-                android:textColor="@color/color_background"
-                android:gravity="center"
-                android:textSize="14sp"
-                android:background="@drawable/border_button_2"
-                android:textAllCaps="false"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="45dp"
-                android:text="Entrar como visitante"/>
-        </LinearLayout>
+       </LinearLayout>
 
     </RelativeLayout>
 

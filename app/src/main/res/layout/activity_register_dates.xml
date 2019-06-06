@@ -37,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_height="48dp"
-                android:fontFamily="sans-serif-condensed"
                 android:textSize="20sp"
                 android:text="Registrar datos"
                 android:textColor="@color/color_toolbar"
@@ -232,12 +231,11 @@
 
             <Button
                 android:id="@+id/button_registrar_datos"
-                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:text="@string/guardar_datos"
                 android:textColor="@color/color_background"
-                android:textSize="16sp"
+                android:textSize="17sp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"

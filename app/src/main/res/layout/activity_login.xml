@@ -22,8 +22,9 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center"
+            android:tint="@color/colorPrimary"
             android:contentDescription="@string/logo_de_sm"
-            android:src="@drawable/icon_app" />
+            android:src="@drawable/icon_logo_sm_4" />
     </FrameLayout>
 
     <LinearLayout
@@ -56,7 +57,7 @@
                     android:layout_height="150dp"
                     android:layout_marginTop="15dp"
                     android:layout_gravity="center"
-                    android:backgroundTint="@color/color_brown"
+                    android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/icon_logo_sm_4"/>
 
                 <LinearLayout
@@ -137,12 +138,12 @@
                 <Button
                     android:id="@+id/email_sign_in_button"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginRight="35dp"
+                    android:layout_marginEnd="35dp"
                     android:text="@string/button_signup"
                     android:textStyle="bold"
                     android:textAllCaps="false"

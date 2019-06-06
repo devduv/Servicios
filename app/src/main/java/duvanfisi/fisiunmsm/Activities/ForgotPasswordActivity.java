@@ -23,13 +23,16 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private Button buttonForgot;
     private EditText email;
     private String email_t;
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        this.inicializarViews();
+        this.initViews();
+        this.setImages();
+        this.touchlisneter();
         this.onClickButtons();
 
     }
@@ -38,7 +41,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         this.buttonForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                verificarEmail();
+                verify_email();
             }
         });
 
@@ -47,19 +50,33 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                     CloseKeyboard.closeKeyboardStart(ForgotPasswordActivity.this, email);
-                    verificarEmail();
+                    verify_email();
                     return true;
                 }
                 return false;
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    public void inicializarViews(){
+
+    public void initViews(){
         this.buttonForgot = findViewById(R.id.email_forgot_button);
         this.email = findViewById(R.id.email_f);
+        this.back = findViewById(R.id.btnback);
+    }
 
+    public void setImages(){
+        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
+    }
+    @SuppressLint("ClickableViewAccessibility")
+    public void touchlisneter(){
         email.setFocusableInTouchMode(false);
         email.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -69,20 +86,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        ImageView back = findViewById(R.id.btnback);
-        ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
-
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
     }
-    public void verificarEmail(){
+
+    public void verify_email(){
         this.email_t = email.getText().toString().trim();
 
         if (TextUtils.isEmpty(email_t)) {

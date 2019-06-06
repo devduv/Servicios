@@ -29,18 +29,13 @@ public class FacultyActivity extends AppCompatActivity {
     public static CStudent user;
     public static FirebaseUser firebaseUser;
     private RecyclerView recyclerView;
-
     private ImageView back;
-    public static String faculty_selected;
-
     private TemplateLoading templateLoading;
     private AlertDialog loading;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
-
-
         inicializarViews();
         setFirebaseUser();
         setUser();
@@ -49,26 +44,22 @@ public class FacultyActivity extends AppCompatActivity {
         loadingON();
         getFaculties();
     }
-
     public void inicializarViews(){
         this.back = findViewById(R.id.btnback);
         this.intent_user = getIntent();
         this.recyclerView = findViewById(R.id.recyclerViewFaculty);
         this.templateLoading = new TemplateLoading(this);
     }
-
     public void setFirebaseUser(){
         firebaseUser = (FirebaseUser)
                 Objects.requireNonNull(intent_user.getExtras()).get(Utilidades.FIREBASEUSER);
     }
-
     public void setUser(){
         user = (CStudent) intent_user.getExtras().get(Utilidades.KEY_MODEL_USER);
     }
     public void setImage(){
         ImagePicasso.setImageCenterCop(this, R.drawable.ic_back, back);
     }
-
     public void loadingON(){
         templateLoading.setTextLoading(Utilidades.FOUNDING_FACULTIES);
         loading = templateLoading.loading();
@@ -82,7 +73,6 @@ public class FacultyActivity extends AppCompatActivity {
             }
         });
     }
-
     public void getFaculties(){
         FacultyFirebase facultyFirebase = new FacultyFirebase(this);
         facultyFirebase.setCollectionFaculties(recyclerView, loading, firebaseUser, user);
