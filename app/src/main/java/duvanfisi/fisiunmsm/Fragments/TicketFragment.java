@@ -109,10 +109,11 @@ public class TicketFragment extends Fragment {
         this.id_fecha.setText(ticket.getFecha_retiro());
         this.id_sede.setText(codigoSede(ticket.get_id_sede())+", San Marcos");
         this.id_piso.setText(codigoPiso(ticket.get_id_piso()));
-        //Picasso.with(getContext()).load(MainActivity.usuario.getPhoto()).into(this.id_photo);
-       // this.id_nickname.setText(MainActivity.usuario.getNickname());
-        this.id_names.setText(ticket.getNombre_usuario() + " " +ticket.getAp_paterno_usuario()+ " "+ ticket.getAp_materno_usuario());
-        this.id_codigo.setText(Integer.toString(ticket.getCod_usuario()));
+        Picasso.with(getContext()).load(ticket.getUser().getPhoto()).into(this.id_photo);
+        this.id_nickname.setText(ticket.getUser().getNick());
+        this.id_names.setText(ticket.getUser().getNames() + " " +ticket.getUser().getLastname_p()+
+                " "+ ticket.getUser().getLastname_p());
+        this.id_codigo.setText(ticket.getUser().get_id());
         this.id_turno.setText("Turno "+ticket.get_id_turno());
         this.id_horario.setText(ticket.getHorario_ini() +" hasta " + ticket.getHorario_fin());
 

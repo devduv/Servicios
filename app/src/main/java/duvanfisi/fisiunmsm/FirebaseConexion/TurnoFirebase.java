@@ -34,6 +34,7 @@ import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Fragments.FReservarTicket;
 
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
 
 import duvanfisi.fisiunmsm.Templates.PlantillaReservarTicket;
@@ -59,11 +60,13 @@ public class TurnoFirebase {
 
     private static int idsede;
     private static int idcomida;
+    private static CStudent user;
     private static String hora_ini;
     private static String hora_fin;
 
     @SuppressLint("UseSparseArrays")
-    public TurnoFirebase(Context context, LinearLayout linearLayout, TextView totalTickets, ProgressBar progressBar){
+    public TurnoFirebase(Context context, LinearLayout linearLayout, TextView totalTickets,
+                         ProgressBar progressBar){
         this.context = context;
 
         textViews = new HashMap<>();
@@ -77,6 +80,9 @@ public class TurnoFirebase {
         this.databaseReference = firebaseDatabase.getReference();
     }
 
+    public void setCurrentUser(CStudent user){
+        this.user = user;
+    }
     private DatabaseReference getDatabaseReference(){
         return this.databaseReference
                 .child(Utilidades.BD)
@@ -387,15 +393,14 @@ public class TurnoFirebase {
                                            DataSnapshot dataSnapshot) {
 
                         if(b){
-                            /*duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase firebaseDatabase
+                            duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase firebaseDatabase
                                     = new duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase(context);
                             UserFirebase userFirebase = new UserFirebase(firebaseDatabase);
-                            //MainActivity.usuario.setT_retirados(MainActivity.usuario.getT_retirados()+1);
-                           // userFirebase.setTicketRetirado(MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
+                            user.setTickets_withdrawn(user.getTickets_withdrawn()+1);
+                            userFirebase.setTicketRetirado(user.getEmail(), user.getTickets_withdrawn());
                             CTicket ticket = new CTicket(idcomida, idsede, Integer.parseInt(idpiso),
                                     Integer.parseInt(idturno),
-                                    hora_ini, hora_fin, MainActivity.usuario.getCodigo(),
-                                    MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
+                                    hora_ini, hora_fin, user);
 
                             TicketsFirebase ticketsFirebase = new TicketsFirebase(context);
                             DatabaseReference ticketdatabasef = ticketsFirebase.getTicketsComidaSede(idsede, idcomida);
@@ -407,7 +412,7 @@ public class TurnoFirebase {
                             TemplateMessage mensaje = new TemplateMessage(context);
                             mensaje.setMensajeTicket("Reservar Ticket",
                                     "Ha reservado su ticket satisfactoriamente.",
-                                    ticket);*/
+                                    ticket);
 
                         }else{
                             dialog.dismiss();

@@ -171,7 +171,7 @@ public abstract class CUser implements Parcelable{
 
         this.faculty = "null";
         this.professional_school = "null";
-        this.host_central = "null";
+        this.host_central = "Ciudad Universitaria (CU)";
         this.nick = "null";
         this.phonenumber = "null";
         this.photo = "null";

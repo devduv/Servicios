@@ -11,10 +11,12 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
+import duvanfisi.fisiunmsm.Actions.Utilidades;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.TicketsFirebase;
 import duvanfisi.fisiunmsm.Model.CTicket;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.R;
 
 public class MiRegistroActivity extends AppCompatActivity {
@@ -34,6 +36,9 @@ public class MiRegistroActivity extends AppCompatActivity {
 
     private HashMap<Integer, CTicket> cTicketHashMap;
     public static TextView auxticket;
+
+    private CStudent user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +48,13 @@ public class MiRegistroActivity extends AppCompatActivity {
         setImageViews();
         onClickViews();
 
+
+
     }
 
     @SuppressLint("UseSparseArrays")
     public void inicializarViews(){
-
+        this.user = getIntent().getExtras().getParcelable(Utilidades.KEY_MODEL_USER);
 
         this.plantillacarga = findViewById(R.id.plantillacargaregistro);
         this.cTicketHashMap = new HashMap<>();
@@ -71,13 +78,13 @@ public class MiRegistroActivity extends AppCompatActivity {
 
 
     public void setTexts(){
-        /*String namettitle = MainActivity.usuario.getNombre() + " " +
-                MainActivity.usuario.getAp_paterno() + " " +
-                MainActivity.usuario.getAp_materno();
+        String namettitle = user.getNames() + " " +
+                user.getLastname_p() + " " +
+                user.getLastname_m();
 
-        String t_retirados = Integer.toString(MainActivity.usuario.getT_retirados());
+        String t_retirados = Integer.toString(user.getTickets_withdrawn());
         this.tickets_retirados.setText(t_retirados);
-        this.titulo.setText(namettitle);*/
+        this.titulo.setText(namettitle);
 
     }
     public void setImageViews(){
@@ -104,7 +111,7 @@ public class MiRegistroActivity extends AppCompatActivity {
     @SuppressLint("UseSparseArrays")
     public void setTicketUser(){
         cTicketHashMap = new HashMap<>();
-        //TicketsFirebase ticketsFirebase= new TicketsFirebase(this);
-        //ticketsFirebase.setTicketUser(rv, cTicketHashMap, MainActivity.usuario.getEmail());
+        TicketsFirebase ticketsFirebase= new TicketsFirebase(this);
+        ticketsFirebase.setTicketUser(user, rv, cTicketHashMap);
     }
 }

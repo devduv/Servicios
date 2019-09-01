@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Mi UNMSM</string>
+    <string name="app_name">Servicios San Marcos</string>
     <string name="my_app_id">unmsmservicios-scxef</string>
 
     <string name="close_app">Presione ATRAS otra vez para salir.</string>
-    <string name="prompt_email">example@unmsm.edu.pe</string>
+    <string name="prompt_email">example@gmail.com</string>
     <string name="prompt_password">contraseña</string>
     <string name="title_home">Home</string>
     <string name="title_services">Servicios</string>
@@ -14,7 +14,7 @@
 
     <string name="titulo_iniciarsesion">Iniciar Sesión</string>
     <string name="button_signup">Iniciar sesión</string>
-    <string name="button_signin">Registrarse</string>
+    <string name="button_signin">Crear cuenta</string>
     <string name="button_signinme">Registrarme</string>
     <string name="button_forgotpass">Olvidé mi contraseña</string>
     <string name="ingresar_como_invitado">Ingresar como Invitado</string>
@@ -23,13 +23,13 @@
     <string name="titulo_mensaje">titulo mensaje</string>
 
     <string name="error_invalid_email">Correo electrónico inválido</string>
-    <string name="error_invalid_email_sm">Se solicita: @unmsm.edu.pe</string>
+    <string name="error_invalid_email_sm">Se solicita: @gmail</string>
     <string name="error_pass_corta">Contraseña es muy corta</string>
     <string name="error_pass_dif">Contraseñas no coinciden</string>
     <string name="error_field_required">Este campo es requerido</string>
     <string name="titulo">titulo_registro</string>
     <string name="titulo_registro_user">Registro de usuario</string>
-    <string name="correo_institucional">Correo Institucional:</string>
+    <string name="correo_institucional">Correo:</string>
     <string name="usuario_y_contrase_a">Usuario y Contraseña</string>
     <string name="contrase_a">Contraseña:</string>
     <string name="password">Contraseña segura</string>

@@ -10,9 +10,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseUser;
+
+import duvanfisi.fisiunmsm.Actions.StartFragment;
 import duvanfisi.fisiunmsm.Extras.ADialogs;
 import duvanfisi.fisiunmsm.Extras.ImagePicasso;
 import duvanfisi.fisiunmsm.Extras.ViewFloat;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
@@ -41,6 +45,10 @@ public class FComedor extends Fragment {
 
     private int sede_selected;
 
+    private CStudent user;
+    private Bundle bundle;
+    private FirebaseUser firebaseUser;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,10 +74,12 @@ public class FComedor extends Fragment {
         this.img_sede_sf = view.findViewById(R.id.img_serv_comedor2);
         this.img_sede_sjl = view.findViewById(R.id.img_serv_comedor3);
 
+        this.getUserCurrent();
     }
 
     public Bundle getBundle(int _idsede){
         Bundle bundle = new Bundle();
+        bundle.putParcelable(Utilidades.KEY_MODEL_USER, user);
         bundle.putInt(Utilidades.IDSEDE, _idsede);
         return bundle;
     }
@@ -94,13 +104,13 @@ public void sede_univ(final CardView button, final ImageView imageView) {
         public void onClick(View v) {
             switch (button.getId()) {
                 case R.id.btncu:
-                    MainActivity.startFragment("elegir turno", new FSeleccionarComida(), 3, getBundle(1));
+                    startFragment("elegir turno", new FSeleccionarComida(), getBundle(1));
                     break;
                 case R.id.btnsf:
-                    MainActivity.startFragment("elegir turno", new FSeleccionarComida(), 3, getBundle(2));
+                    startFragment("elegir turno", new FSeleccionarComida(), getBundle(2));
                     break;
                 case R.id.btnsjl:
-                    MainActivity.startFragment("elegir turno", new FSeleccionarComida(), 3, getBundle(3));
+                    startFragment("elegir turno", new FSeleccionarComida(), getBundle(3));
                     break;
             }
 
@@ -151,5 +161,14 @@ public void sede_univ(final CardView button, final ImageView imageView) {
         dialog.show();
     }
 
+    public void getUserCurrent(){
+        bundle = getArguments();
+
+        firebaseUser = bundle.getParcelable(Utilidades.FIREBASEUSER);
+        user = bundle.getParcelable(Utilidades.KEY_MODEL_USER);
+    }
+    public void startFragment(String name, Fragment fragment, Bundle bundle){
+        StartFragment.startFragment(name, fragment, bundle);
+    }
 
 }

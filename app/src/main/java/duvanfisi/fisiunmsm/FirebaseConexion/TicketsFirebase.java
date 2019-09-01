@@ -23,6 +23,7 @@ import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Activities.MiRegistroActivity;
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.Model.CTicket;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewFunction;
 import duvanfisi.fisiunmsm.Recyclers.RecyclerViewTickets;
 
@@ -55,7 +56,6 @@ public class TicketsFirebase {
     }
 
     public DatabaseReference getTicketsComidaSede(int idsede, int idcomida){
-        //this.idsede = idsede;
         DatabaseReference databaseReference = null;
         switch (idsede){
             case 1:
@@ -116,9 +116,6 @@ public class TicketsFirebase {
 
         ticket.setFecha_retiro(getFechaFull());
         ticket.setHora_retiro(getHoraMedium());
-        /*ticket.setNombre_usuario(MainActivity.usuario.getNombre());
-        ticket.setAp_paterno_usuario(MainActivity.usuario.getAp_paterno());
-        ticket.setAp_materno_usuario(MainActivity.usuario.getAp_materno());*/
 
         ticket.key_ticket(getFechaShort());
         String id = ticket.get_id();
@@ -126,7 +123,8 @@ public class TicketsFirebase {
                 .child(key_ticket())
                 .child(id)
                 .setValue(ticket);
-        this.userFirebase.registrarTicket(ticket.getEmail(), ticket);
+
+        this.userFirebase.registrarTicket(ticket.getUser(), ticket);
 
     }
 
@@ -155,15 +153,16 @@ public class TicketsFirebase {
 
     }
 
-    public void setTicketUser(final RecyclerView recyclerView, final HashMap<Integer, CTicket> cTicketHashMap, String email) {
-        CollectionReference collectionReference = userFirebase.getRegistroUserTicket(email);
+    public void setTicketUser(final CStudent user, final RecyclerView recyclerView,
+                              final HashMap<Integer, CTicket> cTicketHashMap) {
+        CollectionReference collectionReference = userFirebase.getRegistroUserTicket(user.getEmail());
 
-        collectionReference.orderBy("cod", Query.Direction.DESCENDING).limit(2)
+        collectionReference.orderBy("_id", Query.Direction.DESCENDING).limit(2)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot querySnapshot,
                                         @Nullable FirebaseFirestoreException e) {
-                        /*if (e != null) {
+                        if (e != null) {
                             return;
                         }
 
@@ -176,15 +175,15 @@ public class TicketsFirebase {
                                 }
                             }
                             duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase firebaseDatabase = new duvanfisi.fisiunmsm.FirebaseConexion.FirebaseDatabase(context);
-                            MainActivity.usuario.setT_retirados(cTicketHashMap.size());
+                            //user.setTickets_withdrawn(cTicketHashMap.size());
                             UserFirebase userFirebase = new UserFirebase(firebaseDatabase);
-                            userFirebase.setTicketRetirado(MainActivity.usuario.getEmail(), MainActivity.usuario.getT_retirados());
+                            userFirebase.setTicketRetirado(user.getEmail(), user.getTickets_withdrawn());
 
-                            if(MainActivity.usuario.getT_retirados()>1){
+                            if(user.getTickets_withdrawn()>1){
                                 MiRegistroActivity.titlet.setText("Tickets");
                                 MiRegistroActivity.titler.setText("Retirados");
                             }else{
-                                if(MainActivity.usuario.getT_retirados()==0){
+                                if(user.getTickets_withdrawn()==0){
                                     MiRegistroActivity.titlet.setText("Tickets");
                                     MiRegistroActivity.titler.setText("Retirados");
                                     //this.btnvermast.setVisibility(ViewVisible.INVISIBLE);
@@ -204,7 +203,7 @@ public class TicketsFirebase {
                                     (context, cTicketHashMap);
                             RecyclerViewFunction.recyclerview
                                     (recyclerView, context, RecyclerViewFunction.VERTICAL, recyclerViewTicket);
-                        }*/
+                        }
                     }
                 });
     }

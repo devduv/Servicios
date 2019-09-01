@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#34495e</color>
-    <color name="colorPrimaryDark">#34495e</color>
-    <color name="colorAccent">#34495e</color>
+    <color name="colorPrimary">#198dcc</color>
+    <color name="colorPrimaryDark">#198dcc</color>
+    <color name="colorAccent">#198dcc</color>
     <color name="color_text">#000000</color>
     <color name="color_datos">#3e5a70</color>
     <color name="color_background">#ffffff</color>
@@ -18,6 +18,6 @@
     <color name="color_button_add">#2196f3</color>
     <color name="color_text_button_add">#c43e00</color>
     <color name="color_navigation">#fafbfd</color>
-    <color name="color_button_green">#2ecc71</color>
+    <color name="color_button_green">#004f7b</color>
     <color name="color_blue_background">#105499</color>
 </resources>

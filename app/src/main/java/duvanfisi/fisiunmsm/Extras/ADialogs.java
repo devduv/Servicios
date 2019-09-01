@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.Actions.StartActivity;
+import duvanfisi.fisiunmsm.Actions.StartFragment;
 import duvanfisi.fisiunmsm.Activities.FacultyActivity;
 import duvanfisi.fisiunmsm.Activities.LoginActivity;
 import duvanfisi.fisiunmsm.Activities.MainActivity;
@@ -36,14 +38,16 @@ public class ADialogs {
         builder.setPositiveButton("Ticket", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 ((ViewGroup) view.getParent()).removeAllViews();
-                MainActivity.startFragment("ticket", new TicketFragment(), 2, bundle);
+                startFragment("ticket", new TicketFragment(), bundle);
             }
         });
         //builder.setCancelable(false);
         return builder.create();
     }
 
-
+    public static void startFragment(String name, Fragment fragment, Bundle bundle){
+        StartFragment.startFragment(name, fragment, bundle);
+    }
     public static AlertDialog mensaje(Context context, final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view);
@@ -194,7 +198,7 @@ public class ADialogs {
                 public void onClick(DialogInterface dialog, int id) {
 
                     ((ViewGroup)view_content.getParent()).removeAllViews();
-                    MainActivity.ON_TOUCH = 3;
+                  //  MainActivity.ON_TOUCH = 3;
                     //MainActivity.startFragment("servicios", MainActivity.fservicios, 3);
                     //MainActivity.navigation.getMenu().getItem(3).setChecked(true);
 

@@ -69,11 +69,12 @@
 
             <Button
                 android:id="@+id/btnirserv"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="Ir al servicio"
+                android:backgroundTint="@color/color_button_green"
+                android:text="Ingresar al servicio"
                 android:textAllCaps="false"
+                android:layout_alignParentRight="true"
                 android:textColor="@color/color_background"
                 android:layout_below="@id/subsubtitle_serv"
                 tools:ignore="HardcodedText" />

@@ -7,7 +7,16 @@ public class Utilidades {
     public static final int ACTION_FOUND_FACULTY = 6;
 
 
-    public static final String TYPE_STUDENT = "student";
+    public static final String NAV_NEWS = "news";
+    public static final String NAV_SOCIAL_RED= "news";
+    public static final String NAV_HOME = "home";
+    public static final String NAV_SERVICES = "services";
+    public static final String NAV_PROFILE = "profile";
+
+
+
+
+    public static final String TYPE_STUDENT = "Estudiante";
     public static final String TYPE_TEACHER = "teacher";
 
     public static final String LOGIN = "Iniciar sesion";
@@ -92,7 +101,7 @@ public class Utilidades {
     public final static String PHONENUMBER = "phonenumber";
     public final static String PROFESSIONAL_SCHOOL = "professional_school";
     public final static String FACULTY = "faculty";
-    public final static String T_RETIRADOS= "t_retirados";
+    public final static String T_RETIRADOS= "tickets_withdrawn";
     public final static String ULT_CONEXION= "ult_conexion";
 
 
@@ -103,11 +112,12 @@ public class Utilidades {
 
     public final static String CONDICIONES = "La misión de esta aplicación es darle otra experiencia " +
             "a los estudiantes de la universidad.\n" +
-            "Permitimos que cualquier persona pueda usar esta aplicación. Creemos que nuestro modelo " +
-            "de aplicación es la mejor manera de ofrecer contenido educativo valioso a nuestros usuarios.\n" +
+            "Permitimos que cualquier persona pueda usar esta aplicación.\n"+
+            "Creemos que nuestro modelo " +
+            "de aplicación es la mejor manera de ofrecer contenido educativo valioso a nuestros usuarios.\n\n" +
             "Necesitamos reglas que mantengan nuestra plataforma y nuestros servicios seguros para" +
             " usted, para nosotros, para nuestros estudiantes y para nuestra comunidad de instructores. " +
-            "Estas Condiciones se aplican a todas las actividades que lleva a cabo en el sitio web" +
+            "Estas Condiciones se aplican a todas las actividades que lleva a cabo en el sitio web " +
             "de San Marcos, " +
             "nuestras API y todos los demás servicios relacionados (“Servicios”).";
 
@@ -115,20 +125,24 @@ public class Utilidades {
             "esta Política de privacidad.\n" +
             "El usuario no deberá utilizar los Servicios si no está de acuerdo " +
             "con esta Política de privacidad o con cualquier otro acuerdo que rija " +
-            "el uso que hace de los Servicios."+
+            "el uso que hace de los Servicios.\n\n"+
             "Esta Política de privacidad aborda nuestras prácticas de recopilación " +
             "de datos y describe los derechos del usuario a acceder, corregir o restringir " +
             "el uso que hacemos de los datos personales del usuario.";
 
     public final static String DATOSUSUARIO = "Podremos recopilar diferentes datos del usuario o sobre este, " +
-            "en función de cómo utilice los Servicios.\nA continuación se muestran algunos ejemplos para " +
-            "ayudar al usuario a comprender mejor los datos que recopilamos.\n" +
+            "en función de cómo utilice los Servicios.\n\nA continuación se detallan algunos aspectos importantes para " +
+            "ayudar al usuario a comprender mejor los datos que recopilamos.\n\n" +
             "Al crear una cuenta y utilizar los Servicios, " +
             "recopilamos los datos que el usuario nos proporciona directamente, lo que incluye:";
 
     public final static String DATOCUENTA = "Para utilizar algunas funciones (como inscribirse en un curso), " +
             "el usuario tiene que crear una cuenta de usuario.\nAl crear o actualizar la cuenta del usuario, " +
             "recopilamos y almacenamos los datos que el usuario nos proporciona, como su dirección de " +
-            "correo electrónico, contraseña, sexo y fecha de nacimiento, y le asignamos un número de " +
-            "identificación único (\"Datos de la cuenta\").";
+            "correo electrónico, sexo y fecha de nacimiento, y le asignamos un número de " +
+            "identificación único (\"Datos de la cuenta\").\n\nLa contraseña proporcionada " +
+            "por el usuario, no tiene que ser necesariamente la de su cuenta institucional actual, puede crearse " +
+            "una nueva, también está precisado que por más que cree, actualice o cambie su contraseña, esta no quedará" +
+            " registrada en la Base de Datos como tal, se usa un Sistema de autenticación el cual codifica la contraseña " +
+            "quedando intendible.";
 }

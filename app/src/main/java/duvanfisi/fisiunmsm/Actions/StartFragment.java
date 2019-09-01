@@ -35,7 +35,6 @@ public class StartFragment {
 
         }
 
-        MainActivity.item.add(id);
         transaction.commit();
     }
 
@@ -78,8 +77,6 @@ public class StartFragment {
 
 
         }
-
-        //MainActivity.item.add(id);
         transaction.commit();
 
     }

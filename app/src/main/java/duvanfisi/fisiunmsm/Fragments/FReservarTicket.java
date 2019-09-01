@@ -11,10 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 import duvanfisi.fisiunmsm.Extras.ViewVisible;
 import duvanfisi.fisiunmsm.FirebaseConexion.TurnoFirebase;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Templates.TemplateLoading;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
@@ -30,9 +32,10 @@ public class FReservarTicket extends Fragment {
 
     private LinearLayout turnos_ticket;
 
-   // private CUsuario user;
+   private FirebaseUser firebaseUser;
     private int idsede;
     private int idcomida;
+    private CStudent user;
 
     private TextView title_sede_c_s;
     private TextView title_comida_selected;
@@ -43,6 +46,8 @@ public class FReservarTicket extends Fragment {
 
     private TextView totalTickets;
     private DatabaseReference databaseReference;
+
+    private Bundle bundle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,13 +74,13 @@ public class FReservarTicket extends Fragment {
         this.totalTickets = this.view.findViewById(R.id.txtTotalT);
         this.progressBar = this.view.findViewById(R.id.progress_tickets);
 
-        this.setBundle();
+        this.getUserCurrent();
         this.setSede();
         this.setComida();
 
 
         this.turnoFirebase = new TurnoFirebase(getContext(), turnos_ticket, totalTickets, progressBar);
-
+        this.turnoFirebase.setCurrentUser(user);
 
         setTotalTickets();
 
@@ -83,15 +88,21 @@ public class FReservarTicket extends Fragment {
 
     public void setTotalTickets(){
          databaseReference = this.turnoFirebase.getTicketsComidaSede(idsede,idcomida);
+
          this.turnoFirebase.setDatabaseReference(databaseReference);
          this.turnoFirebase.getPisosTurnos();
 
 
     }
-    public void setBundle(){
+
+
+    public void getUserCurrent(){
+        bundle = getArguments();
         idsede = getArguments().getInt(Utilidades.IDSEDE);
         idcomida = getArguments().getInt(Utilidades.IDCOMIDA);
-
+        firebaseUser = bundle.getParcelable(Utilidades.FIREBASEUSER);
+        user = bundle.getParcelable(Utilidades.KEY_MODEL_USER);
+        idsede = bundle.getInt(Utilidades.IDSEDE);
     }
 
     public void setComida(){

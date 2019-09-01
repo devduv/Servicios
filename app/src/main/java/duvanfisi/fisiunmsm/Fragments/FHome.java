@@ -99,8 +99,8 @@ public class FHome extends Fragment {
         button_noticias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.ON_TOUCH = 0;
-                MainActivity.startFragment("news", new FNoticias(), 0);
+               // MainActivity.ON_TOUCH = 0;
+                //MainActivity.startFragment("news", new FNoticias(), 0);
                 //MainActivity.navigation.getMenu().getItem(0).setChecked(true);
             }
         });

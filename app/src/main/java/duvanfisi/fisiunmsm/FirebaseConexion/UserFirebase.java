@@ -60,12 +60,12 @@ public class UserFirebase {
         return this.firebaseDatabase.getDocument(Utilidades.DOCUMENT_USERS, id);
     }
 
-    public void registrarTicket(String email, CTicket ticket){
-       /* DocumentReference documentReference =
-                getRegistroUserTicket(email)
-                .document(Integer.toString(MainActivity.usuario.getT_retirados()));
+    public void registrarTicket(CStudent user, CTicket ticket){
+        DocumentReference documentReference =
+                getRegistroUserTicket(user.getEmail())
+                .document(Integer.toString(user.getTickets_withdrawn()));
 
-        documentReference.set(ticket);*/
+        documentReference.set(ticket);
 
     }
 

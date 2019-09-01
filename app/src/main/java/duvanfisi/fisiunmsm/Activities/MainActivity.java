@@ -16,8 +16,6 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseUser;
 
 
-import java.util.ArrayList;
-
 import duvanfisi.fisiunmsm.Actions.Preferences;
 import duvanfisi.fisiunmsm.Fragments.FNoticias;
 import duvanfisi.fisiunmsm.Model.Users.CStudent;
@@ -36,12 +34,11 @@ import duvanfisi.fisiunmsm.Actions.Utilidades;
 public class MainActivity extends AppCompatActivity {
 
     private boolean CAN_EXIT_APP = false;
+    private boolean GET_BACK_HOME = false;
 
     //User recurrent
     private FirebaseUser firebaseUser;
     private CStudent user;
-
-    public static int ON_TOUCH;
 
     //Navigation & Toolbar
     private BottomNavigationView navigation;
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public static  FragmentManager fragmentManager;
 
     //This is Menu Main
-    private FHome fhome;
+    private FHome nav_home;
     private FPersonajes fpersonajes;
     private FServicios nav_services;
     private FPerfil nav_profile;
@@ -59,70 +56,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     public static Fragment currentFragment;
 
-
-    public static ArrayList<Integer> item;
-
-
-   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener =
-           new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-            @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()) {
-                    case R.id.navigation_news:
-                        if(ON_TOUCH !=0){
-                            ON_TOUCH =0;
-                            startFragment("news", nav_news, 0);
-                            return true;
-                        }else{
-                            return false;
-                        }
-                    case R.id.navigation_social_red:
-                        if(ON_TOUCH !=1){
-                            ON_TOUCH =1;
-                            startFragment("personajes", fpersonajes, 1);
-                            return true;
-                        }else{
-                            return false;
-                        }
-                    case R.id.navigation_home:
-                        if(ON_TOUCH !=2){
-                            ON_TOUCH = 2;
-                            startFragment("home", fhome, 2);
-                            return true;
-                        }else{
-                            return false;
-                        }
-                    case R.id.navigation_services:
-                        if (ON_TOUCH != 3) {
-                            ON_TOUCH = 3;
-                            startFragment("servicios", nav_services, 3);
-                            return true;
-                        }else{
-                            return false;
-                        }
-                    case R.id.navigation_profile:
-                       if(ON_TOUCH !=4){
-                           if(firebaseUser!=null) {
-                               ON_TOUCH =4;
-                               startFragment("mi perfil", nav_profile, getBundle());
-                               return true;
-                           }else{
-                               TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
-                               mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                               mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
-                               return false;
-                           }
-                       }else{
-                           return false;
-                       }
-                }
-                return false;
-            }
-    };
-
-
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         set_persistence();
+        setmOnNavigationItemSelectedListener();
         initViews();
         get_user_current_firebase();
         is_firebaseuser_on();
@@ -138,47 +72,67 @@ public class MainActivity extends AppCompatActivity {
         gotoHome();
 
     }
+
+
+   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
+
+
+    public void setmOnNavigationItemSelectedListener(){
+        mOnNavigationItemSelectedListener =
+        new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.navigation_news:
+                        GET_BACK_HOME = true;
+                        gotofragment(Utilidades.NAV_NEWS, nav_news);
+                        return true;
+                    case R.id.navigation_social_red:
+                        GET_BACK_HOME = true;
+                        gotofragment(Utilidades.NAV_SOCIAL_RED, fpersonajes);
+                        return true;
+                    case R.id.navigation_home:
+                        GET_BACK_HOME = false;
+                        gotofragment(Utilidades.NAV_HOME, nav_home);
+                        return true;
+                    case R.id.navigation_services:
+                        GET_BACK_HOME = true;
+                        gotofragment(Utilidades.NAV_SERVICES, nav_services);
+                        return true;
+                    case R.id.navigation_profile:
+                        GET_BACK_HOME = true;
+                        if(firebaseUser!=null) {
+                            gotofragment(Utilidades.NAV_PROFILE, nav_profile);
+                            return true;
+                        }else{
+                            TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
+                            mensaje.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                            mensaje.setMensaje("Iniciar Sesión", "No ha iniciado sesión", 3);
+                            return false;
+                        }
+                }
+                return false;
+            }
+        };
+    }
+
+    public void gotofragment(String tag, Fragment fragment){
+        startFragment(tag, fragment, getBundle());
+    }
+
     @Override
     public void onBackPressed() {
-        if(item.size()>1) {
-            item.remove(item.size() - 1);
-            int id = item.get(item.size() - 1);
-            switch (id) {
-                case 0:
-                    ON_TOUCH =0;
-                    startFragmentBack("news", MainActivity.this, nav_news);
-                    navigation.getMenu().getItem(0).setChecked(true);
-                    break;
-                case 1:
-                    ON_TOUCH =1;
-                    startFragmentBack("personajes", MainActivity.this, fpersonajes);
-                    navigation.getMenu().getItem(1).setChecked(true);
-                    break;
-                case 2:
-                    ON_TOUCH = 2;
-                    startFragmentBack("home", MainActivity.this,fhome);
-                    navigation.getMenu().getItem(2).setChecked(true);
-                    break;
-                case 3:
-                    ON_TOUCH = 3;
-                    startFragmentBack("servicios", MainActivity.this, nav_services);
-                    navigation.getMenu().getItem(3).setChecked(true);
-                    break;
-                case 4:
-                    ON_TOUCH = 4;
-                    startFragmentBack("mi perfil", MainActivity.this, nav_profile);
-                    navigation.getMenu().getItem(4).setChecked(true);
-                    break;
-                default:
-
-                    break;
-            }
+        if(GET_BACK_HOME){
+            GET_BACK_HOME = false;
+            gotofragment(Utilidades.NAV_HOME, nav_home);
+            this.navigation.setSelectedItemId(R.id.navigation_home);
         }else{
             if (!CAN_EXIT_APP) {
                 CAN_EXIT_APP = true;
                 Toast.makeText(this, getString(R.string.close_app), Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
-
                     @Override
                     public void run() {
                         CAN_EXIT_APP = false;
@@ -191,8 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoHome(){
-        ON_TOUCH = 2;
-        startFragment("home", fhome, 2);
+        gotofragment(Utilidades.NAV_HOME, nav_home);
         navigation.getMenu().getItem(2).setChecked(true);
     }
     public void startLogin(){
@@ -207,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.mi_registro:
                         if(firebaseUser!=null){
-                            StartActivity.startActivity(MainActivity.this, new MiRegistroActivity());
+                            StartActivity.startActivity(MainActivity.this, new MiRegistroActivity(), firebaseUser, user);
                             return true;
                         }else{
                             TemplateMessage mensaje = new TemplateMessage(MainActivity.this);
@@ -236,12 +189,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override protected void onStop() {
         super.onStop();
         /*FirebaseDatabase firebaseDatabase = new FirebaseDatabase(this);
         UserFirebase usuarioFirebase = new UserFirebase(firebaseDatabase);
         usuarioFirebase.setUltimaConexion(MainActivity.usuario.getEmail(), TicketsFirebase.getHoraMedium());*/
     }
+
     public void initViews() {
         this.toolbar = findViewById(R.id.toolbar);
         this.toolbar.inflateMenu(R.menu.tools_main);
@@ -278,37 +233,17 @@ public class MainActivity extends AppCompatActivity {
             this.user = getIntent().getExtras().getParcelable(Utilidades.KEY_MODEL_USER);
         }
     }
-    public static void startFragment(String name, Fragment fragment, int id){
-
-            StartFragment.startFragment(name, fragment, id);
-    }
-
-    public static void startFragment(String name, Fragment fragment, Bundle bundle){
-
+    public void startFragment(String name, Fragment fragment, Bundle bundle){
         StartFragment.startFragment(name, fragment, bundle);
     }
-
-    public static void startFragmentBack(String name, AppCompatActivity appCompatActivity, Fragment fragment){
-
-        StartFragment.startFragmentBack(name, fragment);
-    }
-
-    public static void startFragment(String name, Fragment fragment, int id, Bundle bundle){
-        StartFragment.startFragment(name, fragment, bundle);
-    }
-
-
     public MainActivity(){
-        this.fhome = new FHome();
+        this.nav_home = new FHome();
         this.fpersonajes = new FPersonajes();
         this.nav_services = new FServicios();
         this.nav_profile = new FPerfil();
         this.nav_news = new FNoticias();
-
-        item = new ArrayList<>();
         fragmentManager = getSupportFragmentManager();
     }
-
     public Bundle getBundle(){
         Bundle bundle = new Bundle();
         bundle.putParcelable(Utilidades.FIREBASEUSER, firebaseUser);

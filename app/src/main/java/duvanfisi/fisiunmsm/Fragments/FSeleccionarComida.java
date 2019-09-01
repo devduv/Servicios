@@ -8,7 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import duvanfisi.fisiunmsm.Actions.InternetConecction;
+import duvanfisi.fisiunmsm.Actions.StartFragment;
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.R;
 import duvanfisi.fisiunmsm.Activities.MainActivity;
 import duvanfisi.fisiunmsm.Actions.Utilidades;
@@ -23,7 +27,10 @@ public class FSeleccionarComida extends Fragment {
     private Button btnalmuerzo;
     private Button btncena;
 
-    //private CUsuario user;
+    private CStudent user;
+    private FirebaseUser firebaseUser;
+    private Bundle bundle;
+
     private int idsede;
     private int idcomida;
 
@@ -46,8 +53,7 @@ public class FSeleccionarComida extends Fragment {
 
         this.title_sede = view.findViewById(R.id.title_sede);
 
-
-        setBundle();
+        this.getUserCurrent();
         setSede();
 
     }
@@ -71,7 +77,7 @@ public class FSeleccionarComida extends Fragment {
     public void irComidaSeleccionada(int idsede, int idcomida){
         if(InternetConecction.isOnline(getContext())){
             this.idcomida = idcomida;
-            MainActivity.startFragment("tickets", new FReservarTicket(), 3,  getBundle(idsede, this.idcomida));
+            startFragment("tickets", new FReservarTicket(),  getBundle(idsede, this.idcomida));
         }else{
             InternetConecction.notInternet(getContext());
         }
@@ -79,9 +85,9 @@ public class FSeleccionarComida extends Fragment {
 
 
     }
-    public void setBundle(){
-        //user = getArguments().getParcelable(Utilidades.KEY_MODEL_USER);
-        idsede = getArguments().getInt(Utilidades.IDSEDE);
+
+    public void startFragment(String name, Fragment fragment, Bundle bundle){
+        StartFragment.startFragment(name, fragment, bundle);
     }
 
     public void setSede(){
@@ -101,10 +107,18 @@ public class FSeleccionarComida extends Fragment {
 
     public Bundle getBundle(int _idsede, int comida){
         Bundle bundle = new Bundle();
-        //bundle.putParcelable(Utilidades.KEY_MODEL_USER, user);
+        bundle.putParcelable(Utilidades.KEY_MODEL_USER, user);
         bundle.putInt(Utilidades.IDSEDE, _idsede);
         bundle.putInt(Utilidades.IDCOMIDA, comida);
         return bundle;
+    }
+
+    public void getUserCurrent(){
+        bundle = getArguments();
+
+        firebaseUser = bundle.getParcelable(Utilidades.FIREBASEUSER);
+        user = bundle.getParcelable(Utilidades.KEY_MODEL_USER);
+        idsede = bundle.getInt(Utilidades.IDSEDE);
     }
 
 }

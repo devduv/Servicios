@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     private boolean PASS_SHOW = false;
     public static boolean ANIMATION_ENDED = false;
 
-    private ImageView back;
 
     @SuppressLint("StaticFieldLeak") public static ImageView imglogo;
     @SuppressLint("StaticFieldLeak") public static EditText emailt;
@@ -75,8 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         linearlogin = findViewById(R.id.linearlogin);
         BUTTON_SHOW_HIDDEN_PASSWORD = findViewById(R.id.btn_m_o_p);
 
-        back = findViewById(R.id.btnback);
-        ImagePicasso.setImageCenterCop(LoginActivity.this, R.drawable.ic_back, back);
 
         pass.addTextChangedListener(new TextWatcher() {
             @Override
@@ -171,14 +168,6 @@ public class LoginActivity extends AppCompatActivity {
                     StartActivity.startActivity(context, new ForgotPasswordActivity());
                 }
         });
-
-        back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   StartActivity.startActivity(context, new WelcomeActivity());
-                }
-        });
-
 
 
     }

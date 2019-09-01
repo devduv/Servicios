@@ -3,11 +3,12 @@ package duvanfisi.fisiunmsm.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import duvanfisi.fisiunmsm.Model.Users.CStudent;
+
 public class CTicket implements Parcelable {
 
     private String _id;
 
-    private int cod;
     private int _id_comida;
     private int _id_sede;
     private int _id_piso;
@@ -23,31 +24,23 @@ public class CTicket implements Parcelable {
     private boolean consumido;
 
 
-    private int cod_usuario;
-    private String email;
-
-    private String nombre_usuario;
-    private String ap_paterno_usuario;
-    private String ap_materno_usuario;
+    private CStudent user;
 
     public CTicket(){
 
     }
 
     public CTicket(int _id_comida, int _id_sede, int _id_piso, int _id_turno,
-                   String hora_ini, String hora_fin, int cod_usuario, String email, int cod) {
+                   String hora_ini, String hora_fin, CStudent user) {
         this._id_comida = _id_comida;
         this._id_sede = _id_sede;
         this._id_piso = _id_piso;
         this._id_turno = _id_turno;
         this.horario_ini = hora_ini;
         this.horario_fin = hora_fin;
-        this.cod_usuario = cod_usuario;
-        this.email = email;
         this.consumido = false;
-        this.cod = cod;
+        this.user = user;
     }
-
 
     protected CTicket(Parcel in) {
         _id = in.readString();
@@ -61,12 +54,7 @@ public class CTicket implements Parcelable {
         hora_retiro = in.readString();
         hora_consumido = in.readString();
         consumido = in.readByte() != 0;
-        cod_usuario = in.readInt();
-        email = in.readString();
-        nombre_usuario = in.readString();
-        ap_paterno_usuario = in.readString();
-        ap_materno_usuario = in.readString();
-        cod = in.readInt();
+        user = in.readParcelable(CStudent.class.getClassLoader());
     }
 
     public static final Creator<CTicket> CREATOR = new Creator<CTicket>() {
@@ -81,20 +69,12 @@ public class CTicket implements Parcelable {
         }
     };
 
-    public int getCod() {
-        return cod;
-    }
-
-    public void setCod(int cod) {
-        this.cod = cod;
-    }
-
     public void key_ticket(String fecha){
         String one = Integer.toString(this._id_comida); //1 1
         String two = Integer.toString(this._id_sede);   //1 1
         String three = Integer.toString(this._id_piso); //2 2
         String four = Integer.toString(this._id_turno); //3 1
-        String five = Integer.toString(cod_usuario);    //16200049
+        String five = user.get_id();    //16200049
 
         String fecha_six[] = fecha.split("/");
 
@@ -103,6 +83,14 @@ public class CTicket implements Parcelable {
 
        set_id(six);
 
+    }
+
+    public CStudent getUser() {
+        return user;
+    }
+
+    public void setUser(CStudent user) {
+        this.user = user;
     }
 
     public String get_id() {
@@ -193,46 +181,6 @@ public class CTicket implements Parcelable {
         this.consumido = consumido;
     }
 
-    public int getCod_usuario() {
-        return cod_usuario;
-    }
-
-    public void setCod_usuario(int cod_usuario) {
-        this.cod_usuario = cod_usuario;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNombre_usuario() {
-        return nombre_usuario;
-    }
-
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
-    }
-
-    public String getAp_paterno_usuario() {
-        return ap_paterno_usuario;
-    }
-
-    public void setAp_paterno_usuario(String ap_paterno_usuario) {
-        this.ap_paterno_usuario = ap_paterno_usuario;
-    }
-
-    public String getAp_materno_usuario() {
-        return ap_materno_usuario;
-    }
-
-    public void setAp_materno_usuario(String ap_materno_usuario) {
-        this.ap_materno_usuario = ap_materno_usuario;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -251,11 +199,6 @@ public class CTicket implements Parcelable {
         dest.writeString(hora_retiro);
         dest.writeString(hora_consumido);
         dest.writeByte((byte) (consumido ? 1 : 0));
-        dest.writeInt(cod_usuario);
-        dest.writeString(email);
-        dest.writeString(nombre_usuario);
-        dest.writeString(ap_paterno_usuario);
-        dest.writeString(ap_materno_usuario);
-        dest.writeInt(cod);
+        dest.writeParcelable(user, flags);
     }
 }

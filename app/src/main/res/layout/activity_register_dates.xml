@@ -243,7 +243,7 @@
                 android:textAllCaps="false"
                 android:textStyle="bold"
                 android:background="@drawable/button_radius"
-                android:backgroundTint="@color/color_datos"
+                android:backgroundTint="@color/color_button_green"
                 />
 
         </LinearLayout>
