@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 import duvanfisi.fisiunmsm.Actions.Preferences;
+import duvanfisi.fisiunmsm.Extras.CloseKeyboard;
 import duvanfisi.fisiunmsm.Fragments.FNoticias;
 import duvanfisi.fisiunmsm.Model.Users.CStudent;
 import duvanfisi.fisiunmsm.Templates.TemplateMessage;
@@ -168,13 +169,10 @@ public class MainActivity extends AppCompatActivity {
                             return false;
                         }
                     case R.id.action_arrive:
-                        /*TemplateMessage mensaje_mapa = new TemplateMessage(MainActivity.this);
-                        mensaje_mapa.setMensaje("Mapa", "Próximamente!");*/
                         StartActivity.startActivity(MainActivity.this, new LocationActivity()   );
-                        // Intent intent = new Intent(MainActivity.this, LocationActivity.ExtraData.class);
                         return true;
                     case R.id.action_info:
-                        StartActivity.startActivity(MainActivity.this, new WelcomeActivity());
+                        //StartActivity.startActivity(MainActivity.this, new WelcomeActivity());
                         return true;
                     case R.id.action_salir:
                         if(firebaseUser!=null) {

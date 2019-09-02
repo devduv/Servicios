@@ -16,6 +16,7 @@
         android:layout_marginBottom="15dp"
         android:layout_centerInParent="true">
         <RelativeLayout
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <de.hdodenhof.circleimageview.CircleImageView
@@ -50,21 +51,22 @@
                         android:layout_marginEnd="5dp"
                         android:textColor="@color/color_text"
                         android:fontFamily="sans-serif"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
+                        android:text="Brandon Duvan Saenz Falcón"
                         tools:ignore="SmallSp"/>
                     <TextView
                         android:id="@+id/fac_user"
-
+                        android:text="Ingeniería de Sistemas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:textColor="@color/color_text"
                         android:fontFamily="sans-serif"
-                        android:textSize="13sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp"/>
                     <TextView
                         android:id="@+id/fecha_pub"
-
+                        android:text="domingo 24 de agosto de 2019"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
@@ -87,33 +89,39 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="2dp"
                 android:orientation="vertical"
                 android:layout_below="@id/linearpub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:text="Bienvenida a esta nueva aplicación"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:id="@+id/tit_new_pub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-light"
+                    android:textStyle="bold"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:layout_margin="2dp"
                     android:id="@+id/descripcion_pub"
+                    android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit curae, vivamus ullamcorper tortor aliquam eros aliquet feugiat, dictumst netus vulputate cursus nulla torquent odio."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/color_text"
                     android:fontFamily="sans-serif-light"
                     android:textSize="16sp" />
 
-                <TextView
-                    android:padding="2dp"
-                    android:layout_margin="2dp"
-                    android:id="@+id/tit_new_pub"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/color_text"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:paddingEnd="10dp"
-                    android:paddingStart="10dp"/>
+
 
                 <ImageView
                     android:id="@+id/image_pub"
@@ -128,8 +136,6 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp" />
 
-                <include
-                    layout="@layout/plantilla_reaccion" />
 
             </LinearLayout>
 

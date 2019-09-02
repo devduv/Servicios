@@ -60,7 +60,7 @@ public class FPersonajes extends Fragment {
         int contparttwo = 0;
         int ctop = 0;
 
-        if(FHome.personajeHashMap!=null) {
+        /*if(FHome.personajeHashMap!=null) {
             HashMap<Integer, CPersonaje> aux = FHome.personajeHashMap;
             int cantidad = FHome.personajeHashMap.size() / 2;
             for (Integer key : FHome.personajeHashMap.keySet()) {
@@ -81,7 +81,7 @@ public class FPersonajes extends Fragment {
                 i++;
             }
 
-        }
+        }*/
     }
 
     public void setPersonajesMore(){

@@ -36,6 +36,7 @@
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
                 android:paddingTop="5dp"
+                android:background="@color/color_comedor_buttons"
                 android:paddingBottom="5dp"
                 android:paddingEnd="5dp"/>
             <TextView
@@ -46,7 +47,8 @@
                 android:gravity="center"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/color_text"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:text="José David Sanchez Tello"
                 android:textStyle="bold"
                 android:layout_toEndOf="@id/puesto"/>
 
@@ -73,6 +75,7 @@
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/color_text"
                 android:textSize="13sp"
+                android:text="FISI"
                 android:layout_below="@id/titulo_fecha_nac"/>
 
             <TextView
@@ -97,6 +100,7 @@
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/color_text"
                 android:textSize="13sp"
+                android:text="Ingeniería de Sistemas"
                 android:layout_below="@id/titulo_escuela"/>
 
             <TextView
@@ -109,6 +113,7 @@
                 android:layout_marginStart="5dp"
                 android:textColor="@color/color_text"
                 android:textSize="13sp"
+                android:text="Tellez"
                 android:layout_below="@id/image"
                 android:layout_toEndOf="@id/puesto"/>
         </RelativeLayout>

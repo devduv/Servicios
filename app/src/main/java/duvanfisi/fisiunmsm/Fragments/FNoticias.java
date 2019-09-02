@@ -66,7 +66,7 @@ public class FNoticias extends Fragment {
         desc_new = itemView.findViewById(R.id.desc_new);
         button_noticia = itemView.findViewById(R.id.button_vernoticia);
 
-        if(FHome.noticiaHashMap!=null) {
+        /*if(FHome.noticiaHashMap!=null) {
             ImagePicasso.setImageCenterCop(getContext(), R.drawable.ic_calendar, img_calender);
             ImagePicasso.setImageCenterInside(getContext(), FHome.noticiaHashMap.get(0).getLink_foto(), image_new);
             tit_new.setText(FHome.noticiaHashMap.get(0).getTitulo());
@@ -93,7 +93,7 @@ public class FNoticias extends Fragment {
                 }
             });
             downloadNoticias();
-        }
+        }*/
     }
 
     public void downloadNoticias(){

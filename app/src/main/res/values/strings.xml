@@ -3,7 +3,7 @@
     <string name="my_app_id">unmsmservicios-scxef</string>
 
     <string name="close_app">Presione ATRAS otra vez para salir.</string>
-    <string name="prompt_email">example@gmail.com</string>
+    <string name="prompt_email">example@unmsm.edu.pe</string>
     <string name="prompt_password">contraseña</string>
     <string name="title_home">Home</string>
     <string name="title_services">Servicios</string>

@@ -147,7 +147,7 @@
 
                 <View
                     android:id="@+id/view_02"
-                    android:layout_below="@id/ln"
+
                     android:layout_width="match_parent"
                     android:background="@android:color/darker_gray"
                     android:layout_height="1dp"
@@ -220,7 +220,6 @@
 
                 <View
                     android:id="@+id/view_03"
-                    android:layout_below="@id/ln"
                     android:layout_width="match_parent"
                     android:background="@android:color/darker_gray"
                     android:layout_height="1dp"
